@@ -731,7 +731,7 @@
   .tb-wide.danger { color: var(--red); border-color: var(--red); }
   .tb-wide.save { color: var(--green); border-color: var(--green); }
 
-  /* Global drawing overlay — one canvas over the entire viewport below timeline */
+  /* Global drawing overlay — always visible (transparent), pointer-events toggled */
   #drawOverlay {
     position: fixed;
     top: 100px;
@@ -740,10 +740,8 @@
     height: calc(100vh - 100px);
     z-index: 50;
     pointer-events: none;
-    display: none;
   }
   #drawOverlay.active {
-    display: block;
     pointer-events: auto;
     cursor: crosshair;
   }
