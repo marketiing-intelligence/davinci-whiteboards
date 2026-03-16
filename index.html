@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pełny Rozbiór — Whiteboardy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #fafaf8;
+    --card: #ffffff;
+    --border: #e8e6dc;
+    --text: #0a0a0a;
+    --dim: #737373;
+    --accent: #c4922b;
+    --accent-light: #e5a84b;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+  .logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 8px;
+  }
+  .logo span { color: var(--accent); }
+  h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    font-size: 16px;
+    color: var(--dim);
+    margin-bottom: 48px;
+    line-height: 1.5;
+  }
+  .episodes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .ep-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 28px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .ep-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(196,146,43,0.12);
+    transform: translateY(-2px);
+  }
+  .ep-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    min-width: 60px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .ep-info { flex: 1; }
+  .ep-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .ep-desc {
+    font-size: 14px;
+    color: var(--dim);
+    line-height: 1.4;
+  }
+  .ep-arrow {
+    color: var(--dim);
+    font-size: 20px;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .ep-card:hover .ep-arrow { transform: translateX(4px); color: var(--accent); }
+  .ep-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(196,146,43,0.1);
+    color: var(--accent);
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--dim);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+  @media (max-width: 600px) {
+    h1 { font-size: 26px; }
+    .ep-card { padding: 18px 20px; gap: 14px; }
+    .ep-num { font-size: 22px; min-width: 44px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="logo"><span>davinci</span>.agency</div>
+  <h1>Pełny Rozbiór — Whiteboardy</h1>
+  <p class="subtitle">Interaktywne whiteboardy do odcinków na YouTube.<br>Każdy zawiera frameworki, analizy i puste szablony do wypełnienia dla Twojej firmy.</p>
+
+  <div class="episodes" id="episodes">
+
+    <a class="ep-card" href="boards/ep1-marbo-sport.html">
+      <div class="ep-num">EP1</div>
+      <div class="ep-info">
+        <div class="ep-title">Marbo Sport <span class="ep-badge">3 frameworki</span></div>
+        <div class="ep-desc">Łańcuch wartości &bull; Audyt kanałów &bull; Mapa pozycjonowania &mdash; producent sprzętu sportowego z 66M PLN przychodu</div>
+      </div>
+      <div class="ep-arrow">&rarr;</div>
+    </a>
+
+    <!-- TEMPLATE: copy this block for each new episode
+    <a class="ep-card" href="boards/ep2-nazwa-firmy.html">
+      <div class="ep-num">EP2</div>
+      <div class="ep-info">
+        <div class="ep-title">Nazwa Firmy <span class="ep-badge">X frameworków</span></div>
+        <div class="ep-desc">Krótki opis frameworków i firmy</div>
+      </div>
+      <div class="ep-arrow">&rarr;</div>
+    </a>
+    -->
+
+  </div>
+
+  <div class="footer">
+    <span>&copy; 2026 davinci.agency</span>
+    <a href="https://www.davinci.agency/pl" target="_blank">davinci.agency</a>
+  </div>
+</div>
+</body>
+</html>
