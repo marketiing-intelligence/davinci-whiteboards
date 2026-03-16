@@ -1772,8 +1772,12 @@
   let stickyColor = '#fff9c4';
   let emojiToPlace = null;
   let zoomLevelVal = 1;
+  let globalZoom = 1;
+  let globalPanX = 0;
+  let globalPanY = 0;
 
   const overlay = document.getElementById('drawOverlay');
+  const mainEl = document.querySelector('.main');
   const drawToggle = document.getElementById('drawToggle');
   const drawToolbar = document.getElementById('drawToolbar');
   const brushSizeInput = document.getElementById('brushSize');
@@ -1805,7 +1809,38 @@
     if (!fc) return;
     fc.setWidth(window.innerWidth);
     fc.setHeight(window.innerHeight - 100);
-    fc.renderAll();
+    applyGlobalTransform();
+  }
+
+  // ===== GLOBAL ZOOM (HTML + Canvas together) =====
+  function setGlobalZoom(z) {
+    z = Math.min(Math.max(0.25, z), 5);
+    if (z === 1) { globalPanX = 0; globalPanY = 0; }
+    globalZoom = z;
+    applyGlobalTransform();
+  }
+
+  function applyGlobalTransform() {
+    // CSS transform on .main — zooms/pans the HTML content
+    mainEl.style.transform = `translate(${globalPanX}px, ${globalPanY}px) scale(${globalZoom})`;
+    mainEl.style.transformOrigin = '50% 100px';
+
+    // Fabric.js viewport — zooms/pans the drawing canvas to match
+    if (fc) {
+      const cx = fc.width / 2;
+      const cy = 0;
+      fc.setViewportTransform([
+        globalZoom, 0, 0, globalZoom,
+        cx * (1 - globalZoom) + globalPanX,
+        cy * (1 - globalZoom) + globalPanY
+      ]);
+      fc.renderAll();
+    }
+
+    // Update UI
+    zoomLevelVal = globalZoom;
+    zoomLevelEl.textContent = Math.round(globalZoom * 100) + '%';
+    zoomControls.classList.toggle('visible', drawingMode || globalZoom !== 1);
   }
 
   // ===== SLIDE DRAWING PERSISTENCE =====
@@ -1825,11 +1860,11 @@
     if (slideDrawings[current]) {
       fc.loadFromJSON(slideDrawings[current], () => {
         fc.backgroundColor = 'transparent';
-        fc.renderAll();
+        applyGlobalTransform(); // Restore global zoom/pan after load
         if (drawingMode) applyTool();
       });
     } else {
-      fc.renderAll();
+      applyGlobalTransform(); // Restore global zoom/pan on empty slide
     }
   }
 
@@ -1839,7 +1874,7 @@
     drawToggle.classList.toggle('active', drawingMode);
     drawToolbar.classList.toggle('visible', drawingMode);
     overlay.classList.toggle('active', drawingMode);
-    zoomControls.classList.toggle('visible', drawingMode);
+    zoomControls.classList.toggle('visible', drawingMode || globalZoom !== 1);
 
     if (drawingMode) {
       resizeCanvas();
@@ -1995,13 +2030,12 @@
         return;
       }
 
-      // Panning
+      // Panning (global: HTML + Canvas)
       if (isPanning && panStart) {
-        const vpt = fc.viewportTransform.slice();
-        vpt[4] += opt.e.clientX - panStart.x;
-        vpt[5] += opt.e.clientY - panStart.y;
-        fc.setViewportTransform(vpt);
+        globalPanX += opt.e.clientX - panStart.x;
+        globalPanY += opt.e.clientY - panStart.y;
         panStart = { x: opt.e.clientX, y: opt.e.clientY };
+        applyGlobalTransform();
         return;
       }
 
@@ -2091,16 +2125,13 @@
       shapeOrigin = null;
     });
 
-    // --- MOUSE WHEEL — ZOOM ---
+    // --- MOUSE WHEEL — ZOOM (global: HTML + Canvas) ---
     fc.on('mouse:wheel', function(opt) {
       if (!drawingMode) return;
       opt.e.preventDefault();
-      let zoom = fc.getZoom();
-      zoom *= opt.e.deltaY > 0 ? 0.9 : 1.1;
-      zoom = Math.min(Math.max(0.25, zoom), 5);
-      fc.zoomToPoint({ x: opt.e.offsetX, y: opt.e.offsetY }, zoom);
-      zoomLevelVal = zoom;
-      zoomLevelEl.textContent = Math.round(zoom * 100) + '%';
+      let z = globalZoom;
+      z *= opt.e.deltaY > 0 ? 0.9 : 1.1;
+      setGlobalZoom(z);
     });
   }
 
@@ -2223,16 +2254,13 @@
     gridOverlay.classList.toggle('visible');
   });
 
-  // Clear
+  // Clear (only drawings, keep global zoom/pan)
   document.getElementById('clearBtn').addEventListener('click', () => {
     if (!fc) return;
     if (confirm('Wyczyścić wszystkie rysunki na tym slajdzie?')) {
       fc.clear();
       fc.backgroundColor = 'transparent';
-      fc.setViewportTransform([1,0,0,1,0,0]);
-      zoomLevelVal = 1;
-      zoomLevelEl.textContent = '100%';
-      fc.renderAll();
+      applyGlobalTransform(); // Keep current zoom/pan
       delete slideDrawings[current];
     }
   });
@@ -2248,24 +2276,16 @@
 
   drawToggle.addEventListener('click', toggleDrawing);
 
-  // ===== ZOOM CONTROLS =====
+  // ===== ZOOM CONTROLS (global) =====
   document.getElementById('zoomIn').addEventListener('click', () => {
-    if (!fc) return;
-    let z = Math.min(fc.getZoom() * 1.25, 5);
-    fc.zoomToPoint({ x: fc.width/2, y: fc.height/2 }, z);
-    zoomLevelEl.textContent = Math.round(z * 100) + '%';
+    setGlobalZoom(globalZoom * 1.25);
   });
   document.getElementById('zoomOut').addEventListener('click', () => {
-    if (!fc) return;
-    let z = Math.max(fc.getZoom() * 0.8, 0.25);
-    fc.zoomToPoint({ x: fc.width/2, y: fc.height/2 }, z);
-    zoomLevelEl.textContent = Math.round(z * 100) + '%';
+    setGlobalZoom(globalZoom * 0.8);
   });
   document.getElementById('zoomReset').addEventListener('click', () => {
-    if (!fc) return;
-    fc.setViewportTransform([1,0,0,1,0,0]);
-    zoomLevelEl.textContent = '100%';
-    fc.renderAll();
+    globalPanX = 0; globalPanY = 0;
+    setGlobalZoom(1);
   });
 
   // ===== KEYBOARD SHORTCUTS =====
@@ -2337,6 +2357,25 @@
   });
 
   window.addEventListener('resize', () => { if (drawingMode) resizeCanvas(); });
+
+  // ===== GLOBAL ZOOM/PAN outside drawing mode =====
+  document.addEventListener('wheel', function(e) {
+    if (drawingMode) return; // Fabric.js mouse:wheel handles it
+    if (e.ctrlKey || e.metaKey) {
+      // Ctrl+scroll = zoom
+      e.preventDefault();
+      let z = globalZoom;
+      z *= e.deltaY > 0 ? 0.9 : 1.1;
+      setGlobalZoom(z);
+    } else if (globalZoom !== 1) {
+      // When zoomed: scroll = pan
+      e.preventDefault();
+      globalPanX -= e.deltaX;
+      globalPanY -= e.deltaY;
+      applyGlobalTransform();
+    }
+    // At zoom=1 without Ctrl: normal page scroll
+  }, { passive: false });
 
   // ===== INIT =====
   initGlobalCanvas();
