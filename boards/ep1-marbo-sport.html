@@ -537,7 +537,7 @@
   .roadmap {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 0;
     max-width: 600px;
     margin: 20px auto;
   }
@@ -545,32 +545,36 @@
     display: flex;
     gap: 16px;
     align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
   }
+  .roadmap-item:last-child { border-bottom: none; }
   .roadmap-num {
-    width: 44px; height: 44px;
+    width: 28px; height: 28px;
     border-radius: 50%;
-    background: var(--accent);
-    color: #fff;
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 13px;
     font-weight: 700;
     flex-shrink: 0;
-  }
-  .roadmap-text {
-    padding-top: 8px;
+    margin-top: 1px;
   }
   .roadmap-text h4 {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--chalk);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
   }
   .roadmap-text p {
-    font-size: 17px;
+    font-size: 14px;
     color: var(--dim);
     font-family: 'DM Sans', sans-serif;
-    margin-top: 4px;
+    margin-top: 3px;
+    line-height: 1.4;
   }
 
   /* VERSUS */
@@ -633,31 +637,29 @@
 
   /* TEMPLATE SLIDE ENHANCEMENTS */
   .slide .board.template-board {
-    border: 2px dashed var(--accent);
-    background: linear-gradient(135deg, rgba(229,168,75,0.03) 0%, rgba(229,168,75,0.08) 100%);
+    border: 1px solid var(--accent);
+    background: linear-gradient(135deg, rgba(229,168,75,0.02) 0%, rgba(229,168,75,0.05) 100%);
     position: relative;
   }
   .slide .board.template-board::before {
     content: "TWOJA KOLEJ";
     position: absolute;
-    top: 16px;
-    right: 20px;
+    top: 20px;
+    right: 24px;
     font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
     color: var(--accent);
-    background: rgba(229,168,75,0.12);
-    padding: 4px 12px;
-    border-radius: 20px;
+    opacity: 0.7;
   }
 
   /* INSIGHT CALLOUT (standardized bottom-of-slide callout) */
   .insight {
     text-align: center;
     margin-top: 32px;
-    padding: 20px 24px;
-    border: 2px dashed var(--accent);
-    border-radius: 14px;
+    padding: 20px 28px;
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
     background: rgba(229,168,75,0.04);
     max-width: 640px;
     margin-left: auto;
@@ -1173,63 +1175,63 @@
   <div class="board template-board">
     <div class="board-title" style="text-decoration-color:var(--accent);">TWOJA BAZA WIEDZY — WARSTWA 2</div>
     <div class="roadmap" style="max-width:700px;margin:0 auto;">
-      <div class="roadmap-item" style="border-style:dashed;">
+      <div class="roadmap-item">
         <div class="roadmap-num">1</div>
         <div class="roadmap-text">
           <h4>Marża per produkt</h4>
           <p>Które produkty zarabiają, które ciągną w dół</p>
         </div>
       </div>
-      <div class="roadmap-item" style="border-style:dashed;">
+      <div class="roadmap-item">
         <div class="roadmap-num">2</div>
         <div class="roadmap-text">
           <h4>Ceny vs konkurencja</h4>
           <p>5 bestsellerów vs 3 konkurentów — tabela</p>
         </div>
       </div>
-      <div class="roadmap-item" style="border-style:dashed;">
+      <div class="roadmap-item">
         <div class="roadmap-num">3</div>
         <div class="roadmap-text">
           <h4>Sezonowość</h4>
           <p>Kiedy sprzedaż rośnie/spada (cykl branżowy)</p>
         </div>
       </div>
-      <div class="roadmap-item" style="border-style:dashed;">
+      <div class="roadmap-item">
         <div class="roadmap-num">4</div>
         <div class="roadmap-text">
           <h4>Źródła ruchu</h4>
           <p>Google Ads, organic, social, polecenia, powrotni</p>
         </div>
       </div>
-      <div class="roadmap-item" style="border-style:dashed;">
+      <div class="roadmap-item">
         <div class="roadmap-num">5</div>
         <div class="roadmap-text">
           <h4>Koszt pozyskania klienta</h4>
           <p>Wydatek na reklamę per kanał / liczba klientów</p>
         </div>
       </div>
-      <div class="roadmap-item" style="border-style:dashed;">
+      <div class="roadmap-item">
         <div class="roadmap-num">6</div>
         <div class="roadmap-text">
           <h4>Wartość klienta w czasie</h4>
           <p>CLV — ile klient zostawia łącznie, jak często wraca</p>
         </div>
       </div>
-      <div class="roadmap-item" style="border-style:dashed;">
+      <div class="roadmap-item">
         <div class="roadmap-num">7</div>
         <div class="roadmap-text">
           <h4>Pipeline sprzedaży</h4>
           <p>Leady → oferty → zamknięte, czas cyklu</p>
         </div>
       </div>
-      <div class="roadmap-item" style="border-style:dashed;">
+      <div class="roadmap-item">
         <div class="roadmap-num">8</div>
         <div class="roadmap-text">
           <h4>Dane o zespole</h4>
           <p>Ile osób, stanowiska, rotacja, plan rekrutacji</p>
         </div>
       </div>
-      <div class="roadmap-item" style="border-style:dashed;">
+      <div class="roadmap-item">
         <div class="roadmap-num">9</div>
         <div class="roadmap-text">
           <h4>Procesy</h4>
@@ -1331,67 +1333,67 @@
   <div class="board template-board">
     <div class="board-title" style="text-decoration-color:var(--accent);">TWÓJ PROFIT TREE</div>
     <!-- Korzeń -->
-    <div style="text-align:center;margin-bottom:8px;">
-      <div style="display:inline-block;padding:14px 28px;border:2px dashed var(--accent);border-radius:14px;">
-        <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Zysk netto:</div>
-        <div style="font-size:28px;font-weight:700;color:var(--dim);">___________</div>
+    <div style="text-align:center;margin-bottom:12px;">
+      <div class="hero-num" style="border-color:var(--board-border);">
+        <span class="label">Zysk netto</span>
+        <span class="number" style="color:var(--dim);font-size:28px;">___________</span>
       </div>
     </div>
-    <div style="text-align:center;font-size:24px;color:var(--dim);margin:4px 0;">↙ ↘</div>
+    <div style="text-align:center;font-size:20px;color:var(--dim);margin:6px 0;">↙ &nbsp;&nbsp;&nbsp;&nbsp; ↘</div>
     <!-- Dwie gałęzie -->
-    <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:8px;">
+    <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:12px;">
       <!-- Przychody -->
-      <div style="flex:1;max-width:380px;">
-        <div style="text-align:center;padding:12px 18px;border:2px dashed var(--green);border-radius:12px;">
-          <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Przychody:</div>
-          <div style="font-size:24px;font-weight:700;color:var(--dim);">___________</div>
+      <div style="flex:1;max-width:400px;">
+        <div class="hero-num" style="border-color:rgba(26,138,74,0.3);width:100%;">
+          <span class="label">Przychody</span>
+          <span class="number" style="color:var(--dim);font-size:24px;">___________</span>
         </div>
-        <div style="text-align:center;font-size:18px;color:var(--dim);margin:4px 0;">↓</div>
+        <div style="text-align:center;font-size:16px;color:var(--dim);margin:6px 0;">↓</div>
         <div style="display:flex;flex-direction:column;gap:6px;">
-          <div style="padding:10px 14px;border:1px dashed rgba(26,138,74,0.3);border-radius:8px;display:flex;justify-content:space-between;">
-            <span style="font-size:15px;color:var(--dim);">Produkty/usługi:</span>
-            <span style="font-size:15px;color:var(--dim);">___________</span>
+          <div style="padding:10px 16px;border-left:3px solid rgba(26,138,74,0.3);border-radius:6px;background:rgba(0,0,0,0.015);display:flex;justify-content:space-between;">
+            <span style="font-size:14px;color:var(--dim);">Produkty/usługi:</span>
+            <span style="font-size:14px;color:var(--dim);">___________</span>
           </div>
-          <div style="padding:10px 14px;border:1px dashed rgba(26,138,74,0.3);border-radius:8px;display:flex;justify-content:space-between;">
-            <span style="font-size:15px;color:var(--dim);">Inne przychody:</span>
-            <span style="font-size:15px;color:var(--dim);">___________</span>
+          <div style="padding:10px 16px;border-left:3px solid rgba(26,138,74,0.3);border-radius:6px;background:rgba(0,0,0,0.015);display:flex;justify-content:space-between;">
+            <span style="font-size:14px;color:var(--dim);">Inne przychody:</span>
+            <span style="font-size:14px;color:var(--dim);">___________</span>
           </div>
         </div>
       </div>
       <!-- Koszty -->
-      <div style="flex:1;max-width:380px;">
-        <div style="text-align:center;padding:12px 18px;border:2px dashed var(--red);border-radius:12px;">
-          <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Koszty:</div>
-          <div style="font-size:24px;font-weight:700;color:var(--dim);">___________</div>
+      <div style="flex:1;max-width:400px;">
+        <div class="hero-num" style="border-color:rgba(204,51,51,0.3);width:100%;">
+          <span class="label">Koszty</span>
+          <span class="number" style="color:var(--dim);font-size:24px;">___________</span>
         </div>
-        <div style="text-align:center;font-size:18px;color:var(--dim);margin:4px 0;">↓</div>
+        <div style="text-align:center;font-size:16px;color:var(--dim);margin:6px 0;">↓</div>
         <div style="display:flex;flex-direction:column;gap:6px;">
-          <div style="padding:10px 14px;border:1px dashed rgba(204,51,51,0.3);border-radius:8px;display:flex;justify-content:space-between;">
-            <span style="font-size:15px;color:var(--dim);">Materiały/energia:</span>
-            <span style="font-size:15px;color:var(--dim);">___________</span>
+          <div style="padding:10px 16px;border-left:3px solid rgba(204,51,51,0.3);border-radius:6px;background:rgba(0,0,0,0.015);display:flex;justify-content:space-between;">
+            <span style="font-size:14px;color:var(--dim);">Materiały/energia:</span>
+            <span style="font-size:14px;color:var(--dim);">___________</span>
           </div>
-          <div style="padding:10px 14px;border:1px dashed rgba(204,51,51,0.3);border-radius:8px;display:flex;justify-content:space-between;">
-            <span style="font-size:15px;color:var(--dim);">Usługi obce:</span>
-            <span style="font-size:15px;color:var(--dim);">___________</span>
+          <div style="padding:10px 16px;border-left:3px solid rgba(204,51,51,0.3);border-radius:6px;background:rgba(0,0,0,0.015);display:flex;justify-content:space-between;">
+            <span style="font-size:14px;color:var(--dim);">Usługi obce:</span>
+            <span style="font-size:14px;color:var(--dim);">___________</span>
           </div>
-          <div style="padding:10px 14px;border:1px dashed rgba(204,51,51,0.3);border-radius:8px;display:flex;justify-content:space-between;">
-            <span style="font-size:15px;color:var(--dim);">Wynagrodzenia:</span>
-            <span style="font-size:15px;color:var(--dim);">___________</span>
+          <div style="padding:10px 16px;border-left:3px solid rgba(204,51,51,0.3);border-radius:6px;background:rgba(0,0,0,0.015);display:flex;justify-content:space-between;">
+            <span style="font-size:14px;color:var(--dim);">Wynagrodzenia:</span>
+            <span style="font-size:14px;color:var(--dim);">___________</span>
           </div>
-          <div style="padding:10px 14px;border:1px dashed rgba(204,51,51,0.3);border-radius:8px;display:flex;justify-content:space-between;">
-            <span style="font-size:15px;color:var(--dim);">Amortyzacja:</span>
-            <span style="font-size:15px;color:var(--dim);">___________</span>
+          <div style="padding:10px 16px;border-left:3px solid rgba(204,51,51,0.3);border-radius:6px;background:rgba(0,0,0,0.015);display:flex;justify-content:space-between;">
+            <span style="font-size:14px;color:var(--dim);">Amortyzacja:</span>
+            <span style="font-size:14px;color:var(--dim);">___________</span>
           </div>
         </div>
       </div>
     </div>
     <!-- Wynik -->
-    <div style="display:flex;justify-content:center;gap:20px;margin-top:12px;flex-wrap:wrap;">
-      <div style="padding:10px 20px;border:1px dashed var(--board-border);border-radius:10px;">
-        <span style="font-size:15px;color:var(--dim);">Zysk ze sprzedaży: ___________</span>
+    <div style="display:flex;justify-content:center;gap:16px;margin-top:12px;flex-wrap:wrap;">
+      <div style="padding:10px 20px;border-left:3px solid var(--board-border);border-radius:6px;background:rgba(0,0,0,0.015);">
+        <span style="font-size:14px;color:var(--dim);">Zysk ze sprzedaży: ___________</span>
       </div>
-      <div style="padding:10px 20px;border:1px dashed var(--board-border);border-radius:10px;">
-        <span style="font-size:15px;color:var(--dim);">Saldo pozostałej dział.: ___________</span>
+      <div style="padding:10px 20px;border-left:3px solid var(--board-border);border-radius:6px;background:rgba(0,0,0,0.015);">
+        <span style="font-size:14px;color:var(--dim);">Saldo ost. dział.: ___________</span>
       </div>
     </div>
     <div class="insight">
@@ -1547,27 +1549,27 @@
   <div class="board template-board">
     <div class="board-title" style="text-decoration-color:var(--accent);">TWÓJ ŁAŃCUCH WARTOŚCI</div>
     <div class="chain">
-      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
+      <div class="chain-link" style="border-color:var(--board-border);color:var(--dim);min-width:130px;">
         Zakupy<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
       </div>
       <div class="chain-arrow">→</div>
-      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
+      <div class="chain-link" style="border-color:var(--board-border);color:var(--dim);min-width:130px;">
         Produkcja /<br>Realizacja<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
       </div>
       <div class="chain-arrow">→</div>
-      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
+      <div class="chain-link" style="border-color:var(--board-border);color:var(--dim);min-width:130px;">
         Logistyka<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
       </div>
       <div class="chain-arrow">→</div>
-      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
+      <div class="chain-link" style="border-color:var(--board-border);color:var(--dim);min-width:130px;">
         Marketing<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
       </div>
       <div class="chain-arrow">→</div>
-      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
+      <div class="chain-link" style="border-color:var(--board-border);color:var(--dim);min-width:130px;">
         Sprzedaż<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
       </div>
       <div class="chain-arrow">→</div>
-      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
+      <div class="chain-link" style="border-color:var(--board-border);color:var(--dim);min-width:130px;">
         Serwis /<br>Obsługa<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
       </div>
     </div>
@@ -1675,42 +1677,42 @@
         <div style="writing-mode:vertical-lr;transform:rotate(180deg);text-align:center;padding-right:8px;font-size:14px;color:var(--dim);font-family:'DM Sans',sans-serif;">
           Istniejący rynek ← → Nowy rynek
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;flex:1;">
-          <div style="padding:20px;border:2px dashed var(--green);border-radius:12px;min-height:140px;">
-            <div style="font-size:17px;font-weight:700;color:var(--green);margin-bottom:12px;">PENETRACJA RYNKU</div>
-            <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:2;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;flex:1;">
+          <div style="padding:20px;border:1px solid rgba(26,138,74,0.3);border-left:3px solid var(--green);border-radius:10px;min-height:140px;">
+            <div style="font-size:15px;font-weight:700;color:var(--green);margin-bottom:10px;">PENETRACJA RYNKU</div>
+            <div style="font-size:14px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:2;">
               1. ___________<br>
               2. ___________<br>
               3. ___________
             </div>
-            <div style="margin-top:10px;font-size:13px;color:var(--green);">Najniższe ryzyko</div>
+            <div style="margin-top:8px;font-size:12px;color:var(--green);">Najniższe ryzyko</div>
           </div>
-          <div style="padding:20px;border:2px dashed var(--yellow);border-radius:12px;min-height:140px;">
-            <div style="font-size:17px;font-weight:700;color:var(--yellow);margin-bottom:12px;">ROZWÓJ PRODUKTU</div>
-            <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:2;">
+          <div style="padding:20px;border:1px solid rgba(184,134,11,0.3);border-left:3px solid var(--yellow);border-radius:10px;min-height:140px;">
+            <div style="font-size:15px;font-weight:700;color:var(--yellow);margin-bottom:10px;">ROZWÓJ PRODUKTU</div>
+            <div style="font-size:14px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:2;">
               1. ___________<br>
               2. ___________<br>
               3. ___________
             </div>
-            <div style="margin-top:10px;font-size:13px;color:var(--yellow);">Średnie ryzyko</div>
+            <div style="margin-top:8px;font-size:12px;color:var(--yellow);">Średnie ryzyko</div>
           </div>
-          <div style="padding:20px;border:2px dashed var(--accent);border-radius:12px;min-height:140px;">
-            <div style="font-size:17px;font-weight:700;color:var(--accent);margin-bottom:12px;">ROZWÓJ RYNKU</div>
-            <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:2;">
+          <div style="padding:20px;border:1px solid rgba(229,168,75,0.3);border-left:3px solid var(--accent);border-radius:10px;min-height:140px;">
+            <div style="font-size:15px;font-weight:700;color:var(--accent);margin-bottom:10px;">ROZWÓJ RYNKU</div>
+            <div style="font-size:14px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:2;">
               1. ___________<br>
               2. ___________<br>
               3. ___________
             </div>
-            <div style="margin-top:10px;font-size:13px;color:var(--accent);">Średnie-wysokie ryzyko</div>
+            <div style="margin-top:8px;font-size:12px;color:var(--accent);">Średnie-wysokie ryzyko</div>
           </div>
-          <div style="padding:20px;border:2px dashed var(--red);border-radius:12px;min-height:140px;">
-            <div style="font-size:17px;font-weight:700;color:var(--red);margin-bottom:12px;">DYWERSYFIKACJA</div>
-            <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:2;">
+          <div style="padding:20px;border:1px solid rgba(204,51,51,0.3);border-left:3px solid var(--red);border-radius:10px;min-height:140px;">
+            <div style="font-size:15px;font-weight:700;color:var(--red);margin-bottom:10px;">DYWERSYFIKACJA</div>
+            <div style="font-size:14px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:2;">
               1. ___________<br>
               2. ___________<br>
               3. ___________
             </div>
-            <div style="margin-top:10px;font-size:13px;color:var(--red);">Najwyższe ryzyko</div>
+            <div style="margin-top:8px;font-size:12px;color:var(--red);">Najwyższe ryzyko</div>
           </div>
         </div>
       </div>
@@ -1773,21 +1775,21 @@
     <div class="board-title">3 PYTANIA</div>
     <div class="roadmap" style="max-width:700px;margin:0 auto;">
       <div class="roadmap-item">
-        <div class="roadmap-num" style="background:var(--green);color:#fff;">1</div>
+        <div class="roadmap-num" style="border-color:var(--green);color:var(--green);">1</div>
         <div class="roadmap-text">
           <h4 style="color:var(--green);">Ile naprawdę jest paliwa?</h4>
           <p>705K gotówki to 1 z 7 podmiotów. Płynność CAŁEGO ekosystemu? Linia kredytowa? Bufor w innym podmiocie?</p>
         </div>
       </div>
       <div class="roadmap-item">
-        <div class="roadmap-num" style="background:var(--blue);color:#fff;">2</div>
+        <div class="roadmap-num" style="border-color:var(--blue);color:var(--blue);">2</div>
         <div class="roadmap-text">
           <h4 style="color:var(--blue);">Kto będzie obsługiwał nowe moce?</h4>
           <p>10M w maszyny, Starachowice 30K mieszkańców. Plan pozyskiwania i utrzymywania ludzi na nowych stanowiskach?</p>
         </div>
       </div>
       <div class="roadmap-item">
-        <div class="roadmap-num" style="background:var(--accent);color:#fff;">3</div>
+        <div class="roadmap-num" style="border-color:var(--accent);color:var(--accent);">3</div>
         <div class="roadmap-text">
           <h4 style="color:var(--accent);">Dlaczego najlepsza historia nie jest opowiedziana?</h4>
           <p>Jedyny PL producent z certyfikatami. Ławka 18 lat. 4,86/5. Materiał o jakim content marketerzy marzą — i jest NIEUŻYWANY.</p>
