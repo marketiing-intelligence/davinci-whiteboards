@@ -882,7 +882,7 @@
 <div class="header">
   <div class="header-left">
     <h1 style="font-family:'Outfit',sans-serif;"><span>Pełny Rozbiór</span> &mdash; EP#1 Marbo Sport</h1>
-    <div class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">13</span></div>
+    <div class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">12</span></div>
   </div>
   <div class="nav-controls">
     <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">&#8592;</button>
@@ -892,234 +892,384 @@
 
 <!-- TIMELINE -->
 <div class="timeline" id="timeline">
-  <div class="timeline-item active" onclick="goToSlide(0)">Hook</div>
-  <div class="timeline-item" onclick="goToSlide(1)">Roadmapa</div>
-  <div class="timeline-item" onclick="goToSlide(2)">Karta Marbo</div>
-  <div class="timeline-item" onclick="goToSlide(3)">F1: Łańcuch</div>
-  <div class="timeline-item" onclick="goToSlide(4)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Łańcuch</div>
-  <div class="timeline-item" onclick="goToSlide(5)">F1: Ocena</div>
-  <div class="timeline-item" onclick="goToSlide(6)">F1: Marbo vs HMS</div>
-  <div class="timeline-item" onclick="goToSlide(7)">F2: 3 Pytania</div>
-  <div class="timeline-item" onclick="goToSlide(8)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Audyt</div>
-  <div class="timeline-item" onclick="goToSlide(9)">F2: 7 Kanałów</div>
-  <div class="timeline-item" onclick="goToSlide(10)">F2: Matryca</div>
-  <div class="timeline-item" onclick="goToSlide(11)" style="border:1px dashed var(--board-border);font-style:italic;">Twoja Matryca</div>
-  <div class="timeline-item" onclick="goToSlide(12)">F3: Mapa rynku</div>
-  <div class="timeline-item" onclick="goToSlide(13)">F3: Inwestycje</div>
-  <div class="timeline-item" onclick="goToSlide(14)">F3: 3 Pozycje</div>
-  <div class="timeline-item" onclick="goToSlide(15)">Synteza</div>
+  <div class="timeline-item active" onclick="goToSlide(0)">Karta Marbo</div>
+  <div class="timeline-item" onclick="goToSlide(1)">Baza Wiedzy: Publiczne</div>
+  <div class="timeline-item" onclick="goToSlide(2)" style="border:1px dashed var(--board-border);font-style:italic;">Baza Wiedzy: Wewnętrzne</div>
+  <div class="timeline-item" onclick="goToSlide(3)">Profit Tree</div>
+  <div class="timeline-item" onclick="goToSlide(4)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Profit Tree</div>
+  <div class="timeline-item" onclick="goToSlide(5)">Value Chain</div>
+  <div class="timeline-item" onclick="goToSlide(6)">Mapa Pozycjonowania</div>
+  <div class="timeline-item" onclick="goToSlide(7)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Łańcuch</div>
+  <div class="timeline-item" onclick="goToSlide(8)">Ansoff Matrix</div>
+  <div class="timeline-item" onclick="goToSlide(9)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Ansoff</div>
+  <div class="timeline-item" onclick="goToSlide(10)">Synteza</div>
+  <div class="timeline-item" onclick="goToSlide(11)">3 Pytania</div>
 </div>
 
 <div class="main">
 
-<!-- ============ SLIDE 1: HOOK ============ -->
+<!-- ============ SLIDE 0: KARTA FIRMY ============ -->
 <div class="slide active" data-slide="0">
   <div class="slide-header">
-    <div class="slide-title">Producent vs Importer</div>
+    <div class="slide-title">Marbo Sport — karta firmy</div>
+    <div class="slide-subtitle">Dane publiczne z eKRS, strony firmy i rejestrów</div>
   </div>
   <div class="board">
-    <div class="columns">
-      <div class="column">
-        <div class="column-header" style="background:rgba(26,138,74,0.1); color:var(--green); border:2px solid var(--green);">PRODUCENT</div>
-        <div class="column-item"><span class="icon">🏭</span> Własna fabryka</div>
-        <div class="column-item"><span class="icon">🇵🇱</span> Made in Poland</div>
-        <div class="column-item"><span class="icon">👷</span> 100+ pracowników</div>
-        <div class="column-item"><span class="icon">📦</span> 2000+ produktów</div>
-        <div class="column-item"><span class="icon">💰</span> <span style="color:var(--green);font-weight:700;font-size:26px">66.6M PLN</span></div>
-        <div class="column-item"><span class="icon">🏆</span> Forbes Diamond</div>
-      </div>
-      <div class="column">
-        <div class="column-header" style="background:rgba(204,51,51,0.1); color:var(--red); border:2px solid var(--red);">IMPORTER</div>
-        <div class="column-item"><span class="icon">🇨🇳</span> Kupuje z Chin</div>
-        <div class="column-item"><span class="icon">🏷️</span> Nakłada naklejkę</div>
-        <div class="column-item"><span class="icon">📦</span> Nie produkuje</div>
-        <div class="column-item"><span class="icon">🌐</span> Szeroka dystrybucja</div>
-        <div class="column-item"><span class="icon">💰</span> <span style="color:var(--red);font-weight:700;font-size:26px">~75M PLN*</span></div>
-        <div class="column-item"><span class="icon">📊</span> Więcej kanałów</div>
+    <div class="board-title">MARBO SPORT</div>
+    <div class="info-card">
+      <div class="info-grid" style="max-width:800px;margin:0 auto;">
+        <div class="info-item">
+          <span class="label">Branża</span>
+          <span class="value">Sprzęt fitness</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Lokalizacja</span>
+          <span class="value">Starachowice</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Przychód (2024)</span>
+          <span class="value accent" style="font-size:28px;">66,6M PLN</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Zysk netto</span>
+          <span class="value">2,95M PLN</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Marża netto</span>
+          <span class="value">4,5%</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Zatrudnienie</span>
+          <span class="value" style="color:var(--yellow);font-style:italic;">~100-150 osób (est.)</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Forma prawna</span>
+          <span class="value">Sp.k. (1 z 7 podmiotów)</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Trusted Shops</span>
+          <span class="value green">4,86 / 5</span>
+        </div>
       </div>
     </div>
-    <div class="under-title" style="margin-top:30px;font-size:36px;">3 FRAMEWORKI →</div>
-    <p style="text-align:center;color:var(--dim);font-size:14px;font-family:'DM Sans',sans-serif;margin-top:8px;">które pokażą dlaczego nawet świetna firma zostawia pieniądze na stole</p>
+    <div style="margin-top:24px;padding:16px 20px;border:2px dashed var(--yellow);border-radius:12px;background:rgba(184,134,11,0.04);text-align:center;">
+      <span style="font-size:20px;font-weight:700;color:var(--yellow);">⚠️ ANALIZA Z DANYCH PUBLICZNYCH</span><br>
+      <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Z danymi wewnętrznymi obraz mógłby wyglądać INACZEJ.</span>
+    </div>
   </div>
 </div>
 
-<!-- ============ SLIDE 2: ROADMAPA ============ -->
+<!-- ============ SLIDE 1: WB1a — BAZA WIEDZY: PUBLICZNE ============ -->
 <div class="slide" data-slide="1">
   <div class="slide-header">
-    <div class="slide-title">3 frameworki — plan odcinka</div>
+    <div class="slide-title">Baza Wiedzy — Warstwa 1: Publiczne dane</div>
+    <div class="slide-subtitle">Minimum, które każdy właściciel powinien mieć pod ręką</div>
   </div>
   <div class="board">
-    <div class="roadmap">
+    <div class="board-title">TWOJA BAZA WIEDZY — WARSTWA 1</div>
+    <div class="roadmap" style="max-width:700px;margin:0 auto;">
       <div class="roadmap-item">
         <div class="roadmap-num">1</div>
         <div class="roadmap-text">
-          <h4>Łańcuch Wartości</h4>
-          <p>Jak znaleźć JEDNO miejsce które blokuje wzrost całej firmy</p>
+          <h4>Sprawozdanie finansowe</h4>
+          <p>RZiS + bilans (eKRS / KPiR)</p>
         </div>
       </div>
       <div class="roadmap-item">
         <div class="roadmap-num">2</div>
         <div class="roadmap-text">
-          <h4>Audyt Kanałów</h4>
-          <p>Jak w 3 minuty ocenić KAŻDY kanał sprzedaży — czy warto, ile kosztuje, ile da</p>
+          <h4>Produkty + opisy</h4>
+          <p>Kategorie, pozycje, opisy ze strony i Allegro</p>
         </div>
       </div>
       <div class="roadmap-item">
         <div class="roadmap-num">3</div>
         <div class="roadmap-text">
-          <h4>Mapa Pozycjonowania</h4>
-          <p>Jak zobaczyć gdzie stoisz na rynku — i czy twoje pieniądze idą we właściwe miejsce</p>
+          <h4>Kanały sprzedaży</h4>
+          <p>B2C / B2B / B2D — jaki % przychodu z którego</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-num">4</div>
+        <div class="roadmap-text">
+          <h4>Opinie klientów</h4>
+          <p>Google, Trusted Shops, Allegro — ile, średnia, powtarzające się skargi</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-num">5</div>
+        <div class="roadmap-text">
+          <h4>Konkurenci</h4>
+          <p>3-5 głównych, przychody z eKRS, co robią inaczej</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-num">6</div>
+        <div class="roadmap-text">
+          <h4>Insighty z branży</h4>
+          <p>Doświadczenie właściciela: trendy, targi, zmiany rynku</p>
         </div>
       </div>
     </div>
     <div style="text-align:center;margin-top:24px;padding:14px;border:1px dashed var(--board-border);border-radius:10px;">
-      <span style="font-size:20px;color:var(--dim);">Na koniec: co powiedziałbym właścicielowi gdybym miał z nim godzinę</span>
+      <span style="font-size:18px;color:var(--accent);font-weight:700;">To jest to, z czym ja dzisiaj pracuję — publiczne dane.</span><br>
+      <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">15-20 minut pracy. Fundament pod KAŻDY framework.</span>
     </div>
   </div>
 </div>
 
-<!-- ============ SLIDE 3: KARTA MARBO ============ -->
+<!-- ============ SLIDE 2: WB1b — BAZA WIEDZY: WEWNĘTRZNE (TEMPLATE) ============ -->
 <div class="slide" data-slide="2">
   <div class="slide-header">
-    <div class="slide-title">Marbo Sport — karta firmy</div>
-  </div>
-  <div class="board">
-    <div class="board-title">MARBO SPORT</div>
-    <div class="info-grid" style="max-width:800px;margin:0 auto;">
-      <div class="info-item">
-        <span class="label">Rok założenia</span>
-        <span class="value">1982</span>
-      </div>
-      <div class="info-item">
-        <span class="label">Siedziba</span>
-        <span class="value">Starachowice</span>
-      </div>
-      <div class="info-item">
-        <span class="label">Pracownicy</span>
-        <span class="value">50-200</span>
-      </div>
-      <div class="info-item">
-        <span class="label">Produkty (SKU)</span>
-        <span class="value accent">2000+</span>
-      </div>
-      <div class="info-item">
-        <span class="label">Przychód (2024)</span>
-        <span class="value accent" style="font-size:28px;">66.6M PLN</span>
-      </div>
-      <div class="info-item">
-        <span class="label">Dynamika wzrostu</span>
-        <span class="value green">130%</span>
-      </div>
-      <div class="info-item">
-        <span class="label">Trusted Shops</span>
-        <span class="value green">4.86 / 5</span>
-      </div>
-      <div class="info-item">
-        <span class="label">Dotacje UE</span>
-        <span class="value">14.8M PLN</span>
-      </div>
-    </div>
-    <div style="display:flex;justify-content:center;gap:16px;margin-top:24px;flex-wrap:wrap;">
-      <span style="padding:8px 16px;border-radius:8px;background:rgba(184,134,11,0.1);color:var(--yellow);font-size:18px;font-weight:700;">🏆 Forbes Diamond 2022</span>
-      <span style="padding:8px 16px;border-radius:8px;background:rgba(26,138,74,0.1);color:var(--green);font-size:18px;font-weight:700;">✅ Jedyny certyfikat bezpieczeństwa w PL</span>
-      <span style="padding:8px 16px;border-radius:8px;background:rgba(124,58,237,0.1);color:var(--purple);font-size:18px;font-weight:700;">💎 Brylant Polskiej Gospodarki</span>
-    </div>
-    <p style="text-align:center;color:var(--accent);font-size:22px;margin-top:24px;font-weight:700;">↓ Nawet firma która ROŚNIE może mieć ślepe pola ↓</p>
-  </div>
-</div>
-
-<!-- ============ SLIDE 4: F1 ŁAŃCUCH WARTOŚCI ============ -->
-<div class="slide" data-slide="3">
-  <div class="slide-header">
-    <div class="slide-title">Łańcuch Wartości — 6 ogniw</div>
-  </div>
-  <div class="board">
-    <div class="board-title">ŁAŃCUCH WARTOŚCI</div>
-    <div class="chain">
-      <div class="chain-link">Projektowanie</div>
-      <div class="chain-arrow">→</div>
-      <div class="chain-link">Produkcja</div>
-      <div class="chain-arrow">→</div>
-      <div class="chain-link">Marketing</div>
-      <div class="chain-arrow">→</div>
-      <div class="chain-link">Sprzedaż /<br>Dystrybucja</div>
-      <div class="chain-arrow">→</div>
-      <div class="chain-link">Logistyka</div>
-      <div class="chain-arrow">→</div>
-      <div class="chain-link">Obsługa<br>klienta</div>
-    </div>
-    <div class="info-card" style="margin-top:30px;max-width:600px;margin-left:auto;margin-right:auto;">
-      <h3 style="font-size:22px;color:var(--accent);">3 Kroki:</h3>
-      <div style="font-size:20px;line-height:2;color:var(--chalk);">
-        <strong>1.</strong> Narysuj łańcuch SWOJEJ firmy<br>
-        <strong>2.</strong> Oceń KAŻDE ogniwo (świetne / OK / słabe / brak)<br>
-        <strong>3.</strong> Znajdź to JEDNO które blokuje resztę
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:20px;font-size:20px;color:var(--dim);">
-      🍽️ Restauracja: świetna kuchnia, boczna uliczka = puste stoliki.<br>
-      Bottleneck ≠ kuchnia. Bottleneck = lokalizacja.
-    </div>
-  </div>
-</div>
-
-<!-- ============ TEMPLATE: Twój Łańcuch Wartości ============ -->
-<div class="slide">
-  <div class="slide-header">
-    <div class="slide-title">Twoja kolej — narysuj swój łańcuch</div>
+    <div class="slide-title">Baza Wiedzy — Warstwa 2: Dane wewnętrzne</div>
     <div class="slide-subtitle">Zescreenuj i wypełnij dla swojej firmy</div>
   </div>
   <div class="board" style="border:2px dashed var(--accent);background:rgba(229,168,75,0.04);">
-    <div class="board-title" style="text-decoration-color:var(--accent);">TWÓJ ŁAŃCUCH WARTOŚCI</div>
-    <div class="chain">
-      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
-        Ogniwo 1<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
+    <div class="board-title" style="text-decoration-color:var(--accent);">TWOJA BAZA WIEDZY — WARSTWA 2</div>
+    <div class="roadmap" style="max-width:700px;margin:0 auto;">
+      <div class="roadmap-item" style="border-style:dashed;">
+        <div class="roadmap-num">1</div>
+        <div class="roadmap-text">
+          <h4>Marża per produkt</h4>
+          <p>Które produkty zarabiają, które ciągną w dół</p>
+        </div>
       </div>
-      <div class="chain-arrow">→</div>
-      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
-        Ogniwo 2<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
+      <div class="roadmap-item" style="border-style:dashed;">
+        <div class="roadmap-num">2</div>
+        <div class="roadmap-text">
+          <h4>Ceny vs konkurencja</h4>
+          <p>5 bestsellerów vs 3 konkurentów — tabela</p>
+        </div>
       </div>
-      <div class="chain-arrow">→</div>
-      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
-        Ogniwo 3<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
+      <div class="roadmap-item" style="border-style:dashed;">
+        <div class="roadmap-num">3</div>
+        <div class="roadmap-text">
+          <h4>Sezonowość</h4>
+          <p>Kiedy sprzedaż rośnie/spada (cykl branżowy)</p>
+        </div>
       </div>
-      <div class="chain-arrow">→</div>
-      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
-        Ogniwo 4<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
+      <div class="roadmap-item" style="border-style:dashed;">
+        <div class="roadmap-num">4</div>
+        <div class="roadmap-text">
+          <h4>Źródła ruchu</h4>
+          <p>Google Ads, organic, social, polecenia, powrotni</p>
+        </div>
       </div>
-      <div class="chain-arrow">→</div>
-      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
-        Ogniwo 5<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
+      <div class="roadmap-item" style="border-style:dashed;">
+        <div class="roadmap-num">5</div>
+        <div class="roadmap-text">
+          <h4>Koszt pozyskania klienta</h4>
+          <p>Wydatek na reklamę per kanał / liczba klientów</p>
+        </div>
       </div>
-      <div class="chain-arrow">→</div>
-      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
-        Ogniwo 6<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
+      <div class="roadmap-item" style="border-style:dashed;">
+        <div class="roadmap-num">6</div>
+        <div class="roadmap-text">
+          <h4>Wartość klienta w czasie</h4>
+          <p>CLV — ile klient zostawia łącznie, jak często wraca</p>
+        </div>
+      </div>
+      <div class="roadmap-item" style="border-style:dashed;">
+        <div class="roadmap-num">7</div>
+        <div class="roadmap-text">
+          <h4>Pipeline sprzedaży</h4>
+          <p>Leady → oferty → zamknięte, czas cyklu</p>
+        </div>
+      </div>
+      <div class="roadmap-item" style="border-style:dashed;">
+        <div class="roadmap-num">8</div>
+        <div class="roadmap-text">
+          <h4>Dane o zespole</h4>
+          <p>Ile osób, stanowiska, rotacja, plan rekrutacji</p>
+        </div>
+      </div>
+      <div class="roadmap-item" style="border-style:dashed;">
+        <div class="roadmap-num">9</div>
+        <div class="roadmap-text">
+          <h4>Procesy</h4>
+          <p>Kto robi co, jak długo, gdzie się blokuje</p>
+        </div>
       </div>
     </div>
-    <div style="margin-top:30px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
-      <span style="padding:8px 16px;border:2px solid var(--green);border-radius:8px;color:var(--green);font-size:18px;font-weight:700;">✅ Świetne</span>
-      <span style="padding:8px 16px;border:2px solid rgba(26,138,74,0.4);border-radius:8px;color:var(--green);font-size:18px;">OK</span>
-      <span style="padding:8px 16px;border:2px solid var(--yellow);border-radius:8px;color:var(--yellow);font-size:18px;font-weight:700;">⚠️ Słabe</span>
-      <span style="padding:8px 16px;border:2px solid var(--red);border-radius:8px;color:var(--red);font-size:18px;font-weight:700;">❌ Brak</span>
-    </div>
-    <div style="text-align:center;margin-top:24px;padding:16px;border:1px dashed var(--board-border);border-radius:10px;">
-      <span style="font-size:20px;color:var(--accent);font-weight:700;">"Gdybym magicznie PODWOIŁ wydajność tego ogniwa — czy cała firma by urosła?"</span><br>
-      <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Jeśli tak → to kandydat na bottleneck.</span>
+    <div style="text-align:center;margin-top:24px;padding:14px;border:1px dashed var(--board-border);border-radius:10px;">
+      <span style="font-size:18px;color:var(--accent);font-weight:700;">To czego JA nie mam — ale TY masz.</span><br>
+      <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Z tymi danymi + AI = pełna analiza w godzinę.</span>
     </div>
   </div>
 </div>
 
-<!-- ============ SLIDE 5: F1 OCENA ============ -->
+<!-- ============ SLIDE 3: WB2 — PROFIT TREE (z danymi Marbo) ============ -->
+<div class="slide" data-slide="3">
+  <div class="slide-header">
+    <div class="slide-title">Profit Tree — Marbo Sport 2024</div>
+    <div class="slide-subtitle">Dekompozycja zysku z danych eKRS</div>
+  </div>
+  <div class="board">
+    <div class="board-title">PROFIT TREE — MARBO SPORT</div>
+    <!-- Korzeń -->
+    <div style="text-align:center;margin-bottom:8px;">
+      <div style="display:inline-block;padding:16px 32px;border:3px solid var(--accent);border-radius:14px;background:rgba(229,168,75,0.08);">
+        <div style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Zysk netto</div>
+        <div style="font-size:32px;font-weight:700;color:var(--accent);">2,95M PLN</div>
+        <div style="font-size:15px;color:var(--red);font-family:'DM Sans',sans-serif;">▼ −13% r/r</div>
+      </div>
+    </div>
+    <!-- Strzałki w dół -->
+    <div style="text-align:center;font-size:24px;color:var(--dim);margin:4px 0;">↙ ↘</div>
+    <!-- Dwie główne gałęzie -->
+    <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:8px;">
+      <!-- Przychody -->
+      <div style="flex:1;max-width:380px;">
+        <div style="text-align:center;padding:14px 20px;border:2px solid var(--green);border-radius:12px;background:rgba(26,138,74,0.04);">
+          <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Przychody</div>
+          <div style="font-size:26px;font-weight:700;color:var(--green);">66,6M PLN</div>
+          <div style="font-size:14px;color:var(--green);font-family:'DM Sans',sans-serif;">▲ +12% r/r</div>
+        </div>
+        <div style="text-align:center;font-size:18px;color:var(--dim);margin:4px 0;">↓</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="padding:10px 14px;border:1px solid rgba(26,138,74,0.2);border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:15px;color:var(--chalk);">Produkty własne</span>
+            <span style="font-size:16px;font-weight:700;color:var(--green);">56M <span style="font-size:12px;color:var(--dim);">(+4%)</span></span>
+          </div>
+          <div style="padding:10px 14px;border:1px solid rgba(26,138,74,0.2);border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:15px;color:var(--chalk);">Zmiana stanu prod.</span>
+            <span style="font-size:16px;font-weight:700;color:var(--green);">+1,3M</span>
+          </div>
+          <div style="padding:10px 14px;border:1px solid rgba(26,138,74,0.2);border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:15px;color:var(--chalk);">Resale (HMS i inne)</span>
+            <span style="font-size:16px;font-weight:700;color:var(--chalk);">8,9M</span>
+          </div>
+        </div>
+      </div>
+      <!-- Koszty -->
+      <div style="flex:1;max-width:380px;">
+        <div style="text-align:center;padding:14px 20px;border:2px solid var(--red);border-radius:12px;background:rgba(204,51,51,0.04);">
+          <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Koszty operacyjne</div>
+          <div style="font-size:26px;font-weight:700;color:var(--red);">64M PLN</div>
+          <div style="font-size:14px;color:var(--red);font-family:'DM Sans',sans-serif;">▲ +12,5% r/r</div>
+        </div>
+        <div style="text-align:center;font-size:18px;color:var(--dim);margin:4px 0;">↓</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="padding:10px 14px;border:1px solid rgba(204,51,51,0.2);border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:15px;color:var(--chalk);">Materiały / energia</span>
+            <span style="font-size:16px;font-weight:700;color:var(--yellow);">26,5M <span style="font-size:12px;color:var(--dim);">(+10%)</span></span>
+          </div>
+          <div style="padding:10px 14px;border:1px solid rgba(204,51,51,0.2);border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:15px;color:var(--chalk);">Usługi obce</span>
+            <span style="font-size:16px;font-weight:700;color:var(--red);">14,5M <span style="font-size:12px;color:var(--red);">(+18%!)</span></span>
+          </div>
+          <div style="padding:10px 14px;border:2px solid var(--red);border-radius:8px;display:flex;justify-content:space-between;align-items:center;background:rgba(204,51,51,0.04);">
+            <span style="font-size:15px;color:var(--chalk);font-weight:700;">Wynagrodzenia</span>
+            <span style="font-size:16px;font-weight:700;color:var(--red);">10,5M <span style="font-size:12px;color:var(--red);">(+24%!!)</span></span>
+          </div>
+          <div style="padding:10px 14px;border:1px solid rgba(204,51,51,0.2);border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:15px;color:var(--chalk);">Amortyzacja</span>
+            <span style="font-size:16px;font-weight:700;color:var(--dim);">3,7M <span style="font-size:12px;color:var(--dim);">(+11%)</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Wynik -->
+    <div style="text-align:center;margin-top:12px;">
+      <div style="display:inline-block;padding:12px 28px;border:2px dashed var(--yellow);border-radius:12px;background:rgba(184,134,11,0.04);">
+        <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Zysk ze sprzedaży: </span>
+        <span style="font-size:22px;font-weight:700;color:var(--yellow);">2,6M PLN (0% wzrostu!)</span>
+        <span style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;"> + Saldo ost. dział.: +1,4M (dotacje UE)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 4: WB3 — PROFIT TREE (pusty szablon) ============ -->
 <div class="slide" data-slide="4">
   <div class="slide-header">
-    <div class="slide-title">Łańcuch Marbo — ocena ogniw</div>
+    <div class="slide-title">Twój Profit Tree — wypełnij dla swojej firmy</div>
+    <div class="slide-subtitle">Zescreenuj i wpisz swoje liczby z RZiS</div>
+  </div>
+  <div class="board" style="border:2px dashed var(--accent);background:rgba(229,168,75,0.04);">
+    <div class="board-title" style="text-decoration-color:var(--accent);">TWÓJ PROFIT TREE</div>
+    <!-- Korzeń -->
+    <div style="text-align:center;margin-bottom:8px;">
+      <div style="display:inline-block;padding:14px 28px;border:2px dashed var(--accent);border-radius:14px;">
+        <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Zysk netto:</div>
+        <div style="font-size:28px;font-weight:700;color:var(--dim);">___________</div>
+      </div>
+    </div>
+    <div style="text-align:center;font-size:24px;color:var(--dim);margin:4px 0;">↙ ↘</div>
+    <!-- Dwie gałęzie -->
+    <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:8px;">
+      <!-- Przychody -->
+      <div style="flex:1;max-width:380px;">
+        <div style="text-align:center;padding:12px 18px;border:2px dashed var(--green);border-radius:12px;">
+          <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Przychody:</div>
+          <div style="font-size:24px;font-weight:700;color:var(--dim);">___________</div>
+        </div>
+        <div style="text-align:center;font-size:18px;color:var(--dim);margin:4px 0;">↓</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="padding:10px 14px;border:1px dashed rgba(26,138,74,0.3);border-radius:8px;display:flex;justify-content:space-between;">
+            <span style="font-size:15px;color:var(--dim);">Produkty/usługi:</span>
+            <span style="font-size:15px;color:var(--dim);">___________</span>
+          </div>
+          <div style="padding:10px 14px;border:1px dashed rgba(26,138,74,0.3);border-radius:8px;display:flex;justify-content:space-between;">
+            <span style="font-size:15px;color:var(--dim);">Inne przychody:</span>
+            <span style="font-size:15px;color:var(--dim);">___________</span>
+          </div>
+        </div>
+      </div>
+      <!-- Koszty -->
+      <div style="flex:1;max-width:380px;">
+        <div style="text-align:center;padding:12px 18px;border:2px dashed var(--red);border-radius:12px;">
+          <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Koszty:</div>
+          <div style="font-size:24px;font-weight:700;color:var(--dim);">___________</div>
+        </div>
+        <div style="text-align:center;font-size:18px;color:var(--dim);margin:4px 0;">↓</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="padding:10px 14px;border:1px dashed rgba(204,51,51,0.3);border-radius:8px;display:flex;justify-content:space-between;">
+            <span style="font-size:15px;color:var(--dim);">Materiały/energia:</span>
+            <span style="font-size:15px;color:var(--dim);">___________</span>
+          </div>
+          <div style="padding:10px 14px;border:1px dashed rgba(204,51,51,0.3);border-radius:8px;display:flex;justify-content:space-between;">
+            <span style="font-size:15px;color:var(--dim);">Usługi obce:</span>
+            <span style="font-size:15px;color:var(--dim);">___________</span>
+          </div>
+          <div style="padding:10px 14px;border:1px dashed rgba(204,51,51,0.3);border-radius:8px;display:flex;justify-content:space-between;">
+            <span style="font-size:15px;color:var(--dim);">Wynagrodzenia:</span>
+            <span style="font-size:15px;color:var(--dim);">___________</span>
+          </div>
+          <div style="padding:10px 14px;border:1px dashed rgba(204,51,51,0.3);border-radius:8px;display:flex;justify-content:space-between;">
+            <span style="font-size:15px;color:var(--dim);">Amortyzacja:</span>
+            <span style="font-size:15px;color:var(--dim);">___________</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Wynik -->
+    <div style="display:flex;justify-content:center;gap:20px;margin-top:12px;flex-wrap:wrap;">
+      <div style="padding:10px 20px;border:1px dashed var(--board-border);border-radius:10px;">
+        <span style="font-size:15px;color:var(--dim);">Zysk ze sprzedaży: ___________</span>
+      </div>
+      <div style="padding:10px 20px;border:1px dashed var(--board-border);border-radius:10px;">
+        <span style="font-size:15px;color:var(--dim);">Saldo pozostałej dział.: ___________</span>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:16px;padding:14px;border:1px dashed var(--board-border);border-radius:10px;">
+      <span style="font-size:18px;color:var(--accent);font-weight:700;">"Która gałąź rośnie najszybciej? Tam jest twój wyciek."</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 5: WB4 — VALUE CHAIN (z danymi Marbo) ============ -->
+<div class="slide" data-slide="5">
+  <div class="slide-header">
+    <div class="slide-title">Value Chain — Marbo Sport</div>
+    <div class="slide-subtitle">Łańcuch wartości — ocena 6 ogniw</div>
   </div>
   <div class="board">
     <div class="board-title">ŁAŃCUCH WARTOŚCI — MARBO SPORT</div>
     <div class="chain">
       <div class="chain-link strong">
         <span class="chain-badge">✅</span>
-        Projektowanie
+        Zakupy
       </div>
       <div class="chain-arrow">→</div>
       <div class="chain-link strong">
@@ -1129,492 +1279,381 @@
       <div class="chain-arrow">→</div>
       <div class="chain-link weak">
         <span class="chain-badge">⚠️</span>
-        Marketing
+        Logistyka
       </div>
       <div class="chain-arrow">→</div>
       <div class="chain-link bottleneck">
         <span class="chain-badge">❌</span>
-        Sprzedaż /<br>Dystrybucja
+        Marketing
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-link weak">
+        <span class="chain-badge">⚠️</span>
+        Sprzedaż
       </div>
       <div class="chain-arrow">→</div>
       <div class="chain-link strong">
-        <span class="chain-badge">✅</span>
-        Logistyka
-      </div>
-      <div class="chain-arrow">→</div>
-      <div class="chain-link strong">
-        <span class="chain-badge">✅</span>
-        Obsługa<br>klienta
+        <span class="chain-badge">✅✅</span>
+        Serwis
       </div>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px;font-family:'DM Sans',sans-serif;">
       <div style="padding:12px;border-radius:8px;background:rgba(26,138,74,0.06);border:1px solid rgba(26,138,74,0.2);">
-        <div style="font-size:16px;color:var(--green);font-weight:700;">✅ Projektowanie</div>
-        <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;margin-top:4px;">3 marki, 7 serii, 3M UE na design</div>
+        <div style="font-size:16px;color:var(--green);font-weight:700;">✅ Zakupy</div>
+        <div style="font-size:15px;color:var(--dim);margin-top:4px;">Vertically integrated. PKD 25.99.Z — sami spawają, malują, montują.</div>
       </div>
       <div style="padding:12px;border-radius:8px;background:rgba(26,138,74,0.06);border:1px solid rgba(26,138,74,0.2);">
         <div style="font-size:16px;color:var(--green);font-weight:700;">✅✅ Produkcja</div>
-        <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;margin-top:4px;">Jedyny certyfikat w PL, 4.86/5, 17-18 lat trwałości</div>
+        <div style="font-size:15px;color:var(--dim);margin-top:4px;">Jedyny certyfikat ISO w PL. 4,86/5. CAPEX 10M w nowe maszyny. 470 SKU.</div>
       </div>
       <div style="padding:12px;border-radius:8px;background:rgba(184,134,11,0.06);border:1px solid rgba(184,134,11,0.2);">
-        <div style="font-size:16px;color:var(--yellow);font-weight:700;">⚠️ Marketing</div>
-        <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;margin-top:4px;">FB 16.7K, IG 6.4K, LinkedIn 95 (!), YT ~0</div>
+        <div style="font-size:16px;color:var(--yellow);font-weight:700;">⚠️ Logistyka</div>
+        <div style="font-size:15px;color:var(--dim);margin-top:4px;">Darmowa >150 PLN, 24h. Ale sygnały o uszkodzeniach w transporcie.</div>
       </div>
       <div style="padding:12px;border-radius:8px;background:rgba(204,51,51,0.06);border:2px solid rgba(204,51,51,0.3);">
-        <div style="font-size:16px;color:var(--red);font-weight:700;">❌ Sprzedaż / Dystrybucja</div>
-        <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;margin-top:4px;">Tylko własny sklep. Brak Allegro, Amazon, B2B aktywne</div>
+        <div style="font-size:16px;color:var(--red);font-weight:700;">❌ Marketing</div>
+        <div style="font-size:15px;color:var(--dim);margin-top:4px;">YT nieregularny. Zero PR. Meta Ads jedyny kanał online. LinkedIn 95 followersów.</div>
+      </div>
+      <div style="padding:12px;border-radius:8px;background:rgba(184,134,11,0.06);border:1px solid rgba(184,134,11,0.2);">
+        <div style="font-size:16px;color:var(--yellow);font-weight:700;">⚠️ Sprzedaż</div>
+        <div style="font-size:15px;color:var(--dim);margin-top:4px;">Własny sklep ShoperJS. 2 konta Allegro. Wycofali się z Ceneo. Program B2B.</div>
       </div>
       <div style="padding:12px;border-radius:8px;background:rgba(26,138,74,0.06);border:1px solid rgba(26,138,74,0.2);">
-        <div style="font-size:16px;color:var(--green);font-weight:700;">✅ Logistyka</div>
-        <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;margin-top:4px;">Darmowa >150 PLN, 24h, 99% części od ręki</div>
-      </div>
-      <div style="padding:12px;border-radius:8px;background:rgba(26,138,74,0.06);border:1px solid rgba(26,138,74,0.2);">
-        <div style="font-size:16px;color:var(--green);font-weight:700;">✅ Obsługa klienta</div>
-        <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;margin-top:4px;">4.86/5, RMA 48h, 3 tiery gwarancji</div>
+        <div style="font-size:16px;color:var(--green);font-weight:700;">✅✅ Serwis</div>
+        <div style="font-size:15px;color:var(--dim);margin-top:4px;">99% części od ręki. RMA 48h. Google 4,5/5. Żaden importer tego nie ma.</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ============ SLIDE 6: F1 MARBO vs HMS ============ -->
-<div class="slide" data-slide="5">
-  <div class="slide-header">
-    <div class="slide-title">Dwa odwrócone modele: Marbo vs HMS</div>
-  </div>
-  <div class="board">
-    <div class="versus">
-      <div class="versus-side">
-        <div class="versus-label" style="color:var(--green);">MARBO</div>
-        <div class="versus-bar-label"><span>Produkcja</span><span style="color:var(--green)">SILNA</span></div>
-        <div class="versus-bar" style="background:linear-gradient(90deg,var(--green),var(--green) 90%,rgba(0,0,0,0.06) 90%);"></div>
-        <div class="versus-bar-label"><span>Dystrybucja</span><span style="color:var(--red)">SŁABA</span></div>
-        <div class="versus-bar" style="background:linear-gradient(90deg,var(--red),var(--red) 20%,rgba(0,0,0,0.06) 20%);"></div>
-        <div style="margin-top:16px;font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">
-          🏭 Fabryka, certyfikat, patent<br>
-          💰 66.6M PLN, ~4.4% marża<br>
-          📈 130% wzrostu
-        </div>
-      </div>
-      <div class="versus-vs">vs</div>
-      <div class="versus-side">
-        <div class="versus-label" style="color:var(--blue);">HMS</div>
-        <div class="versus-bar-label"><span>Produkcja</span><span style="color:var(--red)">SŁABA</span></div>
-        <div class="versus-bar" style="background:linear-gradient(90deg,var(--red),var(--red) 15%,rgba(0,0,0,0.06) 15%);"></div>
-        <div class="versus-bar-label"><span>Dystrybucja</span><span style="color:var(--green)">SILNA</span></div>
-        <div class="versus-bar" style="background:linear-gradient(90deg,var(--green),var(--green) 85%,rgba(0,0,0,0.06) 85%);"></div>
-        <div style="margin-top:16px;font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">
-          🇨🇳 Import z Chin, rebranding<br>
-          💰 ~75M PLN*, ~4.6% marża<br>
-          🛒 Allegro, Amazon, sklepy
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:30px;padding:16px;border:2px dashed var(--accent);border-radius:12px;max-width:500px;margin-left:auto;margin-right:auto;">
-      <div style="font-size:24px;color:var(--accent);font-weight:700;">Podobna marża (~4%)</div>
-      <div style="font-size:20px;color:var(--chalk);margin-top:8px;">Ale Marbo ma więcej DŹWIGNI</div>
-      <div style="font-size:17px;color:var(--dim);font-family:'DM Sans',sans-serif;margin-top:6px;">Dodanie dystrybucji = łatwiejsze niż zbudowanie fabryki od zera</div>
-    </div>
-  </div>
-</div>
-
-<!-- ============ SLIDE 7: F2 3 PYTANIA ============ -->
+<!-- ============ SLIDE 6: WB5 — MAPA POZYCJONOWANIA ============ -->
 <div class="slide" data-slide="6">
   <div class="slide-header">
-    <div class="slide-title">Audyt Kanałów — 3 pytania</div>
-  </div>
-  <div class="board">
-    <div class="board-title">AUDYT KANAŁÓW</div>
-    <div style="display:flex;gap:20px;justify-content:center;margin:30px 0;flex-wrap:wrap;">
-      <div style="flex:1;min-width:200px;max-width:280px;padding:24px;border:2px solid var(--green);border-radius:14px;text-align:center;">
-        <div style="font-size:36px;margin-bottom:8px;">🎯</div>
-        <div style="font-size:24px;font-weight:700;color:var(--green);">Popyt?</div>
-        <div style="font-size:17px;color:var(--chalk);margin-top:8px;">Czy klienci JUŻ tam szukają?</div>
-      </div>
-      <div style="flex:1;min-width:200px;max-width:280px;padding:24px;border:2px solid var(--yellow);border-radius:14px;text-align:center;">
-        <div style="font-size:36px;margin-bottom:8px;">💰</div>
-        <div style="font-size:24px;font-weight:700;color:var(--yellow);">Koszt?</div>
-        <div style="font-size:17px;color:var(--chalk);margin-top:8px;">Setup, prowizje, ongoing</div>
-      </div>
-      <div style="flex:1;min-width:200px;max-width:280px;padding:24px;border:2px solid var(--blue);border-radius:14px;text-align:center;">
-        <div style="font-size:36px;margin-bottom:8px;">📊</div>
-        <div style="font-size:24px;font-weight:700;color:var(--blue);">Marża?</div>
-        <div style="font-size:17px;color:var(--chalk);margin-top:8px;">Czy zarobisz po kosztach kanału?</div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:16px;font-size:22px;color:var(--chalk);">
-      <strong>3 kroki:</strong><br>
-      <span style="color:var(--dim);">1. Wypisz WSZYSTKIE kanały (nie tylko swoje)<br>
-      2. Każdy oceń: popyt / koszt / marża<br>
-      3. Narysuj matrycę 2×2: wpływ × szybkość</span>
-    </div>
-    <div style="text-align:center;margin-top:20px;padding:12px;border:1px dashed var(--board-border);border-radius:10px;">
-      <span style="font-size:18px;color:var(--accent);">+ Bonusowe pytanie: co firma JUŻ robi w tym kanale?</span>
-    </div>
-  </div>
-</div>
-
-<!-- ============ TEMPLATE: Twój Audyt Kanałów ============ -->
-<div class="slide">
-  <div class="slide-header">
-    <div class="slide-title">Twoja kolej — oceń swoje kanały</div>
-    <div class="slide-subtitle">Zescreenuj i wypełnij dla swojej firmy</div>
-  </div>
-  <div class="board" style="border:2px dashed var(--accent);background:rgba(229,168,75,0.04);">
-    <div class="board-title" style="text-decoration-color:var(--accent);">TWÓJ AUDYT KANAŁÓW</div>
-    <table class="channel-table">
-      <thead>
-        <tr>
-          <th>Kanał</th>
-          <th>Masz?</th>
-          <th>Popyt</th>
-          <th>Koszt</th>
-          <th>Marża</th>
-          <th>Priorytet</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td style="color:var(--dim);">1. ___________</td><td>___</td><td>___</td><td>___</td><td>___</td><td>___</td></tr>
-        <tr><td style="color:var(--dim);">2. ___________</td><td>___</td><td>___</td><td>___</td><td>___</td><td>___</td></tr>
-        <tr><td style="color:var(--dim);">3. ___________</td><td>___</td><td>___</td><td>___</td><td>___</td><td>___</td></tr>
-        <tr><td style="color:var(--dim);">4. ___________</td><td>___</td><td>___</td><td>___</td><td>___</td><td>___</td></tr>
-        <tr><td style="color:var(--dim);">5. ___________</td><td>___</td><td>___</td><td>___</td><td>___</td><td>___</td></tr>
-        <tr><td style="color:var(--dim);">6. ___________</td><td>___</td><td>___</td><td>___</td><td>___</td><td>___</td></tr>
-        <tr><td style="color:var(--dim);">7. ___________</td><td>___</td><td>___</td><td>___</td><td>___</td><td>___</td></tr>
-      </tbody>
-    </table>
-    <div style="display:flex;gap:16px;justify-content:center;margin-top:24px;flex-wrap:wrap;">
-      <div style="padding:10px 16px;border:1px dashed var(--green);border-radius:8px;text-align:center;">
-        <div style="font-size:20px;">🎯</div>
-        <div style="font-size:16px;color:var(--green);font-weight:700;">Popyt?</div>
-        <div style="font-size:14px;color:var(--dim);font-family:'DM Sans',sans-serif;">Czy klienci JUŻ<br>tam szukają?</div>
-      </div>
-      <div style="padding:10px 16px;border:1px dashed var(--yellow);border-radius:8px;text-align:center;">
-        <div style="font-size:20px;">💰</div>
-        <div style="font-size:16px;color:var(--yellow);font-weight:700;">Koszt?</div>
-        <div style="font-size:14px;color:var(--dim);font-family:'DM Sans',sans-serif;">Setup + prowizje<br>+ ongoing</div>
-      </div>
-      <div style="padding:10px 16px;border:1px dashed var(--blue);border-radius:8px;text-align:center;">
-        <div style="font-size:20px;">📊</div>
-        <div style="font-size:16px;color:var(--blue);font-weight:700;">Marża?</div>
-        <div style="font-size:14px;color:var(--dim);font-family:'DM Sans',sans-serif;">Czy zarobisz po<br>kosztach kanału?</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ============ SLIDE 8: F2 7 KANAŁÓW ============ -->
-<div class="slide" data-slide="7">
-  <div class="slide-header">
-    <div class="slide-title">7 kanałów Marbo — ocena</div>
-  </div>
-  <div class="board">
-    <div class="board-title" style="font-size:26px;">AUDYT KANAŁÓW — MARBO SPORT</div>
-    <table class="channel-table">
-      <thead>
-        <tr>
-          <th>Kanał</th>
-          <th>Status</th>
-          <th>Popyt</th>
-          <th>Koszt</th>
-          <th>Marża</th>
-          <th>Priorytet</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Własny sklep</td>
-          <td class="status-have">MAJĄ ✅</td>
-          <td>Buduj ruch sam</td>
-          <td>0 PLN</td>
-          <td>Pełna</td>
-          <td>—</td>
-        </tr>
-        <tr style="background:rgba(204,51,51,0.05);">
-          <td style="color:var(--red);">Allegro</td>
-          <td class="status-nope">NIE MAJĄ ❌</td>
-          <td style="color:var(--green);">40% e-com PL</td>
-          <td>8-12%</td>
-          <td>OK (producent)</td>
-          <td style="color:var(--red);font-weight:700;">🔴 JUTRO</td>
-        </tr>
-        <tr>
-          <td>Amazon.pl</td>
-          <td class="status-nope">NIE MAJĄ ❌</td>
-          <td>Rośnie</td>
-          <td>Podobne</td>
-          <td>OK</td>
-          <td style="color:var(--yellow);">Ten sam Q</td>
-        </tr>
-        <tr>
-          <td>Decathlon MKT</td>
-          <td class="status-nope">NIE MAJĄ ❌</td>
-          <td>Idealny fit</td>
-          <td>Nowy MKT</td>
-          <td>OK</td>
-          <td style="color:var(--yellow);">Średni-wysoki</td>
-        </tr>
-        <tr style="background:rgba(184,134,11,0.04);">
-          <td style="color:var(--yellow);">B2B</td>
-          <td class="status-partial">INFRASTR. ⚠️</td>
-          <td style="color:var(--green);">1855 gmin bez siłowni</td>
-          <td>1 handlowiec</td>
-          <td>Wysoka</td>
-          <td style="color:var(--accent);font-weight:700;">🟠 WYSOKI</td>
-        </tr>
-        <tr>
-          <td>Eksport (EU)</td>
-          <td class="status-partial">STRONA ⚠️</td>
-          <td>19 krajów</td>
-          <td>425K UE</td>
-          <td>OK</td>
-          <td>Średni</td>
-        </tr>
-        <tr>
-          <td>Program partnerski</td>
-          <td class="status-partial">MAJĄ ⚠️</td>
-          <td>Brak widoczności</td>
-          <td>10% prowizja</td>
-          <td>OK</td>
-          <td style="color:var(--dim);">Sam się odpali</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<!-- ============ SLIDE 9: F2 MATRYCA ============ -->
-<div class="slide" data-slide="8">
-  <div class="slide-header">
-    <div class="slide-title">Matryca priorytetów: wpływ × szybkość</div>
-  </div>
-  <div class="board">
-    <div class="board-title" style="font-size:26px;">MATRYCA PRIORYTETÓW</div>
-    <div style="max-width:650px;margin:20px auto;padding-left:100px;">
-      <div class="matrix" style="height:450px;">
-        <div class="matrix-label y-top">Szybkie<br>wdrożenie</div>
-        <div class="matrix-label y-bottom">Wolne<br>wdrożenie</div>
-        <div class="matrix-label x-left">Mały wpływ</div>
-        <div class="matrix-label x-right">Duży wpływ</div>
-
-        <!-- Allegro - top right -->
-        <div class="matrix-point" style="top:15%;right:10%;background:rgba(204,51,51,0.1);border-color:var(--red);color:var(--red);">
-          🔴 ALLEGRO
-        </div>
-        <!-- Decathlon - top middle-right -->
-        <div class="matrix-point" style="top:25%;right:35%;background:rgba(184,134,11,0.1);border-color:var(--yellow);color:var(--yellow);">
-          Decathlon
-        </div>
-        <!-- Amazon - top middle -->
-        <div class="matrix-point" style="top:20%;left:45%;background:rgba(184,134,11,0.1);border-color:var(--yellow);color:var(--yellow);">
-          Amazon
-        </div>
-        <!-- B2B - bottom right -->
-        <div class="matrix-point" style="bottom:20%;right:10%;background:rgba(229,168,75,0.12);border-color:var(--accent);color:var(--accent);">
-          🟠 B2B<br><span style="font-size:13px;">hotele, gminy, wojsko</span>
-        </div>
-        <!-- Eksport - bottom left -->
-        <div class="matrix-point" style="bottom:25%;left:15%;background:rgba(124,58,237,0.1);border-color:var(--purple);color:var(--purple);">
-          Eksport
-        </div>
-        <!-- Program partnerski - top left -->
-        <div class="matrix-point" style="top:30%;left:8%;background:rgba(107,107,107,0.08);border-color:var(--dim);color:var(--dim);">
-          Program<br>partnerski
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:40px;font-size:20px;color:var(--chalk);">
-      <strong style="color:var(--red);">Allegro</strong> = duży wpływ + szybko →
-      <span style="color:var(--red);font-weight:700;">PIERWSZY RUCH</span>
-    </div>
-  </div>
-</div>
-
-<!-- ============ TEMPLATE: Twoja Matryca Priorytetów ============ -->
-<div class="slide">
-  <div class="slide-header">
-    <div class="slide-title">Twoja kolej — wrzuć kanały na matrycę</div>
-    <div class="slide-subtitle">Zescreenuj i wypełnij dla swojej firmy</div>
-  </div>
-  <div class="board" style="border:2px dashed var(--accent);background:rgba(229,168,75,0.04);">
-    <div class="board-title" style="text-decoration-color:var(--accent);">TWOJA MATRYCA PRIORYTETÓW</div>
-    <div style="max-width:650px;margin:20px auto;padding-left:100px;">
-      <div class="matrix" style="height:450px;">
-        <div class="matrix-label y-top">Szybkie<br>wdrożenie</div>
-        <div class="matrix-label y-bottom">Wolne<br>wdrożenie</div>
-        <div class="matrix-label x-left">Mały wpływ</div>
-        <div class="matrix-label x-right">Duży wpływ</div>
-        <div style="position:absolute;top:18%;left:12%;font-size:17px;color:var(--dim);font-family:'DM Sans',sans-serif;opacity:0.4;text-align:center;">nice to have</div>
-        <div style="position:absolute;top:18%;right:12%;font-size:20px;color:var(--green);font-family:'DM Sans',sans-serif;font-weight:700;opacity:0.5;text-align:center;">PIERWSZY<br>RUCH</div>
-        <div style="position:absolute;bottom:18%;left:12%;font-size:17px;color:var(--red);font-family:'DM Sans',sans-serif;opacity:0.4;text-align:center;">pomiń</div>
-        <div style="position:absolute;bottom:18%;right:12%;font-size:20px;color:var(--accent);font-family:'DM Sans',sans-serif;font-weight:700;opacity:0.5;text-align:center;">zaplanuj<br>na Q2</div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:40px;font-size:18px;color:var(--dim);font-family:'DM Sans',sans-serif;">
-      Wpisz swoje kanały w odpowiednie miejsca.<br>
-      <strong style="color:var(--accent);">Prawy górny róg = twój PIERWSZY RUCH.</strong>
-    </div>
-  </div>
-</div>
-
-<!-- ============ SLIDE 10: F3 MAPA RYNKU ============ -->
-<div class="slide" data-slide="9">
-  <div class="slide-header">
-    <div class="slide-title">Mapa Pozycjonowania — 5 graczy</div>
+    <div class="slide-title">Mapa Pozycjonowania — fitness PL</div>
+    <div class="slide-subtitle">Import ↔ Made in PL × Tani ↔ Drogi</div>
   </div>
   <div class="board">
     <div class="board-title">MAPA POZYCJONOWANIA — FITNESS PL</div>
     <div style="max-width:750px;margin:10px auto;padding-left:60px;">
       <div class="pos-map">
         <div class="axis-label y" style="top:-30px;left:-60px;font-size:14px;">CENA ↑<br><span style="font-size:11px;color:var(--dim);">premium</span></div>
-        <div class="axis-label x" style="bottom:-30px;right:0;">WIDOCZNOŚĆ / DYSTRYBUCJA →</div>
+        <div class="axis-label x" style="bottom:-30px;right:0;">MADE IN POLAND →</div>
 
-        <!-- Temu/Ali - bottom right -->
-        <div class="pos-player" style="bottom:8%;right:10%;">
-          <div class="dot" style="background:rgba(107,107,107,0.1);border-color:var(--dim);color:var(--dim);">T</div>
-          <div class="name" style="color:var(--dim);">Temu / AliExpress</div>
-          <div class="sub">~200 PLN, plastik, WSZĘDZIE</div>
+        <!-- Hop-Sport - bottom left -->
+        <div class="pos-player" style="bottom:12%;left:8%;">
+          <div class="dot" style="background:rgba(107,107,107,0.1);border-color:var(--dim);color:var(--dim);">HS</div>
+          <div class="name" style="color:var(--dim);">Hop-Sport</div>
+          <div class="sub">Import z Chin via DE. Tani.</div>
         </div>
 
-        <!-- HMS - middle, wide -->
-        <div class="pos-player" style="bottom:35%;right:15%;">
+        <!-- HMS - middle left -->
+        <div class="pos-player" style="bottom:35%;left:15%;">
           <div class="dot" style="background:rgba(37,99,235,0.1);border-color:var(--blue);color:var(--blue);">H</div>
           <div class="name" style="color:var(--blue);">HMS</div>
-          <div class="sub">Import z Chin, 160-4K PLN<br>Allegro, Amazon, Google, retail</div>
+          <div class="sub">Import z Azji, 75M PLN, +21%<br>Allegro, Amazon, Google, retail</div>
         </div>
 
-        <!-- Marbo - upper middle, NARROW -->
-        <div class="pos-player" style="top:22%;left:18%;">
+        <!-- ATX/Body-Solid - top left -->
+        <div class="pos-player" style="top:8%;left:8%;">
+          <div class="dot" style="background:rgba(124,58,237,0.1);border-color:var(--purple);color:var(--purple);">A</div>
+          <div class="name" style="color:var(--purple);">ATX / Body-Solid</div>
+          <div class="sub">Import premium z DE i USA</div>
+        </div>
+
+        <!-- K-Sport - bottom right -->
+        <div class="pos-player" style="bottom:15%;right:30%;">
+          <div class="dot" style="background:rgba(107,107,107,0.1);border-color:var(--dim);color:var(--dim);">K</div>
+          <div class="name" style="color:var(--dim);">K-Sport</div>
+          <div class="sub">PL producent, najtańszy. JDG.</div>
+        </div>
+
+        <!-- Kelton - middle right-ish -->
+        <div class="pos-player" style="bottom:40%;right:35%;">
+          <div class="dot" style="background:rgba(107,107,107,0.1);border-color:var(--dim);color:var(--dim);">Ke</div>
+          <div class="name" style="color:var(--dim);">Kelton</div>
+          <div class="sub">PL, tańszy niż Marbo</div>
+        </div>
+
+        <!-- MARBO - upper right, highlighted -->
+        <div class="pos-player" style="top:22%;right:20%;">
           <div class="dot" style="background:rgba(229,168,75,0.18);border-color:var(--accent);color:var(--accent);width:56px;height:56px;font-size:22px;">M</div>
           <div class="name" style="color:var(--accent);font-size:20px;">MARBO</div>
-          <div class="sub">Producent PL, 500-10K PLN<br>⚠️ Tylko własny sklep!</div>
+          <div class="sub">Producent PL, 500-10K PLN<br>DTC + certyfikaty + serwis</div>
         </div>
 
-        <!-- Matrix/Inspire - top right -->
-        <div class="pos-player" style="top:8%;right:30%;">
-          <div class="dot" style="background:rgba(124,58,237,0.1);border-color:var(--purple);color:var(--purple);">P</div>
-          <div class="name" style="color:var(--purple);">Matrix / Inspire</div>
-          <div class="sub">Premium komercyjny, 5-50K PLN</div>
+        <!-- MasterSport - top right -->
+        <div class="pos-player" style="top:5%;right:8%;">
+          <div class="dot" style="background:rgba(26,138,74,0.1);border-color:var(--green);color:var(--green);">MS</div>
+          <div class="name" style="color:var(--green);">MasterSport</div>
+          <div class="sub">72M, B2B + eksport. Inny segment.</div>
         </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:20px;padding:14px;border:2px dashed var(--accent);border-radius:12px;max-width:600px;margin-left:auto;margin-right:auto;">
+      <span style="font-size:20px;color:var(--accent);font-weight:700;">"Made in PL + DTC + certyfikaty" = nikt inny tam nie stoi</span><br>
+      <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Żeby tu wejść — musisz mieć fabrykę, certyfikaty, serwis. To wymaga lat.</span>
+    </div>
+  </div>
+</div>
 
-        <!-- Dotted arrow showing where Marbo SHOULD be -->
-        <div style="position:absolute;top:22%;left:28%;width:200px;height:2px;border-top:3px dashed var(--accent);opacity:0.5;"></div>
-        <div style="position:absolute;top:18%;left:55%;font-size:15px;color:var(--accent);font-family:'DM Sans',sans-serif;font-weight:600;">← gdzie Marbo<br>MOGŁOBY stać</div>
+<!-- ============ SLIDE 7: WB6 — VALUE CHAIN (pusty szablon) ============ -->
+<div class="slide" data-slide="7">
+  <div class="slide-header">
+    <div class="slide-title">Twój Value Chain — wypełnij dla swojej firmy</div>
+    <div class="slide-subtitle">Zescreenuj i oceń swoje ogniwa</div>
+  </div>
+  <div class="board" style="border:2px dashed var(--accent);background:rgba(229,168,75,0.04);">
+    <div class="board-title" style="text-decoration-color:var(--accent);">TWÓJ ŁAŃCUCH WARTOŚCI</div>
+    <div class="chain">
+      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
+        Zakupy<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
+        Produkcja /<br>Realizacja<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
+        Logistyka<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
+        Marketing<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
+        Sprzedaż<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
+        Serwis /<br>Obsługa<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
+      </div>
+    </div>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+      <span style="padding:8px 16px;border:2px solid var(--green);border-radius:8px;color:var(--green);font-size:18px;font-weight:700;">✅ Świetne</span>
+      <span style="padding:8px 16px;border:2px solid var(--yellow);border-radius:8px;color:var(--yellow);font-size:18px;font-weight:700;">⚠️ Słabe</span>
+      <span style="padding:8px 16px;border:2px solid var(--red);border-radius:8px;color:var(--red);font-size:18px;font-weight:700;">❌ Brak</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:24px;max-width:600px;margin-left:auto;margin-right:auto;">
+      <div style="padding:12px 16px;border:1px dashed var(--board-border);border-radius:10px;">
+        <span style="font-size:17px;color:var(--accent);font-weight:700;">"Które ogniwo jest NAJTRUDNIEJSZE do skopiowania przez konkurencję?"</span>
+      </div>
+      <div style="padding:12px 16px;border:1px dashed var(--board-border);border-radius:10px;">
+        <span style="font-size:17px;color:var(--accent);font-weight:700;">"Które ogniwo kosztuje cię NAJWIĘCEJ nerwów/czasu?"</span>
+      </div>
+      <div style="padding:12px 16px;border:1px dashed var(--board-border);border-radius:10px;">
+        <span style="font-size:17px;color:var(--accent);font-weight:700;">"Pokoloruj: zielone, żółte, czerwone. Gdzie jest twoja trójka?"</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ============ SLIDE 11: F3 INWESTYCJE ============ -->
+<!-- ============ SLIDE 8: WB7 — ANSOFF MATRIX (z danymi Marbo) ============ -->
+<div class="slide" data-slide="8">
+  <div class="slide-header">
+    <div class="slide-title">Ansoff Matrix — Marbo Sport</div>
+    <div class="slide-subtitle">4 kierunki wzrostu — ile naraz?</div>
+  </div>
+  <div class="board">
+    <div class="board-title">ANSOFF MATRIX — MARBO SPORT</div>
+    <div style="max-width:700px;margin:0 auto;">
+      <!-- Etykiety osi -->
+      <div style="display:flex;justify-content:center;gap:0;margin-bottom:4px;">
+        <div style="width:50%;text-align:center;font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Istniejący produkt</div>
+        <div style="width:50%;text-align:center;font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Nowy produkt</div>
+      </div>
+      <div style="display:flex;gap:0;">
+        <!-- Y-axis label -->
+        <div style="writing-mode:vertical-lr;transform:rotate(180deg);text-align:center;padding-right:8px;font-size:14px;color:var(--dim);font-family:'DM Sans',sans-serif;">
+          Istniejący rynek ← → Nowy rynek
+        </div>
+        <!-- Grid -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;flex:1;">
+          <!-- Penetracja (lewy góra) -->
+          <div style="padding:16px;border:2px solid var(--green);border-radius:12px;background:rgba(26,138,74,0.04);">
+            <div style="font-size:18px;font-weight:700;color:var(--green);margin-bottom:8px;">PENETRACJA PL</div>
+            <div style="font-size:15px;color:var(--chalk);line-height:1.6;font-family:'DM Sans',sans-serif;">
+              Meta Ads (252 reklam od 2023)<br>
+              2 konta Allegro<br>
+              Program partnerski B2B<br>
+              Leasing
+            </div>
+            <div style="margin-top:10px;font-size:14px;color:var(--green);font-weight:700;">Ryzyko: NISKIE ✅</div>
+          </div>
+          <!-- Rozwój produktu (prawy góra) -->
+          <div style="padding:16px;border:2px solid var(--yellow);border-radius:12px;background:rgba(184,134,11,0.04);">
+            <div style="font-size:18px;font-weight:700;color:var(--yellow);margin-bottom:8px;">ROZWÓJ PRODUKTU</div>
+            <div style="font-size:15px;color:var(--chalk);line-height:1.6;font-family:'DM Sans',sans-serif;">
+              Marbo GARDEN (outdoor, eco)<br>
+              Dotacja UE 6M PLN<br>
+              Booty Builder (JV z Norwegią)
+            </div>
+            <div style="margin-top:10px;font-size:14px;color:var(--yellow);font-weight:700;">Ryzyko: ŚREDNIE ⚠️</div>
+          </div>
+          <!-- Rozwój rynku (lewy dół) -->
+          <div style="padding:16px;border:2px solid var(--accent);border-radius:12px;background:rgba(229,168,75,0.04);">
+            <div style="font-size:18px;font-weight:700;color:var(--accent);margin-bottom:8px;">EKSPANSJA DE</div>
+            <div style="font-size:15px;color:var(--chalk);line-height:1.6;font-family:'DM Sans',sans-serif;">
+              FB Deutschland: 1200 followers<br>
+              5 reklam DE w Meta<br>
+              Dotacja UE na internacjonalizację: 426K
+            </div>
+            <div style="margin-top:10px;font-size:14px;color:var(--accent);font-weight:700;">Ryzyko: ŚREDNIE-WYSOKIE</div>
+          </div>
+          <!-- Dywersyfikacja (prawy dół) -->
+          <div style="padding:16px;border:2px solid var(--red);border-radius:12px;background:rgba(204,51,51,0.04);">
+            <div style="font-size:18px;font-weight:700;color:var(--red);margin-bottom:8px;">DYWERSYFIKACJA?</div>
+            <div style="font-size:15px;color:var(--chalk);line-height:1.6;font-family:'DM Sans',sans-serif;">
+              GARDEN + rynek DE = nowy<br>
+              produkt + nowy rynek?<br>
+              <span style="color:var(--dim);font-style:italic;">Spekulacja — brak danych</span>
+            </div>
+            <div style="margin-top:10px;font-size:14px;color:var(--red);font-weight:700;">Ryzyko: WYSOKIE ❌</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:16px;padding:14px;border:2px dashed var(--accent);border-radius:12px;max-width:550px;margin-left:auto;margin-right:auto;">
+      <span style="font-size:20px;color:var(--accent);font-weight:700;">3 z 4 strategii naraz</span><br>
+      <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Pytanie: czy mają ludzi i kasę na wszystkie jednocześnie?</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 9: WB8 — ANSOFF MATRIX (pusty szablon) ============ -->
+<div class="slide" data-slide="9">
+  <div class="slide-header">
+    <div class="slide-title">Twoja Ansoff Matrix — wypełnij dla swojej firmy</div>
+    <div class="slide-subtitle">Wpisz swoje projekty i plany w odpowiednie kwadranty</div>
+  </div>
+  <div class="board" style="border:2px dashed var(--accent);background:rgba(229,168,75,0.04);">
+    <div class="board-title" style="text-decoration-color:var(--accent);">TWOJA ANSOFF MATRIX</div>
+    <div style="max-width:700px;margin:0 auto;">
+      <div style="display:flex;justify-content:center;gap:0;margin-bottom:4px;">
+        <div style="width:50%;text-align:center;font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Istniejący produkt</div>
+        <div style="width:50%;text-align:center;font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Nowy produkt</div>
+      </div>
+      <div style="display:flex;gap:0;">
+        <div style="writing-mode:vertical-lr;transform:rotate(180deg);text-align:center;padding-right:8px;font-size:14px;color:var(--dim);font-family:'DM Sans',sans-serif;">
+          Istniejący rynek ← → Nowy rynek
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;flex:1;">
+          <div style="padding:20px;border:2px dashed var(--green);border-radius:12px;min-height:140px;">
+            <div style="font-size:17px;font-weight:700;color:var(--green);margin-bottom:12px;">PENETRACJA RYNKU</div>
+            <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:2;">
+              1. ___________<br>
+              2. ___________<br>
+              3. ___________
+            </div>
+            <div style="margin-top:10px;font-size:13px;color:var(--green);">Najniższe ryzyko</div>
+          </div>
+          <div style="padding:20px;border:2px dashed var(--yellow);border-radius:12px;min-height:140px;">
+            <div style="font-size:17px;font-weight:700;color:var(--yellow);margin-bottom:12px;">ROZWÓJ PRODUKTU</div>
+            <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:2;">
+              1. ___________<br>
+              2. ___________<br>
+              3. ___________
+            </div>
+            <div style="margin-top:10px;font-size:13px;color:var(--yellow);">Średnie ryzyko</div>
+          </div>
+          <div style="padding:20px;border:2px dashed var(--accent);border-radius:12px;min-height:140px;">
+            <div style="font-size:17px;font-weight:700;color:var(--accent);margin-bottom:12px;">ROZWÓJ RYNKU</div>
+            <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:2;">
+              1. ___________<br>
+              2. ___________<br>
+              3. ___________
+            </div>
+            <div style="margin-top:10px;font-size:13px;color:var(--accent);">Średnie-wysokie ryzyko</div>
+          </div>
+          <div style="padding:20px;border:2px dashed var(--red);border-radius:12px;min-height:140px;">
+            <div style="font-size:17px;font-weight:700;color:var(--red);margin-bottom:12px;">DYWERSYFIKACJA</div>
+            <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;line-height:2;">
+              1. ___________<br>
+              2. ___________<br>
+              3. ___________
+            </div>
+            <div style="margin-top:10px;font-size:13px;color:var(--red);">Najwyższe ryzyko</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:16px;padding:14px;border:1px dashed var(--board-border);border-radius:10px;">
+      <span style="font-size:18px;color:var(--accent);font-weight:700;">"Ile kwadrantów wypełniłeś? Jeśli >2 — czy masz ludzi i kasę na wszystkie naraz?"</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 10: WB9a — SYNTEZA: JAK SIĘ ŁĄCZY ============ -->
 <div class="slide" data-slide="10">
   <div class="slide-header">
-    <div class="slide-title">Gdzie inwestuje vs gdzie bottleneck</div>
-  </div>
-  <div class="board">
-    <div class="board-title" style="font-size:26px;">ROZBIEŻNOŚĆ INWESTYCJI</div>
-    <div class="invest-compare">
-      <div class="invest-col" style="background:rgba(26,138,74,0.04);border:2px solid rgba(26,138,74,0.2);border-radius:12px;">
-        <h4 style="color:var(--green);">💰 GDZIE INWESTUJE</h4>
-        <div class="invest-item"><span>Technologia produkcji</span><span class="amount" style="color:var(--green);">5M PLN</span></div>
-        <div class="invest-item"><span>Strategia designu</span><span class="amount" style="color:var(--green);">3M PLN</span></div>
-        <div class="invest-item"><span>Termomodernizacja</span><span class="amount" style="color:var(--green);">6M PLN</span></div>
-        <div class="invest-item"><span>Promocja eksportu</span><span class="amount" style="color:var(--green);">425K</span></div>
-        <div class="invest-item" style="border:none;padding-top:12px;"><span style="font-weight:700;">RAZEM</span><span class="amount" style="color:var(--green);font-size:22px;">~14.8M PLN</span></div>
-      </div>
-      <div class="invest-col" style="background:rgba(204,51,51,0.04);border:2px solid rgba(204,51,51,0.2);border-radius:12px;">
-        <h4 style="color:var(--red);">🚫 GDZIE BOTTLENECK</h4>
-        <div class="invest-item"><span>Allegro</span><span class="amount" style="color:var(--red);">0 PLN</span></div>
-        <div class="invest-item"><span>Amazon</span><span class="amount" style="color:var(--red);">0 PLN</span></div>
-        <div class="invest-item"><span>YouTube</span><span class="amount" style="color:var(--red);">0 PLN</span></div>
-        <div class="invest-item"><span>LinkedIn B2B</span><span class="amount" style="color:var(--red);">0 PLN</span></div>
-        <div class="invest-item"><span>Marketplace</span><span class="amount" style="color:var(--red);">0 PLN</span></div>
-        <div class="invest-item" style="border:none;padding-top:12px;"><span style="font-weight:700;">RAZEM</span><span class="amount" style="color:var(--red);font-size:22px;">0 PLN</span></div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:24px;padding:16px;border-radius:12px;background:rgba(229,168,75,0.08);border:2px solid var(--accent);">
-      <div style="font-size:24px;font-weight:700;color:var(--accent);">"Jeszcze lepszy produkt" ≠ więcej klientów</div>
-      <div style="font-size:18px;color:var(--chalk);margin-top:8px;">W 1990 — tak. W 2026 — nie.<br>Bottleneck = dystrybucja. Inwestycje = produkcja. <strong>ROZBIEŻNOŚĆ.</strong></div>
-    </div>
-  </div>
-</div>
-
-<!-- ============ SLIDE 12: F3 3 POZYCJE ============ -->
-<div class="slide" data-slide="11">
-  <div class="slide-header">
-    <div class="slide-title">3 możliwe pozycje</div>
-  </div>
-  <div class="board">
-    <div class="board-title" style="font-size:26px;">3 POZYCJE DLA MARBO</div>
-    <div class="positions">
-      <div class="position-card" style="border-color:var(--green);">
-        <h4 style="color:var(--green);">1. Premium B2C</h4>
-        <div class="target">"Kup raz na 15 lat"</div>
-        <div class="channels">
-          Klient: 30-50 lat, budżet<br><br>
-          <strong>Kanały:</strong><br>
-          Allegro (premium)<br>
-          YouTube (content z fabryki)<br>
-          Własny sklep<br><br>
-          <span style="color:var(--green);font-weight:700;">Certyfikat na KAŻDYM listingu</span>
-        </div>
-      </div>
-      <div class="position-card" style="border-color:var(--blue);">
-        <h4 style="color:var(--blue);">2. B2B Outfitter</h4>
-        <div class="target">"Wyposażamy obiekty"</div>
-        <div class="channels">
-          Klient: hotele, siłownie, gminy<br><br>
-          <strong>Kanały:</strong><br>
-          LinkedIn<br>
-          Przetargi publiczne<br>
-          Targi<br>
-          Handlowiec B2B<br><br>
-          <span style="color:var(--blue);font-weight:700;">Case studies + UpForm</span>
-        </div>
-      </div>
-      <div class="position-card" style="border-color:var(--accent);">
-        <h4 style="color:var(--accent);">3. HYBRID ⭐</h4>
-        <div class="target">Oba jednocześnie</div>
-        <div class="channels">
-          Ta sama firma, dwa przekazy:<br><br>
-          <strong style="color:var(--green);">B2C:</strong> Allegro, Amazon, YT<br>
-          "Stal polska, certyfikat, 15 lat"<br><br>
-          <strong style="color:var(--blue);">B2B:</strong> LinkedIn, przetargi<br>
-          "Pełne wyposażenie A-Z"<br><br>
-          <span style="color:var(--accent);font-weight:700;">Nie nowe produkty — nowa komunikacja</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ============ SLIDE 13: SYNTEZA ============ -->
-<div class="slide" data-slide="12">
-  <div class="slide-header">
-    <div class="slide-title">Jak 3 frameworki się łączą</div>
+    <div class="slide-title">Synteza — jak 3 frameworki się łączą</div>
   </div>
   <div class="board">
     <div class="board-title">SYNTEZA</div>
     <div class="flow">
       <div class="flow-step" style="border-color:var(--green);color:var(--green);">
-        <strong>F1: Łańcuch Wartości</strong><br>
-        <span style="font-size:18px;">Bottleneck = Dystrybucja</span>
-      </div>
-      <div class="flow-arrow">↓</div>
-      <div class="flow-step" style="border-color:var(--yellow);color:var(--yellow);">
-        <strong>F2: Audyt Kanałów</strong><br>
-        <span style="font-size:18px;">1 kanał zamiast 6-7 możliwych<br>Infrastruktura B2B bez aktywnej sprzedaży</span>
+        <strong>PROFIT TREE</strong><br>
+        <span style="font-size:17px;">Przychody +12%, koszty +12,5%. Zysk stoi.<br>Cykl inwestycyjny — CAPEX 10M.</span>
       </div>
       <div class="flow-arrow">↓</div>
       <div class="flow-step" style="border-color:var(--blue);color:var(--blue);">
-        <strong>F3: Mapa Pozycjonowania</strong><br>
-        <span style="font-size:18px;">14M → produkcja (silne ogniwo)<br>0 → dystrybucja (bottleneck)<br>Komunikacja: "producent" + resell konkurenta</span>
+        <strong>VALUE CHAIN</strong><br>
+        <span style="font-size:17px;">Supermoce: produkcja + serwis.<br>Biała plama: marketing. Pozycja unikalna.</span>
       </div>
       <div class="flow-arrow">↓</div>
-      <div class="flow-result">
-        EFEKT: Świetna firma → rośnie wolniej niż mogłaby
+      <div class="flow-step" style="border-color:var(--yellow);color:var(--yellow);">
+        <strong>ANSOFF MATRIX</strong><br>
+        <span style="font-size:17px;">3 strategie naraz: PL, DE, GARDEN.<br>Każda wymaga ludzi i kasy.</span>
       </div>
     </div>
-    <div style="text-align:center;margin-top:24px;font-size:20px;color:var(--dim);">
-      "Frameworki które właśnie pokazałem działają w KAŻDEJ branży."
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:20px;max-width:600px;margin-left:auto;margin-right:auto;">
+      <div class="flow-result" style="border-left:4px solid var(--green);">
+        Inwestycje zjadają zysk — ale planowo
+      </div>
+      <div class="flow-result" style="border-left:4px solid var(--blue);">
+        Materiał na więcej — ale nie wykorzystany
+      </div>
+      <div class="flow-result" style="border-left:4px solid var(--yellow);">
+        3 fronty naraz — czy starczy zasobów?
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 11: WB9b — 3 PYTANIA DO WŁAŚCICIELA ============ -->
+<div class="slide" data-slide="11">
+  <div class="slide-header">
+    <div class="slide-title">3 pytania do właściciela</div>
+    <div class="slide-subtitle">Pytania, które zadałbym gdybym miał godzinę</div>
+  </div>
+  <div class="board">
+    <div class="board-title">3 PYTANIA</div>
+    <div class="roadmap" style="max-width:700px;margin:0 auto;">
+      <div class="roadmap-item">
+        <div class="roadmap-num" style="background:var(--green);color:#fff;">1</div>
+        <div class="roadmap-text">
+          <h4 style="color:var(--green);">Ile naprawdę jest paliwa?</h4>
+          <p>705K gotówki to 1 z 7 podmiotów. Płynność CAŁEGO ekosystemu? Linia kredytowa? Bufor w innym podmiocie?</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-num" style="background:var(--blue);color:#fff;">2</div>
+        <div class="roadmap-text">
+          <h4 style="color:var(--blue);">Kto będzie obsługiwał nowe moce?</h4>
+          <p>10M w maszyny, Starachowice 30K mieszkańców. Plan pozyskiwania i utrzymywania ludzi na nowych stanowiskach?</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-num" style="background:var(--accent);color:#fff;">3</div>
+        <div class="roadmap-text">
+          <h4 style="color:var(--accent);">Dlaczego najlepsza historia nie jest opowiedziana?</h4>
+          <p>Jedyny PL producent z certyfikatami. Ławka 18 lat. 4,86/5. Materiał o jakim content marketerzy marzą — i jest NIEUŻYWANY.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:24px;padding:16px;border:2px dashed var(--accent);border-radius:12px;max-width:600px;margin-left:auto;margin-right:auto;">
+      <span style="font-size:18px;color:var(--accent);font-weight:700;">Odpowiedzi na te pytania wymagają danych z WNĘTRZA firmy.</span><br>
+      <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Pipeline → paliwo. Dane o zespole → ludzie. Procesy → dlaczego historia nie jest opowiedziana.</span>
     </div>
   </div>
 </div>
