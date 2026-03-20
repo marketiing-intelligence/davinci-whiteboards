@@ -157,6 +157,102 @@
     border-color: var(--chalk);
   }
 
+  /* RESEARCH SLIDES */
+  .research-iframe {
+    width: 100%;
+    height: 70vh;
+    border: 1px solid var(--board-border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .research-iframe iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .iframe-hint {
+    font-size: 12px;
+    color: var(--dim);
+    text-align: center;
+    margin-top: 8px;
+    font-style: italic;
+  }
+  .research-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+  .research-table th {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 2px solid var(--chalk);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--dim);
+  }
+  .research-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--board-border);
+    color: var(--chalk);
+  }
+  .research-table tr:hover td {
+    background: rgba(196,146,43,0.04);
+  }
+  .research-table .val { font-weight: 700; font-size: 17px; }
+  .research-table .yoy { font-size: 13px; font-weight: 600; }
+  .research-table .yoy.up { color: var(--green); }
+  .research-table .yoy.down { color: var(--red); }
+  .research-table .src { font-size: 11px; color: var(--dim); }
+  .ecosystem-graph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+  }
+  .ego-node {
+    background: var(--chalk);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+  }
+  .ego-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .ego-entity {
+    background: var(--board-bg);
+    border: 2px solid var(--board-border);
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 140px;
+    position: relative;
+  }
+  .ego-entity .ego-role {
+    font-size: 11px;
+    color: var(--dim);
+    font-weight: 400;
+    margin-top: 4px;
+  }
+  .ego-entity.highlight { border-color: var(--accent); }
+  .ego-entity.person { border-style: dashed; }
+  .ego-connector {
+    width: 2px;
+    height: 20px;
+    background: var(--board-border);
+    margin: 0 auto;
+  }
+
   /* MAIN CONTENT */
   .main {
     padding: 150px 24px 40px;
@@ -1034,18 +1130,21 @@
   <div class="timeline-item active" data-section="intro" onclick="goToSlide(0)">Karta Marbo</div>
   <div class="timeline-item" data-section="intro" onclick="goToSlide(1)">Baza Wiedzy: Publiczne</div>
   <div class="timeline-item" data-section="intro" onclick="goToSlide(2)" style="border:1px dashed var(--board-border);font-style:italic;">Baza Wiedzy: Wewnętrzne</div>
-  <div class="timeline-item" data-section="b1" onclick="goToSlide(3)">Profit Tree</div>
-  <div class="timeline-item" data-section="b1" onclick="goToSlide(4)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Profit Tree</div>
-  <div class="timeline-item" data-section="b1" onclick="goToSlide(5)">BCG Matrix</div>
-  <div class="timeline-item" data-section="b2" onclick="goToSlide(6)">Value Chain</div>
-  <div class="timeline-item" data-section="b2" onclick="goToSlide(7)">Mapa Pozycjonowania</div>
-  <div class="timeline-item" data-section="b2" onclick="goToSlide(8)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Łańcuch</div>
-  <div class="timeline-item" data-section="b2" onclick="goToSlide(9)">Blue Ocean</div>
-  <div class="timeline-item" data-section="b3" onclick="goToSlide(10)">Ansoff Matrix</div>
-  <div class="timeline-item" data-section="b3" onclick="goToSlide(11)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Ansoff</div>
-  <div class="timeline-item" data-section="b3" onclick="goToSlide(12)">TOC: Wąskie Gardło</div>
-  <div class="timeline-item" data-section="syn" onclick="goToSlide(13)">Synteza</div>
-  <div class="timeline-item" data-section="syn" onclick="goToSlide(14)">3 Pytania</div>
+  <div class="timeline-item" data-section="intro" onclick="goToSlide(3)">Strona Marbo</div>
+  <div class="timeline-item" data-section="intro" onclick="goToSlide(4)">eKRS: Finanse</div>
+  <div class="timeline-item" data-section="b1" onclick="goToSlide(5)">Profit Tree</div>
+  <div class="timeline-item" data-section="b1" onclick="goToSlide(6)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Profit Tree</div>
+  <div class="timeline-item" data-section="b1" onclick="goToSlide(7)">BCG Matrix</div>
+  <div class="timeline-item" data-section="b2" onclick="goToSlide(8)">Value Chain</div>
+  <div class="timeline-item" data-section="b2" onclick="goToSlide(9)">Mapa Pozycjonowania</div>
+  <div class="timeline-item" data-section="b2" onclick="goToSlide(10)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Łańcuch</div>
+  <div class="timeline-item" data-section="b2" onclick="goToSlide(11)">Blue Ocean</div>
+  <div class="timeline-item" data-section="b3" onclick="goToSlide(12)">Ansoff Matrix</div>
+  <div class="timeline-item" data-section="b3" onclick="goToSlide(13)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Ansoff</div>
+  <div class="timeline-item" data-section="b3" onclick="goToSlide(14)">Ekosystem Marbo</div>
+  <div class="timeline-item" data-section="b3" onclick="goToSlide(15)">TOC: Wąskie Gardło</div>
+  <div class="timeline-item" data-section="syn" onclick="goToSlide(16)">Synteza</div>
+  <div class="timeline-item" data-section="syn" onclick="goToSlide(17)">3 Pytania</div>
 </div>
 
 <div class="main">
@@ -1249,8 +1348,52 @@
   </div>
 </div>
 
-<!-- ============ SLIDE 3: WB2 — PROFIT TREE (z danymi Marbo) ============ -->
+<!-- ============ SLIDE 3: RESEARCH — STRONA MARBO (iframe) ============ -->
 <div class="slide" data-slide="3">
+  <div class="slide-header">
+    <div class="slide-title">marbo-sport.pl — strona firmy na żywo</div>
+    <div class="slide-subtitle">Scrolluj, klikaj, sprawdzaj — to jest live view strony Marbo Sport</div>
+  </div>
+  <div class="research-iframe">
+    <iframe src="https://marbo-sport.pl" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups" referrerpolicy="no-referrer"></iframe>
+  </div>
+  <div class="iframe-hint">Strona ładuje się na żywo z marbo-sport.pl. Możesz scrollować i klikać wewnątrz ramki.</div>
+</div>
+
+<!-- ============ SLIDE 4: RESEARCH — eKRS FINANSE ============ -->
+<div class="slide" data-slide="4">
+  <div class="slide-header">
+    <div class="slide-title">eKRS — Sprawozdanie Finansowe 2024</div>
+    <div class="slide-subtitle">MARBO Ulikowski Sp.K. | KRS 0001019017 | Dane publiczne z eKRS</div>
+  </div>
+  <div class="board">
+    <div class="board-title">KLUCZOWE LICZBY — eKRS 2024</div>
+    <table class="research-table">
+      <thead>
+        <tr><th>Metryka</th><th>Wartość</th><th>YoY</th><th>Źródło</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Przychody netto</td><td class="val">66,6M PLN</td><td class="yoy up">+12%</td><td class="src">eKRS SF XML 2024</td></tr>
+        <tr><td>Zysk netto</td><td class="val">2,95M PLN</td><td class="yoy down">-13%</td><td class="src">eKRS SF XML 2024</td></tr>
+        <tr><td>Marża netto</td><td class="val">4,4%</td><td class="yoy down">z 5,7%</td><td class="src">Kalkulacja z SF</td></tr>
+        <tr><td>CAPEX</td><td class="val">~10M PLN</td><td class="yoy up">+406%</td><td class="src">eKRS CF 2024</td></tr>
+        <tr><td>Gotówka bilansowa</td><td class="val">705K PLN</td><td class="yoy down">-77%</td><td class="src">eKRS bilans 2024</td></tr>
+        <tr><td>Dług długoterminowy</td><td class="val">7,85M PLN</td><td class="yoy up">+167%</td><td class="src">eKRS bilans 2024</td></tr>
+        <tr><td>Wynagrodzenia</td><td class="val">10,5M PLN</td><td class="yoy up">+24%</td><td class="src">eKRS RZiS 2024</td></tr>
+        <tr><td>Aktywa ogółem</td><td class="val">48,7M PLN</td><td class="yoy up">+15%</td><td class="src">eKRS bilans 2024</td></tr>
+        <tr><td>Sprzedaż produktów</td><td class="val">56,1M PLN</td><td class="yoy up">+4%</td><td class="src">eKRS RZiS 2024</td></tr>
+        <tr><td>Sprzedaż towarów (resale)</td><td class="val">8,9M PLN</td><td class="yoy up">+2%</td><td class="src">eKRS RZiS 2024</td></tr>
+        <tr><td>Dotacje EU łącznie</td><td class="val">14,8M PLN</td><td class="yoy" style="color:var(--blue)">/ 28,2M projekty</td><td class="src">marbo-sport.pl</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:20px;padding:14px;background:rgba(220,68,68,0.05);border-radius:10px;border-left:4px solid var(--red);font-size:13px;color:var(--dim);line-height:1.5;">
+      <strong style="color:var(--red);">CAVEAT:</strong> Dane z JEDNEGO podmiotu (Sp.K.). Marbo to ekosystem 7 spółek — przepływy między nimi mogą zmieniać obraz. Cash ratio 0,06 (z 0,24) — ale cykl inwestycyjny, nie kryzys.
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 4: WB2 — PROFIT TREE (z danymi Marbo) ============ -->
+<div class="slide" data-slide="5">
   <div class="slide-header">
     <div class="slide-title">B1: Profit Tree — Marbo Sport 2024</div>
     <div class="slide-subtitle">Dekompozycja zysku z danych eKRS</div>
@@ -1328,7 +1471,7 @@
 </div>
 
 <!-- ============ SLIDE 4: WB3 — PROFIT TREE (pusty szablon) ============ -->
-<div class="slide" data-slide="4">
+<div class="slide" data-slide="6">
   <div class="slide-header">
     <div class="slide-title">B1: Twój Profit Tree — wypełnij dla swojej firmy</div>
     <div class="slide-subtitle">Zescreenuj i wpisz swoje liczby z RZiS</div>
@@ -1406,7 +1549,7 @@
 </div>
 
 <!-- ============ SLIDE 5: BCG MATRIX — PORTFOLIO PRODUKTÓW (z danymi Marbo) ============ -->
-<div class="slide" data-slide="5">
+<div class="slide" data-slide="7">
   <div class="slide-header">
     <div class="slide-title">B1: BCG Matrix — 7 linii Marbo</div>
     <div class="slide-subtitle">Które produkty karmisz, a które cię jedzą?</div>
@@ -1479,7 +1622,7 @@
 </div>
 
 <!-- ============ SLIDE 6: WB4 — VALUE CHAIN (z danymi Marbo) ============ -->
-<div class="slide" data-slide="6">
+<div class="slide" data-slide="8">
   <div class="slide-header">
     <div class="slide-title">B2: Value Chain — Marbo Sport</div>
     <div class="slide-subtitle">Łańcuch wartości — ocena 6 ogniw</div>
@@ -1547,7 +1690,7 @@
 </div>
 
 <!-- ============ SLIDE 7: WB5 — MAPA POZYCJONOWANIA ============ -->
-<div class="slide" data-slide="7">
+<div class="slide" data-slide="9">
   <div class="slide-header">
     <div class="slide-title">B2: Mapa Pozycjonowania — fitness PL</div>
     <div class="slide-subtitle">Import ↔ Made in PL × Tani ↔ Drogi</div>
@@ -1617,7 +1760,7 @@
 </div>
 
 <!-- ============ SLIDE 8: WB6 — VALUE CHAIN (pusty szablon) ============ -->
-<div class="slide" data-slide="8">
+<div class="slide" data-slide="10">
   <div class="slide-header">
     <div class="slide-title">B2: Twój Value Chain — wypełnij dla swojej firmy</div>
     <div class="slide-subtitle">Zescreenuj i oceń swoje ogniwa</div>
@@ -1665,7 +1808,7 @@
 </div>
 
 <!-- ============ SLIDE 9: BLUE OCEAN — STRATEGY CANVAS (z danymi Marbo) ============ -->
-<div class="slide" data-slide="9">
+<div class="slide" data-slide="11">
   <div class="slide-header">
     <div class="slide-title">B2: Blue Ocean — Strategy Canvas</div>
     <div class="slide-subtitle">Czynniki konkurencji — kto ma co? Gdzie pusta przestrzeń?</div>
@@ -1764,7 +1907,7 @@
 </div>
 
 <!-- ============ SLIDE 10: WB7 — ANSOFF MATRIX (z danymi Marbo) ============ -->
-<div class="slide" data-slide="10">
+<div class="slide" data-slide="12">
   <div class="slide-header">
     <div class="slide-title">B3: Ansoff Matrix — Marbo Sport</div>
     <div class="slide-subtitle">4 kierunki wzrostu — ile naraz?</div>
@@ -1836,7 +1979,7 @@
 </div>
 
 <!-- ============ SLIDE 11: WB8 — ANSOFF MATRIX (pusty szablon) ============ -->
-<div class="slide" data-slide="11">
+<div class="slide" data-slide="13">
   <div class="slide-header">
     <div class="slide-title">B3: Twoja Ansoff Matrix — wypełnij dla swojej firmy</div>
     <div class="slide-subtitle">Wpisz swoje projekty i plany w odpowiednie kwadranty</div>
@@ -1898,8 +2041,81 @@
   </div>
 </div>
 
-<!-- ============ SLIDE 12: TOC — WĄSKIE GARDŁO (z danymi Marbo) ============ -->
-<div class="slide" data-slide="12">
+<!-- ============ SLIDE 12: RESEARCH — EKOSYSTEM MARBO (Rejestr.io) ============ -->
+<div class="slide" data-slide="14">
+  <div class="slide-header">
+    <div class="slide-title">Ekosystem Marbo — 7 podmiotów rodziny Ulikowskich</div>
+    <div class="slide-subtitle">Dane z Rejestr.io i eKRS. Dlaczego 705K gotówki to nie cały obraz.</div>
+  </div>
+  <div class="board">
+    <div class="board-title">EKOSYSTEM SPÓŁEK — REJESTR.IO</div>
+    <div class="ecosystem-graph">
+      <!-- Central person -->
+      <div class="ego-node">Michał Ulikowski<br><span style="font-size:12px;font-weight:400;opacity:0.7">Prezes / Komplementariusz</span></div>
+      <div class="ego-connector"></div>
+      <!-- Main companies row -->
+      <div class="ego-row">
+        <div class="ego-entity highlight">
+          MARBO Ulikowski Sp.K.
+          <div class="ego-role">KRS 0001019017 · 66,6M przychodu</div>
+        </div>
+        <div class="ego-entity">
+          "MARBO" Sp. z o.o.
+          <div class="ego-role">KRS 0000057495 · komplementariusz Sp.K.</div>
+        </div>
+        <div class="ego-entity">
+          MU Holding
+          <div class="ego-role">Spółka holdingowa</div>
+        </div>
+      </div>
+      <div class="ego-connector"></div>
+      <!-- Secondary companies -->
+      <div class="ego-row">
+        <div class="ego-entity">
+          Booty Builder
+          <div class="ego-role">JV z norweskim wynalazcą</div>
+        </div>
+        <div class="ego-entity">
+          Booty Builder Lars...
+          <div class="ego-role">Podmiot norweskiej strony</div>
+        </div>
+        <div class="ego-entity">
+          EPL Invest
+          <div class="ego-role">Inwestycje / nieruchomości</div>
+        </div>
+        <div class="ego-entity">
+          Endorfina Group
+          <div class="ego-role">Sieci fitness?</div>
+        </div>
+      </div>
+      <div class="ego-connector"></div>
+      <!-- People -->
+      <div class="ego-row">
+        <div class="ego-entity person">
+          Bożena Ulikowska
+          <div class="ego-role">Wiceprezes Marbo Sp. z o.o. · wspólnik 50%</div>
+        </div>
+        <div class="ego-entity person">
+          Ewa Ulikowska
+          <div class="ego-role">Wspólnik Marbo Ulikowski Sp.K.</div>
+        </div>
+        <div class="ego-entity person">
+          Jacek Jedlikowski
+          <div class="ego-role">Wspólnik Marbo Ulikowski Sp.K.</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:24px;padding:16px;background:rgba(196,146,43,0.06);border-radius:12px;border-left:4px solid var(--accent);">
+      <div style="font-weight:700;margin-bottom:6px;">Dlaczego to ważne?</div>
+      <div style="font-size:14px;color:var(--dim);line-height:1.6;">
+        Sprawozdanie finansowe pokazuje JEDEN podmiot (Sp.K.). Ale gotówka, długi i przepływy mogą krążyć między 7 firmami. 705K gotówki bilansowej ≠ gotówka całego ekosystemu. Bez danych wewnętrznych — nie sprawdzę.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 13: TOC — WĄSKIE GARDŁO (z danymi Marbo) ============ -->
+<div class="slide" data-slide="15">
   <div class="slide-header">
     <div class="slide-title">B3: Theory of Constraints — Marbo Sport</div>
     <div class="slide-subtitle">5 kroków Goldratta — gdzie jest wąskie gardło?</div>
@@ -1976,7 +2192,7 @@
 </div>
 
 <!-- ============ SLIDE 13: WB9a — SYNTEZA: JAK SIĘ ŁĄCZY ============ -->
-<div class="slide" data-slide="13">
+<div class="slide" data-slide="16">
   <div class="slide-header">
     <div class="slide-title">Synteza — jak 3 frameworki się łączą</div>
   </div>
@@ -2018,7 +2234,7 @@
 </div>
 
 <!-- ============ SLIDE 14: WB9b — 3 PYTANIA DO WŁAŚCICIELA ============ -->
-<div class="slide" data-slide="14">
+<div class="slide" data-slide="17">
   <div class="slide-header">
     <div class="slide-title">3 pytania do właściciela</div>
     <div class="slide-subtitle">Pytania, które zadałbym gdybym miał godzinę</div>
@@ -2165,11 +2381,11 @@
 
   // Map slide indices to sections
   const slideSection = {
-    0:'intro', 1:'intro', 2:'intro',
-    3:'b1', 4:'b1', 5:'b1',
-    6:'b2', 7:'b2', 8:'b2', 9:'b2',
-    10:'b3', 11:'b3', 12:'b3',
-    13:'syn', 14:'syn'
+    0:'intro', 1:'intro', 2:'intro', 3:'intro', 4:'intro',
+    5:'b1', 6:'b1', 7:'b1',
+    8:'b2', 9:'b2', 10:'b2', 11:'b2',
+    12:'b3', 13:'b3', 14:'b3', 15:'b3',
+    16:'syn', 17:'syn'
   };
 
   function switchSection(section) {
