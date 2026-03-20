@@ -596,6 +596,80 @@
     margin-top: 16px;
   }
 
+  /* PROGRESS BAR */
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    z-index: 110;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* BLOCK LABELS IN TIMELINE */
+  .timeline-sep {
+    flex-shrink: 0;
+    padding: 6px 8px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 6px;
+    white-space: nowrap;
+    user-select: none;
+    opacity: 0.85;
+  }
+  .timeline-sep.sep-intro { background: var(--dim); }
+  .timeline-sep.sep-b1 { background: var(--green); }
+  .timeline-sep.sep-b2 { background: var(--blue); }
+  .timeline-sep.sep-b3 { background: var(--yellow); }
+  .timeline-sep.sep-synth { background: var(--accent); }
+
+  /* BLOCK BADGE ON SLIDES */
+  .block-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .block-badge.badge-intro { background: var(--dim); }
+  .block-badge.badge-b1 { background: var(--green); }
+  .block-badge.badge-b2 { background: var(--blue); }
+  .block-badge.badge-b3 { background: var(--yellow); color: #1a1a1a; }
+  .block-badge.badge-synth { background: var(--accent); }
+
+  /* TEMPLATE SLIDE ENHANCEMENTS */
+  .slide .board.template-board {
+    border: 2px dashed var(--accent);
+    background: linear-gradient(135deg, rgba(229,168,75,0.03) 0%, rgba(229,168,75,0.08) 100%);
+    position: relative;
+  }
+  .slide .board.template-board::before {
+    content: "TWOJA KOLEJ";
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    background: rgba(229,168,75,0.12);
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* IMPROVED BOARD */
+  .board {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 32px rgba(0,0,0,0.06);
+  }
+
   /* KEYBOARD HINT */
   .keyboard-hint {
     position: fixed;
@@ -890,18 +964,26 @@
   </div>
 </div>
 
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar" style="width:8.33%"></div>
+
 <!-- TIMELINE -->
 <div class="timeline" id="timeline">
+  <div class="timeline-sep sep-intro">INTRO</div>
   <div class="timeline-item active" onclick="goToSlide(0)">Karta Marbo</div>
   <div class="timeline-item" onclick="goToSlide(1)">Baza Wiedzy: Publiczne</div>
   <div class="timeline-item" onclick="goToSlide(2)" style="border:1px dashed var(--board-border);font-style:italic;">Baza Wiedzy: Wewnętrzne</div>
+  <div class="timeline-sep sep-b1">BLOK 1</div>
   <div class="timeline-item" onclick="goToSlide(3)">Profit Tree</div>
   <div class="timeline-item" onclick="goToSlide(4)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Profit Tree</div>
+  <div class="timeline-sep sep-b2">BLOK 2</div>
   <div class="timeline-item" onclick="goToSlide(5)">Value Chain</div>
   <div class="timeline-item" onclick="goToSlide(6)">Mapa Pozycjonowania</div>
   <div class="timeline-item" onclick="goToSlide(7)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Łańcuch</div>
+  <div class="timeline-sep sep-b3">BLOK 3</div>
   <div class="timeline-item" onclick="goToSlide(8)">Ansoff Matrix</div>
   <div class="timeline-item" onclick="goToSlide(9)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Ansoff</div>
+  <div class="timeline-sep sep-synth">SYNTEZA</div>
   <div class="timeline-item" onclick="goToSlide(10)">Synteza</div>
   <div class="timeline-item" onclick="goToSlide(11)">3 Pytania</div>
 </div>
@@ -911,6 +993,7 @@
 <!-- ============ SLIDE 0: KARTA FIRMY ============ -->
 <div class="slide active" data-slide="0">
   <div class="slide-header">
+    <div class="block-badge badge-intro">INTRO</div>
     <div class="slide-title">Marbo Sport — karta firmy</div>
     <div class="slide-subtitle">Dane publiczne z eKRS, strony firmy i rejestrów</div>
   </div>
@@ -962,6 +1045,7 @@
 <!-- ============ SLIDE 1: WB1a — BAZA WIEDZY: PUBLICZNE ============ -->
 <div class="slide" data-slide="1">
   <div class="slide-header">
+    <div class="block-badge badge-intro">INTRO</div>
     <div class="slide-title">Baza Wiedzy — Warstwa 1: Publiczne dane</div>
     <div class="slide-subtitle">Minimum, które każdy właściciel powinien mieć pod ręką</div>
   </div>
@@ -1021,10 +1105,11 @@
 <!-- ============ SLIDE 2: WB1b — BAZA WIEDZY: WEWNĘTRZNE (TEMPLATE) ============ -->
 <div class="slide" data-slide="2">
   <div class="slide-header">
+    <div class="block-badge badge-intro">INTRO</div>
     <div class="slide-title">Baza Wiedzy — Warstwa 2: Dane wewnętrzne</div>
     <div class="slide-subtitle">Zescreenuj i wypełnij dla swojej firmy</div>
   </div>
-  <div class="board" style="border:2px dashed var(--accent);background:rgba(229,168,75,0.04);">
+  <div class="board template-board">
     <div class="board-title" style="text-decoration-color:var(--accent);">TWOJA BAZA WIEDZY — WARSTWA 2</div>
     <div class="roadmap" style="max-width:700px;margin:0 auto;">
       <div class="roadmap-item" style="border-style:dashed;">
@@ -1101,6 +1186,7 @@
 <!-- ============ SLIDE 3: WB2 — PROFIT TREE (z danymi Marbo) ============ -->
 <div class="slide" data-slide="3">
   <div class="slide-header">
+    <div class="block-badge badge-b1">BLOK 1 — PROFIT TREE</div>
     <div class="slide-title">Profit Tree — Marbo Sport 2024</div>
     <div class="slide-subtitle">Dekompozycja zysku z danych eKRS</div>
   </div>
@@ -1183,10 +1269,11 @@
 <!-- ============ SLIDE 4: WB3 — PROFIT TREE (pusty szablon) ============ -->
 <div class="slide" data-slide="4">
   <div class="slide-header">
+    <div class="block-badge badge-b1">BLOK 1 — PROFIT TREE</div>
     <div class="slide-title">Twój Profit Tree — wypełnij dla swojej firmy</div>
     <div class="slide-subtitle">Zescreenuj i wpisz swoje liczby z RZiS</div>
   </div>
-  <div class="board" style="border:2px dashed var(--accent);background:rgba(229,168,75,0.04);">
+  <div class="board template-board">
     <div class="board-title" style="text-decoration-color:var(--accent);">TWÓJ PROFIT TREE</div>
     <!-- Korzeń -->
     <div style="text-align:center;margin-bottom:8px;">
@@ -1261,6 +1348,7 @@
 <!-- ============ SLIDE 5: WB4 — VALUE CHAIN (z danymi Marbo) ============ -->
 <div class="slide" data-slide="5">
   <div class="slide-header">
+    <div class="block-badge badge-b2">BLOK 2 — VALUE CHAIN</div>
     <div class="slide-title">Value Chain — Marbo Sport</div>
     <div class="slide-subtitle">Łańcuch wartości — ocena 6 ogniw</div>
   </div>
@@ -1329,6 +1417,7 @@
 <!-- ============ SLIDE 6: WB5 — MAPA POZYCJONOWANIA ============ -->
 <div class="slide" data-slide="6">
   <div class="slide-header">
+    <div class="block-badge badge-b2">BLOK 2 — VALUE CHAIN</div>
     <div class="slide-title">Mapa Pozycjonowania — fitness PL</div>
     <div class="slide-subtitle">Import ↔ Made in PL × Tani ↔ Drogi</div>
   </div>
@@ -1399,10 +1488,11 @@
 <!-- ============ SLIDE 7: WB6 — VALUE CHAIN (pusty szablon) ============ -->
 <div class="slide" data-slide="7">
   <div class="slide-header">
+    <div class="block-badge badge-b2">BLOK 2 — VALUE CHAIN</div>
     <div class="slide-title">Twój Value Chain — wypełnij dla swojej firmy</div>
     <div class="slide-subtitle">Zescreenuj i oceń swoje ogniwa</div>
   </div>
-  <div class="board" style="border:2px dashed var(--accent);background:rgba(229,168,75,0.04);">
+  <div class="board template-board">
     <div class="board-title" style="text-decoration-color:var(--accent);">TWÓJ ŁAŃCUCH WARTOŚCI</div>
     <div class="chain">
       <div class="chain-link" style="border-style:dashed;color:var(--dim);min-width:130px;">
@@ -1451,6 +1541,7 @@
 <!-- ============ SLIDE 8: WB7 — ANSOFF MATRIX (z danymi Marbo) ============ -->
 <div class="slide" data-slide="8">
   <div class="slide-header">
+    <div class="block-badge badge-b3">BLOK 3 — ANSOFF MATRIX</div>
     <div class="slide-title">Ansoff Matrix — Marbo Sport</div>
     <div class="slide-subtitle">4 kierunki wzrostu — ile naraz?</div>
   </div>
@@ -1523,10 +1614,11 @@
 <!-- ============ SLIDE 9: WB8 — ANSOFF MATRIX (pusty szablon) ============ -->
 <div class="slide" data-slide="9">
   <div class="slide-header">
+    <div class="block-badge badge-b3">BLOK 3 — ANSOFF MATRIX</div>
     <div class="slide-title">Twoja Ansoff Matrix — wypełnij dla swojej firmy</div>
     <div class="slide-subtitle">Wpisz swoje projekty i plany w odpowiednie kwadranty</div>
   </div>
-  <div class="board" style="border:2px dashed var(--accent);background:rgba(229,168,75,0.04);">
+  <div class="board template-board">
     <div class="board-title" style="text-decoration-color:var(--accent);">TWOJA ANSOFF MATRIX</div>
     <div style="max-width:700px;margin:0 auto;">
       <div style="display:flex;justify-content:center;gap:0;margin-bottom:4px;">
@@ -1586,6 +1678,7 @@
 <!-- ============ SLIDE 10: WB9a — SYNTEZA: JAK SIĘ ŁĄCZY ============ -->
 <div class="slide" data-slide="10">
   <div class="slide-header">
+    <div class="block-badge badge-synth">SYNTEZA</div>
     <div class="slide-title">Synteza — jak 3 frameworki się łączą</div>
   </div>
   <div class="board">
@@ -1623,6 +1716,7 @@
 <!-- ============ SLIDE 11: WB9b — 3 PYTANIA DO WŁAŚCICIELA ============ -->
 <div class="slide" data-slide="11">
   <div class="slide-header">
+    <div class="block-badge badge-synth">SYNTEZA</div>
     <div class="slide-title">3 pytania do właściciela</div>
     <div class="slide-subtitle">Pytania, które zadałbym gdybym miał godzinę</div>
   </div>
@@ -1773,6 +1867,9 @@
     document.getElementById('prevBtn').disabled = current === 0;
     document.getElementById('nextBtn').disabled = current === total - 1;
     timelineItems[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    // Progress bar
+    const pct = ((current + 1) / total) * 100;
+    document.getElementById('progressBar').style.width = pct + '%';
   }
 
   function changeSlide(dir) {
