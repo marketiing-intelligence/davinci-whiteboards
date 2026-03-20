@@ -607,44 +607,6 @@
     border-radius: 0 2px 2px 0;
   }
 
-  /* BLOCK LABELS IN TIMELINE */
-  .timeline-sep {
-    flex-shrink: 0;
-    padding: 6px 8px;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: #fff;
-    border-radius: 6px;
-    white-space: nowrap;
-    user-select: none;
-    opacity: 0.85;
-  }
-  .timeline-sep.sep-intro { background: var(--dim); }
-  .timeline-sep.sep-b1 { background: var(--green); }
-  .timeline-sep.sep-b2 { background: var(--blue); }
-  .timeline-sep.sep-b3 { background: var(--yellow); }
-  .timeline-sep.sep-synth { background: var(--accent); }
-
-  /* BLOCK BADGE ON SLIDES */
-  .block-badge {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #fff;
-    margin-bottom: 6px;
-  }
-  .block-badge.badge-intro { background: var(--dim); }
-  .block-badge.badge-b1 { background: var(--green); }
-  .block-badge.badge-b2 { background: var(--blue); }
-  .block-badge.badge-b3 { background: var(--yellow); color: #1a1a1a; }
-  .block-badge.badge-synth { background: var(--accent); }
-
   /* TEMPLATE SLIDE ENHANCEMENTS */
   .slide .board.template-board {
     border: 2px dashed var(--accent);
@@ -969,22 +931,18 @@
 
 <!-- TIMELINE -->
 <div class="timeline" id="timeline">
-  <div class="timeline-item active" onclick="goToSlide(0)">Karta Marbo</div>
-  <div class="timeline-item" onclick="goToSlide(1)">Baza Wiedzy: Publiczne</div>
-  <div class="timeline-item" onclick="goToSlide(2)" style="border:1px dashed var(--board-border);font-style:italic;">Baza Wiedzy: Wewnętrzne</div>
-  <div class="timeline-sep sep-b1">B1</div>
-  <div class="timeline-item" onclick="goToSlide(3)">Profit Tree</div>
-  <div class="timeline-item" onclick="goToSlide(4)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Profit Tree</div>
-  <div class="timeline-sep sep-b2">B2</div>
-  <div class="timeline-item" onclick="goToSlide(5)">Value Chain</div>
-  <div class="timeline-item" onclick="goToSlide(6)">Mapa Pozycjonowania</div>
-  <div class="timeline-item" onclick="goToSlide(7)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Łańcuch</div>
-  <div class="timeline-sep sep-b3">B3</div>
-  <div class="timeline-item" onclick="goToSlide(8)">Ansoff Matrix</div>
-  <div class="timeline-item" onclick="goToSlide(9)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Ansoff</div>
-  <div class="timeline-sep sep-synth">SYN</div>
-  <div class="timeline-item" onclick="goToSlide(10)">Synteza</div>
-  <div class="timeline-item" onclick="goToSlide(11)">3 Pytania</div>
+  <div class="timeline-item active" onclick="goToSlide(0)">INTRO Karta Marbo</div>
+  <div class="timeline-item" onclick="goToSlide(1)">INTRO Baza Wiedzy: Publiczne</div>
+  <div class="timeline-item" onclick="goToSlide(2)" style="border:1px dashed var(--board-border);font-style:italic;">INTRO Baza Wiedzy: Wewnętrzne</div>
+  <div class="timeline-item" onclick="goToSlide(3)">B1 Profit Tree</div>
+  <div class="timeline-item" onclick="goToSlide(4)" style="border:1px dashed var(--board-border);font-style:italic;">B1 Twój Profit Tree</div>
+  <div class="timeline-item" onclick="goToSlide(5)">B2 Value Chain</div>
+  <div class="timeline-item" onclick="goToSlide(6)">B2 Mapa Pozycjonowania</div>
+  <div class="timeline-item" onclick="goToSlide(7)" style="border:1px dashed var(--board-border);font-style:italic;">B2 Twój Łańcuch</div>
+  <div class="timeline-item" onclick="goToSlide(8)">B3 Ansoff Matrix</div>
+  <div class="timeline-item" onclick="goToSlide(9)" style="border:1px dashed var(--board-border);font-style:italic;">B3 Twój Ansoff</div>
+  <div class="timeline-item" onclick="goToSlide(10)">SYN Synteza</div>
+  <div class="timeline-item" onclick="goToSlide(11)">SYN 3 Pytania</div>
 </div>
 
 <div class="main">
