@@ -1009,7 +1009,7 @@
 <div class="header">
   <div class="header-left">
     <h1 style="font-family:'Outfit',sans-serif;"><span>Pełny Rozbiór</span> &mdash; EP#1 Marbo Sport</h1>
-    <div class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">12</span></div>
+    <div class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">15</span></div>
   </div>
   <div class="nav-controls">
     <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">&#8592;</button>
@@ -1018,7 +1018,7 @@
 </div>
 
 <!-- PROGRESS BAR -->
-<div class="progress-bar" id="progressBar" style="width:8.33%"></div>
+<div class="progress-bar" id="progressBar" style="width:6.67%"></div>
 
 <!-- SECTION TABS -->
 <div class="section-tabs" id="sectionTabs">
@@ -1036,13 +1036,16 @@
   <div class="timeline-item" data-section="intro" onclick="goToSlide(2)" style="border:1px dashed var(--board-border);font-style:italic;">Baza Wiedzy: Wewnętrzne</div>
   <div class="timeline-item" data-section="b1" onclick="goToSlide(3)">Profit Tree</div>
   <div class="timeline-item" data-section="b1" onclick="goToSlide(4)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Profit Tree</div>
-  <div class="timeline-item" data-section="b2" onclick="goToSlide(5)">Value Chain</div>
-  <div class="timeline-item" data-section="b2" onclick="goToSlide(6)">Mapa Pozycjonowania</div>
-  <div class="timeline-item" data-section="b2" onclick="goToSlide(7)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Łańcuch</div>
-  <div class="timeline-item" data-section="b3" onclick="goToSlide(8)">Ansoff Matrix</div>
-  <div class="timeline-item" data-section="b3" onclick="goToSlide(9)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Ansoff</div>
-  <div class="timeline-item" data-section="syn" onclick="goToSlide(10)">Synteza</div>
-  <div class="timeline-item" data-section="syn" onclick="goToSlide(11)">3 Pytania</div>
+  <div class="timeline-item" data-section="b1" onclick="goToSlide(5)">BCG Matrix</div>
+  <div class="timeline-item" data-section="b2" onclick="goToSlide(6)">Value Chain</div>
+  <div class="timeline-item" data-section="b2" onclick="goToSlide(7)">Mapa Pozycjonowania</div>
+  <div class="timeline-item" data-section="b2" onclick="goToSlide(8)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Łańcuch</div>
+  <div class="timeline-item" data-section="b2" onclick="goToSlide(9)">Blue Ocean</div>
+  <div class="timeline-item" data-section="b3" onclick="goToSlide(10)">Ansoff Matrix</div>
+  <div class="timeline-item" data-section="b3" onclick="goToSlide(11)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Ansoff</div>
+  <div class="timeline-item" data-section="b3" onclick="goToSlide(12)">TOC: Wąskie Gardło</div>
+  <div class="timeline-item" data-section="syn" onclick="goToSlide(13)">Synteza</div>
+  <div class="timeline-item" data-section="syn" onclick="goToSlide(14)">3 Pytania</div>
 </div>
 
 <div class="main">
@@ -1402,8 +1405,81 @@
   </div>
 </div>
 
-<!-- ============ SLIDE 5: WB4 — VALUE CHAIN (z danymi Marbo) ============ -->
+<!-- ============ SLIDE 5: BCG MATRIX — PORTFOLIO PRODUKTÓW (z danymi Marbo) ============ -->
 <div class="slide" data-slide="5">
+  <div class="slide-header">
+    <div class="slide-title">B1: BCG Matrix — 7 linii Marbo</div>
+    <div class="slide-subtitle">Które produkty karmisz, a które cię jedzą?</div>
+  </div>
+  <div class="board">
+    <div class="board-title">BCG MATRIX — PORTFOLIO MARBO</div>
+    <!-- 2x2 BCG grid -->
+    <div style="max-width:700px;margin:0 auto;">
+      <div style="display:flex;justify-content:center;gap:0;margin-bottom:4px;">
+        <div style="width:50%;text-align:center;font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Wysoki udział rynku</div>
+        <div style="width:50%;text-align:center;font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Niski udział rynku</div>
+      </div>
+      <div style="display:flex;gap:0;">
+        <div style="writing-mode:vertical-lr;transform:rotate(180deg);text-align:center;padding-right:8px;font-size:14px;color:var(--dim);font-family:'DM Sans',sans-serif;">
+          Niski wzrost ← → Wysoki wzrost
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;flex:1;">
+          <!-- Stars (wysoki wzrost, wysoki udział) -->
+          <div style="padding:16px;border:2px solid var(--yellow);border-radius:12px;background:rgba(184,134,11,0.04);">
+            <div style="font-size:16px;font-weight:700;color:var(--yellow);margin-bottom:10px;">⭐ STARS</div>
+            <div style="padding:10px;border-left:3px solid var(--yellow);border-radius:6px;background:rgba(184,134,11,0.04);margin-bottom:6px;">
+              <div style="font-size:15px;font-weight:600;color:var(--text);">Semi-Pro</div>
+              <div style="font-size:13px;color:var(--dim);">70 SKU — home gym upgraders, aktywnie rozwijane</div>
+            </div>
+          </div>
+          <!-- Question Marks (wysoki wzrost, niski udział) -->
+          <div style="padding:16px;border:2px solid var(--accent);border-radius:12px;background:rgba(229,168,75,0.04);">
+            <div style="font-size:16px;font-weight:700;color:var(--accent);margin-bottom:10px;">❓ QUESTION MARKS</div>
+            <div style="padding:10px;border-left:3px solid var(--accent);border-radius:6px;background:rgba(229,168,75,0.04);margin-bottom:6px;">
+              <div style="font-size:15px;font-weight:600;color:var(--text);">Functional Training</div>
+              <div style="font-size:13px;color:var(--dim);">61 SKU — CrossFit trend, ale silne importy</div>
+            </div>
+            <div style="padding:10px;border-left:3px solid var(--accent);border-radius:6px;background:rgba(229,168,75,0.04);">
+              <div style="font-size:15px;font-weight:600;color:var(--text);">GARDEN / Outdoor</div>
+              <div style="font-size:13px;color:var(--dim);">24 SKU + nowa linia — dotacja EU 6M, rynek niepewny</div>
+            </div>
+          </div>
+          <!-- Cash Cows (niski wzrost, wysoki udział) -->
+          <div style="padding:16px;border:2px solid var(--green);border-radius:12px;background:rgba(26,138,74,0.04);">
+            <div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:10px;">🐄 CASH COWS</div>
+            <div style="padding:10px;border-left:3px solid var(--green);border-radius:6px;background:rgba(26,138,74,0.04);margin-bottom:6px;">
+              <div style="font-size:15px;font-weight:600;color:var(--text);">Home</div>
+              <div style="font-size:13px;color:var(--dim);">100+ SKU — rdzeń, największy wolumen</div>
+            </div>
+            <div style="padding:10px;border-left:3px solid var(--green);border-radius:6px;background:rgba(26,138,74,0.04);margin-bottom:6px;">
+              <div style="font-size:15px;font-weight:600;color:var(--text);">Professional</div>
+              <div style="font-size:13px;color:var(--dim);">69 SKU — B2B, certyfikaty, stabilne zamówienia</div>
+            </div>
+            <div style="padding:10px;border-left:3px solid var(--green);border-radius:6px;background:rgba(26,138,74,0.04);">
+              <div style="font-size:15px;font-weight:600;color:var(--text);">Free Weight</div>
+              <div style="font-size:13px;color:var(--dim);">12 SKU — niszowe, stały popyt, niska konkurencja PL</div>
+            </div>
+          </div>
+          <!-- Dogs (niski wzrost, niski udział) -->
+          <div style="padding:16px;border:2px solid var(--red);border-radius:12px;background:rgba(204,51,51,0.04);">
+            <div style="font-size:16px;font-weight:700;color:var(--red);margin-bottom:10px;">🐕 DOGS</div>
+            <div style="padding:10px;border-left:3px solid var(--red);border-radius:6px;background:rgba(204,51,51,0.04);">
+              <div style="font-size:15px;font-weight:600;color:var(--text);">Combat</div>
+              <div style="font-size:13px;color:var(--dim);">~20 SKU — niszowy, Venum i Hayashi dominują</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="insight">
+      <div class="insight-main">Cash Cows finansują resztę. GARDEN to największy bet — 6M na linię bez potwierdzonego rynku.</div>
+      <div class="insight-sub">Brak danych o przychodach per linia — klasyfikacja z publicznych sygnałów.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 6: WB4 — VALUE CHAIN (z danymi Marbo) ============ -->
+<div class="slide" data-slide="6">
   <div class="slide-header">
     <div class="slide-title">B2: Value Chain — Marbo Sport</div>
     <div class="slide-subtitle">Łańcuch wartości — ocena 6 ogniw</div>
@@ -1470,8 +1546,8 @@
   </div>
 </div>
 
-<!-- ============ SLIDE 6: WB5 — MAPA POZYCJONOWANIA ============ -->
-<div class="slide" data-slide="6">
+<!-- ============ SLIDE 7: WB5 — MAPA POZYCJONOWANIA ============ -->
+<div class="slide" data-slide="7">
   <div class="slide-header">
     <div class="slide-title">B2: Mapa Pozycjonowania — fitness PL</div>
     <div class="slide-subtitle">Import ↔ Made in PL × Tani ↔ Drogi</div>
@@ -1540,8 +1616,8 @@
   </div>
 </div>
 
-<!-- ============ SLIDE 7: WB6 — VALUE CHAIN (pusty szablon) ============ -->
-<div class="slide" data-slide="7">
+<!-- ============ SLIDE 8: WB6 — VALUE CHAIN (pusty szablon) ============ -->
+<div class="slide" data-slide="8">
   <div class="slide-header">
     <div class="slide-title">B2: Twój Value Chain — wypełnij dla swojej firmy</div>
     <div class="slide-subtitle">Zescreenuj i oceń swoje ogniwa</div>
@@ -1588,8 +1664,107 @@
   </div>
 </div>
 
-<!-- ============ SLIDE 8: WB7 — ANSOFF MATRIX (z danymi Marbo) ============ -->
-<div class="slide" data-slide="8">
+<!-- ============ SLIDE 9: BLUE OCEAN — STRATEGY CANVAS (z danymi Marbo) ============ -->
+<div class="slide" data-slide="9">
+  <div class="slide-header">
+    <div class="slide-title">B2: Blue Ocean — Strategy Canvas</div>
+    <div class="slide-subtitle">Czynniki konkurencji — kto ma co? Gdzie pusta przestrzeń?</div>
+  </div>
+  <div class="board">
+    <div class="board-title">STRATEGY CANVAS — FITNESS PL</div>
+    <!-- Comparison table -->
+    <div style="overflow-x:auto;margin-bottom:28px;">
+      <table class="channel-table" style="min-width:600px;">
+        <thead>
+          <tr>
+            <th style="width:30%;">Czynnik</th>
+            <th style="text-align:center;">HMS</th>
+            <th style="text-align:center;">K-Sport</th>
+            <th style="text-align:center;color:var(--accent);font-size:17px;">MARBO</th>
+            <th style="text-align:center;">ATX</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cena (niższa = lepsza)</td>
+            <td style="text-align:center;">7</td>
+            <td style="text-align:center;">9</td>
+            <td style="text-align:center;font-weight:700;">5</td>
+            <td style="text-align:center;">2</td>
+          </tr>
+          <tr>
+            <td>Szerokość oferty (SKU)</td>
+            <td style="text-align:center;">9</td>
+            <td style="text-align:center;">4</td>
+            <td style="text-align:center;font-weight:700;">7</td>
+            <td style="text-align:center;">6</td>
+          </tr>
+          <tr>
+            <td>Certyfikaty bezpieczeństwa</td>
+            <td style="text-align:center;">3</td>
+            <td style="text-align:center;">2</td>
+            <td style="text-align:center;font-weight:700;color:var(--green);">9</td>
+            <td style="text-align:center;">8</td>
+          </tr>
+          <tr>
+            <td>Serwis / części zamienne</td>
+            <td style="text-align:center;">4</td>
+            <td style="text-align:center;">2</td>
+            <td style="text-align:center;font-weight:700;color:var(--green);">9</td>
+            <td style="text-align:center;">5</td>
+          </tr>
+          <tr>
+            <td>"Made in Poland"</td>
+            <td style="text-align:center;">1</td>
+            <td style="text-align:center;">8</td>
+            <td style="text-align:center;font-weight:700;color:var(--green);">10</td>
+            <td style="text-align:center;">1</td>
+          </tr>
+          <tr>
+            <td style="color:var(--red);font-weight:700;">Content / edukacja</td>
+            <td style="text-align:center;">3</td>
+            <td style="text-align:center;">1</td>
+            <td style="text-align:center;font-weight:700;color:var(--red);">3</td>
+            <td style="text-align:center;">4</td>
+          </tr>
+          <tr>
+            <td>Design / estetyka</td>
+            <td style="text-align:center;">5</td>
+            <td style="text-align:center;">2</td>
+            <td style="text-align:center;font-weight:700;">5</td>
+            <td style="text-align:center;">9</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- ERRC framework -->
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:640px;margin:0 auto;">
+      <div style="padding:14px;border-radius:10px;border-left:4px solid var(--dim);background:rgba(0,0,0,0.02);">
+        <div style="font-size:13px;font-weight:700;color:var(--dim);margin-bottom:4px;">ZBADAJ</div>
+        <div style="font-size:14px;color:var(--text);line-height:1.5;">Resale HMS (8,9M) — uzupełnienie czy kanibalizacja?</div>
+      </div>
+      <div style="padding:14px;border-radius:10px;border-left:4px solid var(--yellow);background:rgba(184,134,11,0.03);">
+        <div style="font-size:13px;font-weight:700;color:var(--yellow);margin-bottom:4px;">ROZWAŻ REDUKCJĘ</div>
+        <div style="font-size:14px;color:var(--text);line-height:1.5;">Liczba frontów (DE + GARDEN naraz)</div>
+      </div>
+      <div style="padding:14px;border-radius:10px;border-left:4px solid var(--blue);background:rgba(37,99,235,0.03);">
+        <div style="font-size:13px;font-weight:700;color:var(--blue);margin-bottom:4px;">PODNIEŚ</div>
+        <div style="font-size:14px;color:var(--text);line-height:1.5;">Content marketing — 3/10 → potencjał na 9/10</div>
+      </div>
+      <div style="padding:14px;border-radius:10px;border-left:4px solid var(--green);background:rgba(26,138,74,0.03);">
+        <div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:4px;">STWÓRZ</div>
+        <div style="font-size:14px;color:var(--text);line-height:1.5;">"Marbo Academy" — edukacja + community dla home gym</div>
+      </div>
+    </div>
+    <div class="insight" style="border-color:var(--blue);background:rgba(37,99,235,0.03);">
+      <div class="insight-main" style="color:var(--blue);">Żaden producent fitness w PL nie uczy klientów.</div>
+      <div class="insight-sub">Marbo ma wiedzę, certyfikaty, serwis — brakuje narracji. To jest Blue Ocean.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 10: WB7 — ANSOFF MATRIX (z danymi Marbo) ============ -->
+<div class="slide" data-slide="10">
   <div class="slide-header">
     <div class="slide-title">B3: Ansoff Matrix — Marbo Sport</div>
     <div class="slide-subtitle">4 kierunki wzrostu — ile naraz?</div>
@@ -1660,8 +1835,8 @@
   </div>
 </div>
 
-<!-- ============ SLIDE 9: WB8 — ANSOFF MATRIX (pusty szablon) ============ -->
-<div class="slide" data-slide="9">
+<!-- ============ SLIDE 11: WB8 — ANSOFF MATRIX (pusty szablon) ============ -->
+<div class="slide" data-slide="11">
   <div class="slide-header">
     <div class="slide-title">B3: Twoja Ansoff Matrix — wypełnij dla swojej firmy</div>
     <div class="slide-subtitle">Wpisz swoje projekty i plany w odpowiednie kwadranty</div>
@@ -1723,8 +1898,85 @@
   </div>
 </div>
 
-<!-- ============ SLIDE 10: WB9a — SYNTEZA: JAK SIĘ ŁĄCZY ============ -->
-<div class="slide" data-slide="10">
+<!-- ============ SLIDE 12: TOC — WĄSKIE GARDŁO (z danymi Marbo) ============ -->
+<div class="slide" data-slide="12">
+  <div class="slide-header">
+    <div class="slide-title">B3: Theory of Constraints — Marbo Sport</div>
+    <div class="slide-subtitle">5 kroków Goldratta — gdzie jest wąskie gardło?</div>
+  </div>
+  <div class="board">
+    <div class="board-title">WĄSKIE GARDŁO — MARBO SPORT</div>
+    <!-- Chain: 5 ogniw -->
+    <div class="chain" style="margin-bottom:32px;">
+      <div class="chain-link bottleneck" style="min-width:110px;">
+        <span class="chain-badge">🔴</span>
+        Ludzie
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-link strong" style="min-width:110px;">
+        <span class="chain-badge">✅</span>
+        Maszyny
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-link strong" style="min-width:110px;">
+        <span class="chain-badge">✅</span>
+        Produkcja
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-link weak" style="min-width:110px;">
+        <span class="chain-badge">⚠️</span>
+        Sprzedaż
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-link" style="min-width:110px;border-color:var(--dim);color:var(--dim);">
+        Cash
+      </div>
+    </div>
+    <!-- Sygnały -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:700px;margin:0 auto;">
+      <div style="padding:16px;border-radius:12px;border-left:4px solid var(--red);background:rgba(204,51,51,0.03);">
+        <div style="font-size:15px;font-weight:700;color:var(--red);margin-bottom:6px;">HIPOTEZA: Ludzie = constraint</div>
+        <div style="font-size:13px;color:var(--dim);line-height:1.6;">GoWork 2,5/5 (selection bias!)<br>Rekurencyjne ogłoszenia o pracę<br>Starachowice = 30K mieszkańców<br>Wynagrodzenia +24% r/r</div>
+      </div>
+      <div style="padding:16px;border-radius:12px;border-left:4px solid var(--green);background:rgba(26,138,74,0.03);">
+        <div style="font-size:15px;font-weight:700;color:var(--green);margin-bottom:6px;">CAPEX 10M → Maszyny</div>
+        <div style="font-size:13px;color:var(--dim);line-height:1.6;">Modernizacja produkcji ✅<br>Dotacje EU pokrywają ~52%<br>Nowe maszyny = nowe moce<br>ALE: kto je obsłuży?</div>
+      </div>
+    </div>
+    <!-- 5-step Goldratt -->
+    <div style="margin-top:28px;max-width:600px;margin-left:auto;margin-right:auto;">
+      <div style="font-size:13px;font-weight:600;color:var(--dim);letter-spacing:0.5px;margin-bottom:10px;">5 KROKÓW GOLDRATTA:</div>
+      <div class="flow" style="gap:8px;">
+        <div class="flow-step" style="border-color:var(--red);background:rgba(204,51,51,0.04);font-size:14px;padding:10px 18px;">
+          1. IDENTIFY → Constraint = ludzie (hipoteza)
+        </div>
+        <div class="flow-arrow" style="font-size:18px;">↓</div>
+        <div class="flow-step" style="border-color:var(--yellow);font-size:14px;padding:10px 18px;">
+          2. EXPLOIT → BHP, transparentność inwestycji, przegląd wynagrodzeń
+        </div>
+        <div class="flow-arrow" style="font-size:18px;">↓</div>
+        <div class="flow-step" style="border-color:var(--accent);font-size:14px;padding:10px 18px;">
+          3. SUBORDINATE → DE czeka, GARDEN czeka, aż kadra stabilna
+        </div>
+        <div class="flow-arrow" style="font-size:18px;">↓</div>
+        <div class="flow-step" style="border-color:var(--blue);font-size:14px;padding:10px 18px;">
+          4. ELEVATE → Employer branding, szkoły zawodowe, benefity
+        </div>
+        <div class="flow-arrow" style="font-size:18px;">↓</div>
+        <div class="flow-step" style="border-color:var(--dim);font-size:14px;padding:10px 18px;">
+          5. REPEAT → Nowy constraint: kanały sprzedaży? cashflow?
+        </div>
+      </div>
+    </div>
+    <div class="insight" style="border-color:var(--red);background:rgba(204,51,51,0.03);">
+      <div class="insight-main" style="color:var(--red);">10M w maszyny, ale kto je obsłuży?</div>
+      <div class="insight-sub">Systems (7S) zaadresowane. Staff (7S) — sygnały, że nie.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 13: WB9a — SYNTEZA: JAK SIĘ ŁĄCZY ============ -->
+<div class="slide" data-slide="13">
   <div class="slide-header">
     <div class="slide-title">Synteza — jak 3 frameworki się łączą</div>
   </div>
@@ -1765,8 +2017,8 @@
   </div>
 </div>
 
-<!-- ============ SLIDE 11: WB9b — 3 PYTANIA DO WŁAŚCICIELA ============ -->
-<div class="slide" data-slide="11">
+<!-- ============ SLIDE 14: WB9b — 3 PYTANIA DO WŁAŚCICIELA ============ -->
+<div class="slide" data-slide="14">
   <div class="slide-header">
     <div class="slide-title">3 pytania do właściciela</div>
     <div class="slide-subtitle">Pytania, które zadałbym gdybym miał godzinę</div>
@@ -1914,10 +2166,10 @@
   // Map slide indices to sections
   const slideSection = {
     0:'intro', 1:'intro', 2:'intro',
-    3:'b1', 4:'b1',
-    5:'b2', 6:'b2', 7:'b2',
-    8:'b3', 9:'b3',
-    10:'syn', 11:'syn'
+    3:'b1', 4:'b1', 5:'b1',
+    6:'b2', 7:'b2', 8:'b2', 9:'b2',
+    10:'b3', 11:'b3', 12:'b3',
+    13:'syn', 14:'syn'
   };
 
   function switchSection(section) {
