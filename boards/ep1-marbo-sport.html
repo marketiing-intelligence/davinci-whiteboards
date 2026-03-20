@@ -90,12 +90,45 @@
   .nav-btn:disabled { opacity: 0.3; cursor: default; }
 
   /* TIMELINE */
-  .timeline {
+  /* SECTION TABS */
+  .section-tabs {
     position: fixed;
     top: 61px; left: 0; right: 0;
     z-index: 99;
-    background: rgba(245,245,240,0.9);
+    background: rgba(245,245,240,0.95);
+    backdrop-filter: blur(10px);
     padding: 8px 24px;
+    display: flex;
+    gap: 6px;
+    border-bottom: 1px solid var(--board-border);
+  }
+  .section-tab {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--board-border);
+    color: var(--dim);
+    transition: all 0.2s;
+  }
+  .section-tab:hover { color: var(--text); border-color: var(--text); }
+  .section-tab.active {
+    background: var(--chalk);
+    color: #fff;
+    border-color: var(--chalk);
+  }
+
+  /* TIMELINE (sub-items) */
+  .timeline {
+    position: fixed;
+    top: 100px; left: 0; right: 0;
+    z-index: 98;
+    background: rgba(245,245,240,0.9);
+    padding: 6px 24px;
     display: flex;
     gap: 4px;
     overflow-x: auto;
@@ -105,7 +138,7 @@
   .timeline::-webkit-scrollbar { display: none; }
   .timeline-item {
     flex-shrink: 0;
-    padding: 6px 12px;
+    padding: 5px 12px;
     border-radius: 6px;
     font-size: 11px;
     font-weight: 500;
@@ -116,6 +149,7 @@
     transition: all 0.2s;
     white-space: nowrap;
   }
+  .timeline-item.hidden { display: none; }
   .timeline-item:hover { color: var(--text); border-color: var(--board-border); }
   .timeline-item.active {
     background: var(--chalk);
@@ -125,7 +159,7 @@
 
   /* MAIN CONTENT */
   .main {
-    padding: 120px 24px 40px;
+    padding: 150px 24px 40px;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -929,20 +963,29 @@
 <!-- PROGRESS BAR -->
 <div class="progress-bar" id="progressBar" style="width:8.33%"></div>
 
+<!-- SECTION TABS -->
+<div class="section-tabs" id="sectionTabs">
+  <button class="section-tab active" data-section="intro" onclick="switchSection('intro')">INTRO</button>
+  <button class="section-tab" data-section="b1" onclick="switchSection('b1')">B1</button>
+  <button class="section-tab" data-section="b2" onclick="switchSection('b2')">B2</button>
+  <button class="section-tab" data-section="b3" onclick="switchSection('b3')">B3</button>
+  <button class="section-tab" data-section="syn" onclick="switchSection('syn')">SYNTEZA</button>
+</div>
+
 <!-- TIMELINE -->
 <div class="timeline" id="timeline">
-  <div class="timeline-item active" onclick="goToSlide(0)">INTRO Karta Marbo</div>
-  <div class="timeline-item" onclick="goToSlide(1)">INTRO Baza Wiedzy: Publiczne</div>
-  <div class="timeline-item" onclick="goToSlide(2)" style="border:1px dashed var(--board-border);font-style:italic;">INTRO Baza Wiedzy: Wewnętrzne</div>
-  <div class="timeline-item" onclick="goToSlide(3)">B1 Profit Tree</div>
-  <div class="timeline-item" onclick="goToSlide(4)" style="border:1px dashed var(--board-border);font-style:italic;">B1 Twój Profit Tree</div>
-  <div class="timeline-item" onclick="goToSlide(5)">B2 Value Chain</div>
-  <div class="timeline-item" onclick="goToSlide(6)">B2 Mapa Pozycjonowania</div>
-  <div class="timeline-item" onclick="goToSlide(7)" style="border:1px dashed var(--board-border);font-style:italic;">B2 Twój Łańcuch</div>
-  <div class="timeline-item" onclick="goToSlide(8)">B3 Ansoff Matrix</div>
-  <div class="timeline-item" onclick="goToSlide(9)" style="border:1px dashed var(--board-border);font-style:italic;">B3 Twój Ansoff</div>
-  <div class="timeline-item" onclick="goToSlide(10)">SYN Synteza</div>
-  <div class="timeline-item" onclick="goToSlide(11)">SYN 3 Pytania</div>
+  <div class="timeline-item active" data-section="intro" onclick="goToSlide(0)">Karta Marbo</div>
+  <div class="timeline-item" data-section="intro" onclick="goToSlide(1)">Baza Wiedzy: Publiczne</div>
+  <div class="timeline-item" data-section="intro" onclick="goToSlide(2)" style="border:1px dashed var(--board-border);font-style:italic;">Baza Wiedzy: Wewnętrzne</div>
+  <div class="timeline-item" data-section="b1" onclick="goToSlide(3)">Profit Tree</div>
+  <div class="timeline-item" data-section="b1" onclick="goToSlide(4)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Profit Tree</div>
+  <div class="timeline-item" data-section="b2" onclick="goToSlide(5)">Value Chain</div>
+  <div class="timeline-item" data-section="b2" onclick="goToSlide(6)">Mapa Pozycjonowania</div>
+  <div class="timeline-item" data-section="b2" onclick="goToSlide(7)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Łańcuch</div>
+  <div class="timeline-item" data-section="b3" onclick="goToSlide(8)">Ansoff Matrix</div>
+  <div class="timeline-item" data-section="b3" onclick="goToSlide(9)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Ansoff</div>
+  <div class="timeline-item" data-section="syn" onclick="goToSlide(10)">Synteza</div>
+  <div class="timeline-item" data-section="syn" onclick="goToSlide(11)">3 Pytania</div>
 </div>
 
 <div class="main">
@@ -1799,12 +1842,44 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
 <script>
-  // ===== SLIDE NAVIGATION =====
+  // ===== SECTION & SLIDE NAVIGATION =====
   let current = 0;
+  let activeSection = 'intro';
   const slides = document.querySelectorAll('.slide');
   const timelineItems = document.querySelectorAll('.timeline-item');
+  const sectionTabs = document.querySelectorAll('.section-tab');
   const total = slides.length;
   document.getElementById('totalSlides').textContent = total;
+
+  // Map slide indices to sections
+  const slideSection = {
+    0:'intro', 1:'intro', 2:'intro',
+    3:'b1', 4:'b1',
+    5:'b2', 6:'b2', 7:'b2',
+    8:'b3', 9:'b3',
+    10:'syn', 11:'syn'
+  };
+
+  function switchSection(section) {
+    activeSection = section;
+    // Update section tabs
+    sectionTabs.forEach(t => t.classList.toggle('active', t.dataset.section === section));
+    // Show/hide timeline items
+    timelineItems.forEach(item => {
+      item.classList.toggle('hidden', item.dataset.section !== section);
+    });
+    // If current slide not in this section, jump to first slide of section
+    if (slideSection[current] !== section) {
+      const firstInSection = [...timelineItems].find(t => t.dataset.section === section);
+      if (firstInSection) {
+        const idx = parseInt(firstInSection.getAttribute('onclick').match(/\d+/)[0]);
+        saveCurrentSlideDrawing();
+        current = idx;
+        updateSlide();
+        loadCurrentSlideDrawing();
+      }
+    }
+  }
 
   function updateSlide() {
     slides.forEach(s => s.classList.remove('active'));
@@ -1818,6 +1893,15 @@
     // Progress bar
     const pct = ((current + 1) / total) * 100;
     document.getElementById('progressBar').style.width = pct + '%';
+    // Auto-switch section tab when navigating
+    const section = slideSection[current];
+    if (section !== activeSection) {
+      activeSection = section;
+      sectionTabs.forEach(t => t.classList.toggle('active', t.dataset.section === section));
+      timelineItems.forEach(item => {
+        item.classList.toggle('hidden', item.dataset.section !== section);
+      });
+    }
   }
 
   function changeSlide(dir) {
@@ -1837,6 +1921,9 @@
     updateSlide();
     loadCurrentSlideDrawing();
   }
+
+  // Initialize: show only intro section items
+  switchSection('intro');
 
   // ===== DRAWING SYSTEM =====
   let drawingMode = false;
