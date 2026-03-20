@@ -177,32 +177,33 @@
   }
 
   .slide-header {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
   .slide-title {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 700;
     font-family: 'Outfit', sans-serif;
     color: var(--text);
+    letter-spacing: -0.3px;
   }
   .slide-subtitle {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--dim);
-    margin-top: 4px;
-    font-style: italic;
+    margin-top: 6px;
+    font-family: 'DM Sans', sans-serif;
   }
 
   /* WHITEBOARD */
   .board {
     background: var(--board-bg);
     border: 1px solid var(--board-border);
-    border-radius: 16px;
-    padding: 40px;
+    border-radius: 20px;
+    padding: 48px;
     min-height: 500px;
     position: relative;
     overflow: hidden;
     font-family: 'DM Sans', sans-serif;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
   }
 
   /* BOARD ELEMENTS */
@@ -472,18 +473,7 @@
     font-size: 28px;
     color: var(--chalk-dim);
   }
-  .flow-result {
-    padding: 20px 30px;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: 700;
-    text-align: center;
-    background: rgba(229,168,75,0.1);
-    border: 2px solid var(--accent);
-    color: var(--accent);
-    max-width: 500px;
-    width: 100%;
-  }
+  /* flow-result is defined below in the new components section */
 
   /* INVESTMENT COMPARISON */
   .invest-compare {
@@ -661,9 +651,74 @@
     border-radius: 20px;
   }
 
-  /* IMPROVED BOARD */
-  .board {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 32px rgba(0,0,0,0.06);
+  /* INSIGHT CALLOUT (standardized bottom-of-slide callout) */
+  .insight {
+    text-align: center;
+    margin-top: 32px;
+    padding: 20px 24px;
+    border: 2px dashed var(--accent);
+    border-radius: 14px;
+    background: rgba(229,168,75,0.04);
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .insight-main {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.4;
+  }
+  .insight-sub {
+    font-size: 15px;
+    color: var(--dim);
+    margin-top: 6px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* HERO NUMBER (key metric that needs to POP) */
+  .hero-num {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 36px;
+    border-radius: 16px;
+    border: 3px solid var(--accent);
+    background: rgba(229,168,75,0.06);
+  }
+  .hero-num .label {
+    font-size: 14px;
+    color: var(--dim);
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 4px;
+  }
+  .hero-num .number {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -1px;
+  }
+  .hero-num .delta {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .hero-num .delta.up { color: var(--green); }
+  .hero-num .delta.down { color: var(--red); }
+
+  /* FLOW RESULT (overwrite old oversized style) */
+  .flow-result {
+    padding: 16px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    background: rgba(0,0,0,0.02);
+    border: 1px solid var(--board-border);
+    color: var(--text);
+    max-width: 600px;
+    width: 100%;
   }
 
   /* KEYBOARD HINT */
@@ -999,8 +1054,26 @@
   </div>
   <div class="board">
     <div class="board-title">MARBO SPORT</div>
+    <!-- Hero metrics row -->
+    <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:32px;">
+      <div class="hero-num">
+        <span class="label">Przychód (2024)</span>
+        <span class="number">66,6M PLN</span>
+        <span class="delta up">+12% r/r</span>
+      </div>
+      <div class="hero-num" style="border-color:var(--text);">
+        <span class="label">Zysk netto</span>
+        <span class="number" style="color:var(--text);">2,95M</span>
+        <span class="delta down">-13% r/r</span>
+      </div>
+      <div class="hero-num" style="border-color:var(--yellow);">
+        <span class="label">Marża netto</span>
+        <span class="number" style="color:var(--yellow);font-size:32px;">4,5%</span>
+      </div>
+    </div>
+    <!-- Details grid -->
     <div class="info-card">
-      <div class="info-grid" style="max-width:800px;margin:0 auto;">
+      <div class="info-grid" style="max-width:700px;margin:0 auto;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));">
         <div class="info-item">
           <span class="label">Branża</span>
           <span class="value">Sprzęt fitness</span>
@@ -1010,24 +1083,12 @@
           <span class="value">Starachowice</span>
         </div>
         <div class="info-item">
-          <span class="label">Przychód (2024)</span>
-          <span class="value accent" style="font-size:28px;">66,6M PLN</span>
-        </div>
-        <div class="info-item">
-          <span class="label">Zysk netto</span>
-          <span class="value">2,95M PLN</span>
-        </div>
-        <div class="info-item">
-          <span class="label">Marża netto</span>
-          <span class="value">4,5%</span>
-        </div>
-        <div class="info-item">
           <span class="label">Zatrudnienie</span>
-          <span class="value" style="color:var(--yellow);font-style:italic;">~100-150 osób (est.)</span>
+          <span class="value" style="color:var(--yellow);">~100-150 (est.)</span>
         </div>
         <div class="info-item">
           <span class="label">Forma prawna</span>
-          <span class="value">Sp.k. (1 z 7 podmiotów)</span>
+          <span class="value">Sp.k. (1 z 7)</span>
         </div>
         <div class="info-item">
           <span class="label">Trusted Shops</span>
@@ -1035,9 +1096,9 @@
         </div>
       </div>
     </div>
-    <div style="margin-top:24px;padding:16px 20px;border:2px dashed var(--yellow);border-radius:12px;background:rgba(184,134,11,0.04);text-align:center;">
-      <span style="font-size:20px;font-weight:700;color:var(--yellow);">⚠️ ANALIZA Z DANYCH PUBLICZNYCH</span><br>
-      <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Z danymi wewnętrznymi obraz mógłby wyglądać INACZEJ.</span>
+    <div class="insight" style="border-color:var(--yellow);background:rgba(184,134,11,0.03);">
+      <div class="insight-main" style="color:var(--yellow);">Analiza z danych publicznych</div>
+      <div class="insight-sub">Z danymi wewnętrznymi obraz mógłby wyglądać inaczej.</div>
     </div>
   </div>
 </div>
@@ -1095,9 +1156,9 @@
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:24px;padding:14px;border:1px dashed var(--board-border);border-radius:10px;">
-      <span style="font-size:18px;color:var(--accent);font-weight:700;">To jest to, z czym ja dzisiaj pracuję — publiczne dane.</span><br>
-      <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">15-20 minut pracy. Fundament pod KAŻDY framework.</span>
+    <div class="insight">
+      <div class="insight-main">To jest to, z czym ja dzisiaj pracuję — publiczne dane.</div>
+      <div class="insight-sub">15-20 minut pracy. Fundament pod KAŻDY framework.</div>
     </div>
   </div>
 </div>
@@ -1176,9 +1237,9 @@
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:24px;padding:14px;border:1px dashed var(--board-border);border-radius:10px;">
-      <span style="font-size:18px;color:var(--accent);font-weight:700;">To czego JA nie mam — ale TY masz.</span><br>
-      <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Z tymi danymi + AI = pełna analiza w godzinę.</span>
+    <div class="insight">
+      <div class="insight-main">To czego JA nie mam — ale TY masz.</div>
+      <div class="insight-sub">Z tymi danymi + AI = pełna analiza w godzinę.</div>
     </div>
   </div>
 </div>
@@ -1191,76 +1252,72 @@
   </div>
   <div class="board">
     <div class="board-title">PROFIT TREE — MARBO SPORT</div>
-    <!-- Korzeń -->
-    <div style="text-align:center;margin-bottom:8px;">
-      <div style="display:inline-block;padding:16px 32px;border:3px solid var(--accent);border-radius:14px;background:rgba(229,168,75,0.08);">
-        <div style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Zysk netto</div>
-        <div style="font-size:32px;font-weight:700;color:var(--accent);">2,95M PLN</div>
-        <div style="font-size:15px;color:var(--red);font-family:'DM Sans',sans-serif;">▼ −13% r/r</div>
+    <!-- Korzeń — hero -->
+    <div style="text-align:center;margin-bottom:12px;">
+      <div class="hero-num">
+        <span class="label">Zysk netto 2024</span>
+        <span class="number">2,95M PLN</span>
+        <span class="delta down">-13% r/r</span>
       </div>
     </div>
-    <!-- Strzałki w dół -->
-    <div style="text-align:center;font-size:24px;color:var(--dim);margin:4px 0;">↙ ↘</div>
+    <div style="text-align:center;font-size:20px;color:var(--dim);margin:6px 0;">↙ &nbsp;&nbsp;&nbsp;&nbsp; ↘</div>
     <!-- Dwie główne gałęzie -->
-    <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:8px;">
+    <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:12px;">
       <!-- Przychody -->
-      <div style="flex:1;max-width:380px;">
-        <div style="text-align:center;padding:14px 20px;border:2px solid var(--green);border-radius:12px;background:rgba(26,138,74,0.04);">
-          <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Przychody</div>
-          <div style="font-size:26px;font-weight:700;color:var(--green);">66,6M PLN</div>
-          <div style="font-size:14px;color:var(--green);font-family:'DM Sans',sans-serif;">▲ +12% r/r</div>
+      <div style="flex:1;max-width:400px;">
+        <div class="hero-num" style="border-color:var(--green);width:100%;background:rgba(26,138,74,0.04);">
+          <span class="label">Przychody</span>
+          <span class="number" style="color:var(--green);font-size:28px;">66,6M PLN</span>
+          <span class="delta up">+12% r/r</span>
         </div>
-        <div style="text-align:center;font-size:18px;color:var(--dim);margin:4px 0;">↓</div>
+        <div style="text-align:center;font-size:16px;color:var(--dim);margin:6px 0;">↓</div>
         <div style="display:flex;flex-direction:column;gap:6px;">
-          <div style="padding:10px 14px;border:1px solid rgba(26,138,74,0.2);border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-size:15px;color:var(--chalk);">Produkty własne</span>
-            <span style="font-size:16px;font-weight:700;color:var(--green);">56M <span style="font-size:12px;color:var(--dim);">(+4%)</span></span>
+          <div style="padding:10px 16px;border-left:3px solid var(--green);border-radius:6px;background:rgba(26,138,74,0.03);display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:14px;color:var(--text);">Produkty własne</span>
+            <span style="font-size:15px;font-weight:700;color:var(--green);">56M <span style="font-size:11px;color:var(--dim);font-weight:400;">(+4%)</span></span>
           </div>
-          <div style="padding:10px 14px;border:1px solid rgba(26,138,74,0.2);border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-size:15px;color:var(--chalk);">Zmiana stanu prod.</span>
-            <span style="font-size:16px;font-weight:700;color:var(--green);">+1,3M</span>
+          <div style="padding:10px 16px;border-left:3px solid var(--green);border-radius:6px;background:rgba(26,138,74,0.03);display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:14px;color:var(--text);">Zmiana stanu prod.</span>
+            <span style="font-size:15px;font-weight:700;color:var(--green);">+1,3M</span>
           </div>
-          <div style="padding:10px 14px;border:1px solid rgba(26,138,74,0.2);border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-size:15px;color:var(--chalk);">Resale (HMS i inne)</span>
-            <span style="font-size:16px;font-weight:700;color:var(--chalk);">8,9M</span>
+          <div style="padding:10px 16px;border-left:3px solid var(--dim);border-radius:6px;background:rgba(0,0,0,0.02);display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:14px;color:var(--text);">Resale (HMS i inne)</span>
+            <span style="font-size:15px;font-weight:700;color:var(--dim);">8,9M</span>
           </div>
         </div>
       </div>
       <!-- Koszty -->
-      <div style="flex:1;max-width:380px;">
-        <div style="text-align:center;padding:14px 20px;border:2px solid var(--red);border-radius:12px;background:rgba(204,51,51,0.04);">
-          <div style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;">Koszty operacyjne</div>
-          <div style="font-size:26px;font-weight:700;color:var(--red);">64M PLN</div>
-          <div style="font-size:14px;color:var(--red);font-family:'DM Sans',sans-serif;">▲ +12,5% r/r</div>
+      <div style="flex:1;max-width:400px;">
+        <div class="hero-num" style="border-color:var(--red);width:100%;background:rgba(204,51,51,0.04);">
+          <span class="label">Koszty operacyjne</span>
+          <span class="number" style="color:var(--red);font-size:28px;">64M PLN</span>
+          <span class="delta down">+12,5% r/r</span>
         </div>
-        <div style="text-align:center;font-size:18px;color:var(--dim);margin:4px 0;">↓</div>
+        <div style="text-align:center;font-size:16px;color:var(--dim);margin:6px 0;">↓</div>
         <div style="display:flex;flex-direction:column;gap:6px;">
-          <div style="padding:10px 14px;border:1px solid rgba(204,51,51,0.2);border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-size:15px;color:var(--chalk);">Materiały / energia</span>
-            <span style="font-size:16px;font-weight:700;color:var(--yellow);">26,5M <span style="font-size:12px;color:var(--dim);">(+10%)</span></span>
+          <div style="padding:10px 16px;border-left:3px solid var(--yellow);border-radius:6px;background:rgba(184,134,11,0.03);display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:14px;color:var(--text);">Materiały / energia</span>
+            <span style="font-size:15px;font-weight:700;color:var(--yellow);">26,5M <span style="font-size:11px;color:var(--dim);font-weight:400;">(+10%)</span></span>
           </div>
-          <div style="padding:10px 14px;border:1px solid rgba(204,51,51,0.2);border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-size:15px;color:var(--chalk);">Usługi obce</span>
-            <span style="font-size:16px;font-weight:700;color:var(--red);">14,5M <span style="font-size:12px;color:var(--red);">(+18%!)</span></span>
+          <div style="padding:10px 16px;border-left:3px solid var(--red);border-radius:6px;background:rgba(204,51,51,0.03);display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:14px;color:var(--text);">Usługi obce</span>
+            <span style="font-size:15px;font-weight:700;color:var(--red);">14,5M <span style="font-size:11px;color:var(--red);font-weight:400;">(+18%!)</span></span>
           </div>
-          <div style="padding:10px 14px;border:2px solid var(--red);border-radius:8px;display:flex;justify-content:space-between;align-items:center;background:rgba(204,51,51,0.04);">
-            <span style="font-size:15px;color:var(--chalk);font-weight:700;">Wynagrodzenia</span>
-            <span style="font-size:16px;font-weight:700;color:var(--red);">10,5M <span style="font-size:12px;color:var(--red);">(+24%!!)</span></span>
+          <div style="padding:12px 16px;border-left:4px solid var(--red);border-radius:6px;background:rgba(204,51,51,0.06);display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:14px;color:var(--text);font-weight:700;">Wynagrodzenia</span>
+            <span style="font-size:15px;font-weight:700;color:var(--red);">10,5M <span style="font-size:11px;color:var(--red);font-weight:400;">(+24%!!)</span></span>
           </div>
-          <div style="padding:10px 14px;border:1px solid rgba(204,51,51,0.2);border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-size:15px;color:var(--chalk);">Amortyzacja</span>
-            <span style="font-size:16px;font-weight:700;color:var(--dim);">3,7M <span style="font-size:12px;color:var(--dim);">(+11%)</span></span>
+          <div style="padding:10px 16px;border-left:3px solid var(--dim);border-radius:6px;background:rgba(0,0,0,0.02);display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:14px;color:var(--text);">Amortyzacja</span>
+            <span style="font-size:15px;font-weight:700;color:var(--dim);">3,7M <span style="font-size:11px;color:var(--dim);font-weight:400;">(+11%)</span></span>
           </div>
         </div>
       </div>
     </div>
     <!-- Wynik -->
-    <div style="text-align:center;margin-top:12px;">
-      <div style="display:inline-block;padding:12px 28px;border:2px dashed var(--yellow);border-radius:12px;background:rgba(184,134,11,0.04);">
-        <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Zysk ze sprzedaży: </span>
-        <span style="font-size:22px;font-weight:700;color:var(--yellow);">2,6M PLN (0% wzrostu!)</span>
-        <span style="font-size:15px;color:var(--dim);font-family:'DM Sans',sans-serif;"> + Saldo ost. dział.: +1,4M (dotacje UE)</span>
-      </div>
+    <div class="insight" style="border-color:var(--yellow);background:rgba(184,134,11,0.04);">
+      <div class="insight-main" style="color:var(--yellow);">Zysk ze sprzedaży: 2,6M PLN — 0% wzrostu!</div>
+      <div class="insight-sub">Saldo ost. działalności: +1,4M (dotacje UE ratują wynik)</div>
     </div>
   </div>
 </div>
@@ -1337,8 +1394,8 @@
         <span style="font-size:15px;color:var(--dim);">Saldo pozostałej dział.: ___________</span>
       </div>
     </div>
-    <div style="text-align:center;margin-top:16px;padding:14px;border:1px dashed var(--board-border);border-radius:10px;">
-      <span style="font-size:18px;color:var(--accent);font-weight:700;">"Która gałąź rośnie najszybciej? Tam jest twój wyciek."</span>
+    <div class="insight">
+      <div class="insight-main">Która gałąź rośnie najszybciej? Tam jest twój wyciek.</div>
     </div>
   </div>
 </div>
@@ -1382,30 +1439,30 @@
         Serwis
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px;font-family:'DM Sans',sans-serif;">
-      <div style="padding:12px;border-radius:8px;background:rgba(26,138,74,0.06);border:1px solid rgba(26,138,74,0.2);">
-        <div style="font-size:16px;color:var(--green);font-weight:700;">✅ Zakupy</div>
-        <div style="font-size:15px;color:var(--dim);margin-top:4px;">Vertically integrated. PKD 25.99.Z — sami spawają, malują, montują.</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;font-family:'DM Sans',sans-serif;">
+      <div style="padding:16px;border-radius:12px;background:rgba(26,138,74,0.04);border-left:4px solid var(--green);">
+        <div style="font-size:15px;color:var(--green);font-weight:700;margin-bottom:6px;">Zakupy</div>
+        <div style="font-size:13px;color:var(--dim);line-height:1.5;">Vertically integrated. PKD 25.99.Z — sami spawają, malują, montują.</div>
       </div>
-      <div style="padding:12px;border-radius:8px;background:rgba(26,138,74,0.06);border:1px solid rgba(26,138,74,0.2);">
-        <div style="font-size:16px;color:var(--green);font-weight:700;">✅✅ Produkcja</div>
-        <div style="font-size:15px;color:var(--dim);margin-top:4px;">Jedyny certyfikat ISO w PL. 4,86/5. CAPEX 10M w nowe maszyny. 470 SKU.</div>
+      <div style="padding:16px;border-radius:12px;background:rgba(26,138,74,0.04);border-left:4px solid var(--green);">
+        <div style="font-size:15px;color:var(--green);font-weight:700;margin-bottom:6px;">Produkcja</div>
+        <div style="font-size:13px;color:var(--dim);line-height:1.5;">Jedyny certyfikat ISO w PL. 4,86/5. CAPEX 10M w nowe maszyny. 470 SKU.</div>
       </div>
-      <div style="padding:12px;border-radius:8px;background:rgba(184,134,11,0.06);border:1px solid rgba(184,134,11,0.2);">
-        <div style="font-size:16px;color:var(--yellow);font-weight:700;">⚠️ Logistyka</div>
-        <div style="font-size:15px;color:var(--dim);margin-top:4px;">Darmowa >150 PLN, 24h. Ale sygnały o uszkodzeniach w transporcie.</div>
+      <div style="padding:16px;border-radius:12px;background:rgba(184,134,11,0.04);border-left:4px solid var(--yellow);">
+        <div style="font-size:15px;color:var(--yellow);font-weight:700;margin-bottom:6px;">Logistyka</div>
+        <div style="font-size:13px;color:var(--dim);line-height:1.5;">Darmowa >150 PLN, 24h. Ale sygnały o uszkodzeniach w transporcie.</div>
       </div>
-      <div style="padding:12px;border-radius:8px;background:rgba(204,51,51,0.06);border:2px solid rgba(204,51,51,0.3);">
-        <div style="font-size:16px;color:var(--red);font-weight:700;">❌ Marketing</div>
-        <div style="font-size:15px;color:var(--dim);margin-top:4px;">YT nieregularny. Zero PR. Meta Ads jedyny kanał online. LinkedIn 95 followersów.</div>
+      <div style="padding:16px;border-radius:12px;background:rgba(204,51,51,0.04);border-left:4px solid var(--red);">
+        <div style="font-size:15px;color:var(--red);font-weight:700;margin-bottom:6px;">Marketing</div>
+        <div style="font-size:13px;color:var(--dim);line-height:1.5;">YT nieregularny. Zero PR. Meta Ads jedyny kanał. LinkedIn 95 followersów.</div>
       </div>
-      <div style="padding:12px;border-radius:8px;background:rgba(184,134,11,0.06);border:1px solid rgba(184,134,11,0.2);">
-        <div style="font-size:16px;color:var(--yellow);font-weight:700;">⚠️ Sprzedaż</div>
-        <div style="font-size:15px;color:var(--dim);margin-top:4px;">Własny sklep ShoperJS. 2 konta Allegro. Wycofali się z Ceneo. Program B2B.</div>
+      <div style="padding:16px;border-radius:12px;background:rgba(184,134,11,0.04);border-left:4px solid var(--yellow);">
+        <div style="font-size:15px;color:var(--yellow);font-weight:700;margin-bottom:6px;">Sprzedaż</div>
+        <div style="font-size:13px;color:var(--dim);line-height:1.5;">Własny sklep ShoperJS. 2 konta Allegro. Wycofali się z Ceneo. Program B2B.</div>
       </div>
-      <div style="padding:12px;border-radius:8px;background:rgba(26,138,74,0.06);border:1px solid rgba(26,138,74,0.2);">
-        <div style="font-size:16px;color:var(--green);font-weight:700;">✅✅ Serwis</div>
-        <div style="font-size:15px;color:var(--dim);margin-top:4px;">99% części od ręki. RMA 48h. Google 4,5/5. Żaden importer tego nie ma.</div>
+      <div style="padding:16px;border-radius:12px;background:rgba(26,138,74,0.04);border-left:4px solid var(--green);">
+        <div style="font-size:15px;color:var(--green);font-weight:700;margin-bottom:6px;">Serwis</div>
+        <div style="font-size:13px;color:var(--dim);line-height:1.5;">99% części od ręki. RMA 48h. Google 4,5/5. Żaden importer tego nie ma.</div>
       </div>
     </div>
   </div>
@@ -1474,9 +1531,9 @@
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:20px;padding:14px;border:2px dashed var(--accent);border-radius:12px;max-width:600px;margin-left:auto;margin-right:auto;">
-      <span style="font-size:20px;color:var(--accent);font-weight:700;">"Made in PL + DTC + certyfikaty" = nikt inny tam nie stoi</span><br>
-      <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Żeby tu wejść — musisz mieć fabrykę, certyfikaty, serwis. To wymaga lat.</span>
+    <div class="insight">
+      <div class="insight-main">"Made in PL + DTC + certyfikaty" = nikt inny tam nie stoi</div>
+      <div class="insight-sub">Żeby tu wejść — musisz mieć fabrykę, certyfikaty, serwis. To wymaga lat.</div>
     </div>
   </div>
 </div>
@@ -1514,20 +1571,16 @@
         Serwis /<br>Obsługa<br><span style="font-size:14px;font-family:'DM Sans',sans-serif;">___________</span>
       </div>
     </div>
-    <div style="margin-top:30px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
-      <span style="padding:8px 16px;border:2px solid var(--green);border-radius:8px;color:var(--green);font-size:18px;font-weight:700;">✅ Świetne</span>
-      <span style="padding:8px 16px;border:2px solid var(--yellow);border-radius:8px;color:var(--yellow);font-size:18px;font-weight:700;">⚠️ Słabe</span>
-      <span style="padding:8px 16px;border:2px solid var(--red);border-radius:8px;color:var(--red);font-size:18px;font-weight:700;">❌ Brak</span>
+    <div style="margin-top:28px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+      <span style="padding:6px 14px;border:1px solid var(--green);border-radius:20px;color:var(--green);font-size:13px;font-weight:600;">Świetne</span>
+      <span style="padding:6px 14px;border:1px solid var(--yellow);border-radius:20px;color:var(--yellow);font-size:13px;font-weight:600;">Słabe</span>
+      <span style="padding:6px 14px;border:1px solid var(--red);border-radius:20px;color:var(--red);font-size:13px;font-weight:600;">Brak</span>
     </div>
-    <div style="display:flex;flex-direction:column;gap:10px;margin-top:24px;max-width:600px;margin-left:auto;margin-right:auto;">
-      <div style="padding:12px 16px;border:1px dashed var(--board-border);border-radius:10px;">
-        <span style="font-size:17px;color:var(--accent);font-weight:700;">"Które ogniwo jest NAJTRUDNIEJSZE do skopiowania przez konkurencję?"</span>
-      </div>
-      <div style="padding:12px 16px;border:1px dashed var(--board-border);border-radius:10px;">
-        <span style="font-size:17px;color:var(--accent);font-weight:700;">"Które ogniwo kosztuje cię NAJWIĘCEJ nerwów/czasu?"</span>
-      </div>
-      <div style="padding:12px 16px;border:1px dashed var(--board-border);border-radius:10px;">
-        <span style="font-size:17px;color:var(--accent);font-weight:700;">"Pokoloruj: zielone, żółte, czerwone. Gdzie jest twoja trójka?"</span>
+    <div class="insight" style="margin-top:24px;">
+      <div class="insight-main" style="font-size:16px;line-height:1.8;">
+        Które ogniwo jest najtrudniejsze do skopiowania?<br>
+        Które kosztuje cię najwięcej nerwów/czasu?<br>
+        Pokoloruj: zielone, żółte, czerwone.
       </div>
     </div>
   </div>
@@ -1598,9 +1651,9 @@
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:16px;padding:14px;border:2px dashed var(--accent);border-radius:12px;max-width:550px;margin-left:auto;margin-right:auto;">
-      <span style="font-size:20px;color:var(--accent);font-weight:700;">3 z 4 strategii naraz</span><br>
-      <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Pytanie: czy mają ludzi i kasę na wszystkie jednocześnie?</span>
+    <div class="insight">
+      <div class="insight-main">3 z 4 strategii naraz</div>
+      <div class="insight-sub">Pytanie: czy mają ludzi i kasę na wszystkie jednocześnie?</div>
     </div>
   </div>
 </div>
@@ -1662,8 +1715,8 @@
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:16px;padding:14px;border:1px dashed var(--board-border);border-radius:10px;">
-      <span style="font-size:18px;color:var(--accent);font-weight:700;">"Ile kwadrantów wypełniłeś? Jeśli >2 — czy masz ludzi i kasę na wszystkie naraz?"</span>
+    <div class="insight">
+      <div class="insight-main">Ile kwadrantów wypełniłeś? Jeśli >2 — czy masz ludzi i kasę na wszystkie naraz?</div>
     </div>
   </div>
 </div>
@@ -1675,23 +1728,25 @@
   </div>
   <div class="board">
     <div class="board-title">SYNTEZA</div>
-    <div class="flow">
-      <div class="flow-step" style="border-color:var(--green);color:var(--green);">
-        <strong>PROFIT TREE</strong><br>
-        <span style="font-size:17px;">Przychody +12%, koszty +12,5%. Zysk stoi.<br>Cykl inwestycyjny — CAPEX 10M.</span>
+    <!-- Three frameworks horizontally -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;">
+      <div style="padding:20px;border-radius:14px;border:2px solid var(--green);background:rgba(26,138,74,0.03);">
+        <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:8px;letter-spacing:0.5px;">PROFIT TREE</div>
+        <div style="font-size:14px;color:var(--text);line-height:1.6;">Przychody +12%, koszty +12,5%. Zysk stoi. Cykl inwestycyjny — CAPEX 10M.</div>
       </div>
-      <div class="flow-arrow">↓</div>
-      <div class="flow-step" style="border-color:var(--blue);color:var(--blue);">
-        <strong>VALUE CHAIN</strong><br>
-        <span style="font-size:17px;">Supermoce: produkcja + serwis.<br>Biała plama: marketing. Pozycja unikalna.</span>
+      <div style="padding:20px;border-radius:14px;border:2px solid var(--blue);background:rgba(37,99,235,0.03);">
+        <div style="font-size:14px;font-weight:700;color:var(--blue);margin-bottom:8px;letter-spacing:0.5px;">VALUE CHAIN</div>
+        <div style="font-size:14px;color:var(--text);line-height:1.6;">Supermoce: produkcja + serwis. Biała plama: marketing. Pozycja unikalna.</div>
       </div>
-      <div class="flow-arrow">↓</div>
-      <div class="flow-step" style="border-color:var(--yellow);color:var(--yellow);">
-        <strong>ANSOFF MATRIX</strong><br>
-        <span style="font-size:17px;">3 strategie naraz: PL, DE, GARDEN.<br>Każda wymaga ludzi i kasy.</span>
+      <div style="padding:20px;border-radius:14px;border:2px solid var(--yellow);background:rgba(184,134,11,0.03);">
+        <div style="font-size:14px;font-weight:700;color:var(--yellow);margin-bottom:8px;letter-spacing:0.5px;">ANSOFF MATRIX</div>
+        <div style="font-size:14px;color:var(--text);line-height:1.6;">3 strategie naraz: PL, DE, GARDEN. Każda wymaga ludzi i kasy.</div>
       </div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:8px;margin-top:20px;max-width:600px;margin-left:auto;margin-right:auto;">
+    <!-- Arrow down -->
+    <div style="text-align:center;font-size:24px;color:var(--dim);margin-bottom:20px;">↓ ↓ ↓</div>
+    <!-- Conclusions -->
+    <div style="display:flex;flex-direction:column;gap:10px;max-width:640px;margin:0 auto;">
       <div class="flow-result" style="border-left:4px solid var(--green);">
         Inwestycje zjadają zysk — ale planowo
       </div>
@@ -1701,6 +1756,9 @@
       <div class="flow-result" style="border-left:4px solid var(--yellow);">
         3 fronty naraz — czy starczy zasobów?
       </div>
+    </div>
+    <div class="insight" style="margin-top:28px;">
+      <div class="insight-main">Firma z materiałem na 2x — ale z bottleneckiem w opowiadaniu swojej historii.</div>
     </div>
   </div>
 </div>
@@ -1736,9 +1794,9 @@
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:24px;padding:16px;border:2px dashed var(--accent);border-radius:12px;max-width:600px;margin-left:auto;margin-right:auto;">
-      <span style="font-size:18px;color:var(--accent);font-weight:700;">Odpowiedzi na te pytania wymagają danych z WNĘTRZA firmy.</span><br>
-      <span style="font-size:16px;color:var(--dim);font-family:'DM Sans',sans-serif;">Pipeline → paliwo. Dane o zespole → ludzie. Procesy → dlaczego historia nie jest opowiedziana.</span>
+    <div class="insight">
+      <div class="insight-main">Odpowiedzi na te pytania wymagają danych z WNĘTRZA firmy.</div>
+      <div class="insight-sub">Pipeline = paliwo. Dane o zespole = ludzie. Procesy = dlaczego historia nie jest opowiedziana.</div>
     </div>
   </div>
 </div>
