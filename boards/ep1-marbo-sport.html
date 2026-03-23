@@ -1142,8 +1142,9 @@
   <div class="timeline-item" data-section="b3" onclick="goToSlide(12)" style="border:1px dashed var(--board-border);font-style:italic;">Twój Ansoff</div>
   <div class="timeline-item" data-section="b3" onclick="goToSlide(13)">Ekosystem Marbo</div>
   <div class="timeline-item" data-section="b3" onclick="goToSlide(14)">TOC: Wąskie Gardło</div>
-  <div class="timeline-item" data-section="syn" onclick="goToSlide(15)">Synteza</div>
-  <div class="timeline-item" data-section="syn" onclick="goToSlide(16)">3 Pytania</div>
+  <div class="timeline-item" data-section="b3" onclick="goToSlide(15)">Bottleneck → Automatyzacja</div>
+  <div class="timeline-item" data-section="syn" onclick="goToSlide(16)">Synteza</div>
+  <div class="timeline-item" data-section="syn" onclick="goToSlide(17)">3 Pytania</div>
 </div>
 
 <div class="main">
@@ -2178,8 +2179,123 @@
   </div>
 </div>
 
-<!-- ============ SLIDE 13: WB9a — SYNTEZA: JAK SIĘ ŁĄCZY ============ -->
+<!-- ============ SLIDE 15: B3 — BOTTLENECK → AUTOMATYZACJA ============ -->
 <div class="slide" data-slide="15">
+  <div class="slide-header">
+    <div class="slide-title">B3: Od bottlenecku → do automatyzacji</div>
+    <div class="slide-subtitle">Constraint zidentyfikowany — teraz: które procesy odblokować?</div>
+  </div>
+  <div class="board">
+    <div class="board-title">3 KROKI: CONSTRAINT → AUTOMATYZACJA</div>
+
+    <!-- Step flow -->
+    <div class="flow" style="flex-direction:row;gap:0;margin-bottom:28px;justify-content:center;">
+      <div class="flow-step" style="border-color:var(--red);background:rgba(204,51,51,0.04);padding:12px 20px;min-width:160px;text-align:center;">
+        <div style="font-size:11px;font-weight:700;color:var(--red);letter-spacing:0.8px;margin-bottom:4px;">KROK 1</div>
+        <div style="font-size:14px;font-weight:600;color:var(--text);">Zidentyfikuj constraint</div>
+        <div style="font-size:12px;color:var(--dim);margin-top:4px;">z TOC / Value Chain</div>
+      </div>
+      <div class="chain-arrow" style="align-self:center;padding:0 8px;">→</div>
+      <div class="flow-step" style="border-color:var(--yellow);background:rgba(255,204,0,0.04);padding:12px 20px;min-width:160px;text-align:center;">
+        <div style="font-size:11px;font-weight:700;color:var(--yellow);letter-spacing:0.8px;margin-bottom:4px;">KROK 2</div>
+        <div style="font-size:14px;font-weight:600;color:var(--text);">Mapuj procesy w obszarze</div>
+        <div style="font-size:12px;color:var(--dim);margin-top:4px;">co się dzieje ręcznie?</div>
+      </div>
+      <div class="chain-arrow" style="align-self:center;padding:0 8px;">→</div>
+      <div class="flow-step" style="border-color:var(--green);background:rgba(26,138,74,0.04);padding:12px 20px;min-width:160px;text-align:center;">
+        <div style="font-size:11px;font-weight:700;color:var(--green);letter-spacing:0.8px;margin-bottom:4px;">KROK 3</div>
+        <div style="font-size:14px;font-weight:600;color:var(--text);">Dobierz narzędzie</div>
+        <div style="font-size:12px;color:var(--dim);margin-top:4px;">automat, kreator lub SOP</div>
+      </div>
+    </div>
+
+    <!-- Diagnostic questions + automation types -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:820px;margin:0 auto 24px;">
+
+      <!-- Left: 3 pytania diagnostyczne -->
+      <div style="padding:18px;border-radius:12px;border:1px solid var(--board-border);background:rgba(255,255,255,0.02);">
+        <div style="font-size:12px;font-weight:700;color:var(--dim);letter-spacing:0.8px;margin-bottom:12px;">KROK 2 — 3 PYTANIA DIAGNOSTYCZNE</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <div style="min-width:28px;height:28px;border-radius:50%;background:rgba(155,92,255,0.15);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--accent);">1</div>
+            <div>
+              <div style="font-size:14px;font-weight:600;color:var(--text);">Powtarzalny?</div>
+              <div style="font-size:12px;color:var(--dim);line-height:1.5;">Robimy to samo co tydzień / miesiąc? → kandydat na algorytm (m36)</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <div style="min-width:28px;height:28px;border-radius:50%;background:rgba(155,92,255,0.15);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--accent);">2</div>
+            <div>
+              <div style="font-size:14px;font-weight:600;color:var(--text);">Czasochłonny?</div>
+              <div style="font-size:12px;color:var(--dim);line-height:1.5;">Zajmuje godziny, a może trwać minuty? → dźwignia (m21)</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <div style="min-width:28px;height:28px;border-radius:50%;background:rgba(155,92,255,0.15);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--accent);">3</div>
+            <div>
+              <div style="font-size:14px;font-weight:600;color:var(--text);">Error-prone?</div>
+              <div style="font-size:12px;color:var(--dim);line-height:1.5;">Różne osoby robią różnie? → standaryzacja lub automat (m17)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Typy automatyzacji -->
+      <div style="padding:18px;border-radius:12px;border:1px solid var(--board-border);background:rgba(255,255,255,0.02);">
+        <div style="font-size:12px;font-weight:700;color:var(--dim);letter-spacing:0.8px;margin-bottom:12px;">KROK 3 — TYPY ROZWIĄZAŃ</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="padding:10px 12px;border-radius:8px;border-left:3px solid var(--blue);background:rgba(0,122,255,0.04);">
+            <div style="font-size:13px;font-weight:700;color:var(--blue);">Automatyzacja przepływu</div>
+            <div style="font-size:12px;color:var(--dim);margin-top:2px;">n8n — dane między systemami, sekwencje, triggery</div>
+          </div>
+          <div style="padding:10px 12px;border-radius:8px;border-left:3px solid var(--green);background:rgba(26,138,74,0.04);">
+            <div style="font-size:13px;font-weight:700;color:var(--green);">Kreator / konfigurator</div>
+            <div style="font-size:12px;color:var(--dim);margin-top:2px;">user sam przechodzi przez opcje i konfiguruje wynik</div>
+          </div>
+          <div style="padding:10px 12px;border-radius:8px;border-left:3px solid var(--yellow);background:rgba(255,204,0,0.04);">
+            <div style="font-size:13px;font-weight:700;color:var(--yellow);">Raportowanie automatyczne</div>
+            <div style="font-size:12px;color:var(--dim);margin-top:2px;">dashboard / alert cykliczny — decyzja na danych, nie intuicji</div>
+          </div>
+          <div style="padding:10px 12px;border-radius:8px;border-left:3px solid var(--dim);background:rgba(255,255,255,0.02);">
+            <div style="font-size:13px;font-weight:700;color:var(--text);">Standaryzacja (SOP)</div>
+            <div style="font-size:12px;color:var(--dim);margin-top:2px;">zmienność → protokół; nie automat, ale fundament pod automat</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marbo example -->
+    <div style="max-width:820px;margin:0 auto;">
+      <div style="font-size:12px;font-weight:700;color:var(--dim);letter-spacing:0.8px;margin-bottom:10px;">MARBO — PRZYKŁAD ZASTOSOWANIA</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div style="padding:14px 16px;border-radius:10px;border:1px solid rgba(204,51,51,0.3);background:rgba(204,51,51,0.03);">
+          <div style="font-size:12px;font-weight:700;color:var(--red);margin-bottom:8px;">CONSTRAINT: Ludzie</div>
+          <div style="font-size:12px;color:var(--dim);line-height:1.7;">
+            Ogłoszenia o pracę → <span style="color:var(--blue);font-weight:600;">n8n: auto-syndykacja na portale</span><br>
+            Onboarding nowego → <span style="color:var(--green);font-weight:600;">kreator: self-service checklist</span><br>
+            BHP, procedury → <span style="color:var(--text);font-weight:600;">SOP → fundament</span>
+          </div>
+        </div>
+        <div style="padding:14px 16px;border-radius:10px;border:1px solid rgba(255,204,0,0.3);background:rgba(255,204,0,0.03);">
+          <div style="font-size:12px;font-weight:700;color:var(--yellow);margin-bottom:8px;">CONSTRAINT: Sprzedaż</div>
+          <div style="font-size:12px;color:var(--dim);line-height:1.7;">
+            Dobór sprzętu B2B → <span style="color:var(--green);font-weight:600;">kreator: "Wyposażę klub"</span><br>
+            Follow-up z leadem → <span style="color:var(--blue);font-weight:600;">n8n: sekwencja wiadomości</span><br>
+            Raporty sprzedaży → <span style="color:var(--yellow);font-weight:600;">dashboard automatyczny</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight" style="border-color:var(--accent);background:rgba(155,92,255,0.04);">
+      <div class="insight-main" style="color:var(--accent);">Automatyzacja nie zastępuje ludzi — eliminuje constraint żeby mogli robić więcej.</div>
+      <div class="insight-sub">Jedno z tych rozwiązań wdrożone = constraint przestaje być bottleneckiem.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 13: WB9a — SYNTEZA: JAK SIĘ ŁĄCZY ============ -->
+<div class="slide" data-slide="16">
   <div class="slide-header">
     <div class="slide-title">Synteza — jak 3 frameworki się łączą</div>
   </div>
@@ -2221,7 +2337,7 @@
 </div>
 
 <!-- ============ SLIDE 14: WB9b — 3 PYTANIA DO WŁAŚCICIELA ============ -->
-<div class="slide" data-slide="16">
+<div class="slide" data-slide="17">
   <div class="slide-header">
     <div class="slide-title">3 pytania do właściciela</div>
     <div class="slide-subtitle">Pytania, które zadałbym gdybym miał godzinę</div>
